@@ -1,5 +1,5 @@
 --[[
-    ⚔️ Anime Adventures — Smart Farm v1.1  (NexusLib)
+    ⚔️ Anime Adventures — Smart Farm v1.2  (NexusLib)
 
     One script for the lobby and every match place:
       • Lobby:  free rewards → spends with floors (gold shop Star Fruits, optional summons) → rank every
@@ -15,13 +15,14 @@
 
     Every number comes from the game's own modules (Units, Waves, Levels, Attacks, Traits, UnitServiceCore
     formulas, the live unit stats that already include level, traits, stat rolls, curses and relics) and
-    is corrected by what really happened (run times, wins, refused spots, measured damage per unit).
+    is corrected by what really happened (run times, wins, refused spots, measured damage per unit). Units the
+    game ships without their upgrades are learned in matches and count as "strength unknown" until then.
     Settings: AA_SmartFarm/settings.json · learning: AA_SmartFarm/brain.json · log: AA_SmartFarm/log.txt
 ]]
 
 -- claim the "running" slot synchronously, before any yield, so two queued loaders can't both start
 if _G.AA_SF and _G.AA_SF.alive then return end
-local VERSION = "1.1"
+local VERSION = "1.2"
 -- what changed, newest first (Updates tab; a one-time notice when a player first runs a new version)
 local CHANGELOG = {
     { v = "1.0", date = "Oct 30, 2026", title = "First version", items = {
@@ -39,7 +40,10 @@ local CHANGELOG = {
         { "🧬", "Smart evolve", "Evolves your best copy of a unit once it's ready and gets stronger, but only with items no bigger goal needs and only using up spare copies (never one on your team or with a trait). Every evolve shows in the log and the Spending tab. Switch it off in the Path tab.", "NEW" },
     } },
 }
-table.insert(CHANGELOG, 1, { v = "1.1", date = "Oct 30, 2026", title = "Takedown training", items = {
+table.insert(CHANGELOG, 1, { v = "1.2", date = "Oct 30, 2026", title = "Hidden unit stats", items = {
+    { "🔍", "Hidden unit stats", "The game hides the upgrades of about half its Mythic and Secret units (every April, Sakamoto and current banner unit) until they're in a match. The farm now records them when a match sends them, and until then calls those units \"strength unknown\" instead of weak: no goal value, no automatic evolve and no summons on a guess.", "FIX" },
+} })
+table.insert(CHANGELOG, 2, { v = "1.1", date = "Oct 30, 2026", title = "Takedown training", items = {
     { "🎯", "Takedown training", "Some evolutions need the unit's own takedowns (Shinobi (Hood) needs 7,500). The farm puts that unit on your team only for runs the simulator says you still win with 30% tougher enemies, counts its takedowns every match, and puts your team back after each run. Path tab.", "NEW" },
     { "📍", "Where it stands", "A takedown needs a hit before the enemy dies, so the trainee stands where enemies arrive first and goes for the newest enemy in its range, one your other units haven't killed yet.", "NEW" },
 } })
@@ -173,6 +177,18 @@ function U.list(t)
     return out
 end
 function U.flat(v) return Vector3.new(v.X, 0, v.Z) end
+-- a copy with only what JSON can hold (numbers, strings, booleans, tables of them): a Roblox value (Color3,
+-- CFrame...) anywhere in the brain would make the whole save fail
+function U.plain(v, depth)
+    local t = type(v)
+    if t == "number" or t == "string" or t == "boolean" then return v end
+    if t ~= "table" or (depth or 0) > 6 then return nil end
+    local out = {}
+    for k, x in pairs(v) do
+        if type(k) == "number" or type(k) == "string" then out[k] = U.plain(x, (depth or 0) + 1) end
+    end
+    return out
+end
 
 function SF.log(level, sys, msg)
     if level > (CFG.logLevel or 1) then return end
@@ -255,6 +271,8 @@ do
     B.goalNeed = tbl(b.goalNeed) or {}   -- [itemId] = how many of it those goals still need
     B.raidShop = tbl(b.raidShop) or {}   -- [key] = {id, costItem, cost, stock} (lobby raid shop, cached)
     B.lb = tbl(b.lb)                     -- limit break requirement from the server {requirement, allowed}
+    B.hidden = tbl(b.hidden) or {}       -- [unitId] = true: the lobby has no upgrade stats for it (UNIT.markHidden)
+    B.unitData = tbl(b.unitData) or {}   -- [unitId] = {upgrade, spawn_cap, ...} the server sent in a match (UNIT.capture)
     B.lastSuggest = tonumber(b.lastSuggest) or 0
     B.anonId = type(b.anonId) == "string" and b.anonId or Http:GenerateGUID(false):gsub("-", ""):sub(1, 10):lower()
     B.hiveQueue = tbl(b.hiveQueue) or {}
@@ -371,15 +389,58 @@ end
 --  UNITS: the game's formulas at full growth
 -- ============================================================
 UNIT._rows, UNIT._mult = {}, {}
+-- hidden stats: the game ships about half its Mythic / Secret units without their upgrades (every April,
+-- Sakamoto and current banner unit). The server sends them in a match, for the units in it
+-- (UnitGameReplicatorClient patches Units[id]); the farm keeps a copy in the brain so the lobby knows them too.
+-- A unit it has never seen in a match is "unknown", not weak: no goal value, no smart evolve, no summons for it.
+UNIT.KEEP = { "upgrade", "spawn_cap", "primary_attack", "primary_attack_no_upgrades", "active_attack", "farm_amount" }
+function UNIT.field(id, k)
+    local d = C.Units[id]
+    if type(d) == "table" and d[k] ~= nil then return d[k] end
+    local x = B.unitData[id]
+    return x and x[k]
+end
+function UNIT.hidden(id)
+    local d = C.Units[id]
+    return type(d) == "table" and d.upgrade == nil and (tonumber(d.cost) or 0) > 0 and not (B.unitData[id] and B.unitData[id].upgrade)
+end
+-- lobby: which units the game shipped without stats (a match checks these for what the server sent)
+function UNIT.markHidden()
+    local n = 0
+    for id, d in pairs(C.Units) do
+        if type(d) == "table" and d.upgrade == nil and (tonumber(d.cost) or 0) > 0 then B.hidden[id] = true; n = n + 1 end
+    end
+    return n
+end
+-- match: keep the stats the server sent for units the lobby didn't have them for (fresh each match: a balance
+-- change updates them)
+function UNIT.capture()
+    local got = {}
+    for id in pairs(B.hidden) do
+        local d = C.Units[id]
+        if type(d) == "table" and type(d.upgrade) == "table" then
+            local keep = {}
+            for _, k in ipairs(UNIT.KEEP) do if d[k] ~= nil then keep[k] = U.plain(d[k]) end end
+            if not B.unitData[id] then table.insert(got, UNIT.name(id)) end
+            B.unitData[id] = keep
+            UNIT._rows[id] = nil
+        end
+    end
+    if #got > 0 then
+        SF.log(1, "UNITS", "learned the hidden upgrade stats of " .. table.concat(got, ", ") .. " (the game only sends them in a match)")
+        SF.saveSoon()
+    end
+end
 -- every upgrade level as a full row (an upgrade only lists what changes)
 function UNIT.rows(id)
     if UNIT._rows[id] then return UNIT._rows[id] end
     local d = C.Units[id]
     if type(d) ~= "table" then return nil end
     local cur = { cost = d.cost or 0, damage = d.damage or 0, cd = d.attack_cooldown or 0, range = d.range or 0,
-        farm = d.farm_amount or 0, atk = d.primary_attack_no_upgrades or d.primary_attack, active = d.active_attack }
+        farm = UNIT.field(id, "farm_amount") or 0, atk = UNIT.field(id, "primary_attack_no_upgrades") or UNIT.field(id, "primary_attack"),
+        active = UNIT.field(id, "active_attack") }
     local rows = { [0] = table.clone(cur) }
-    local ups = d.upgrade or {}
+    local ups = UNIT.field(id, "upgrade") or {}
     for i, up in ipairs(ups) do
         cur = table.clone(cur)
         cur.cost = up.cost or 0
@@ -539,8 +600,7 @@ end
 -- how many copies may be on the field: the unit's spawn cap, 1 for the Unique trait ("There can only be
 -- one"), lowered further by what the server really allowed
 function UNIT.cap(u)
-    local d = C.Units[u.unit_id] or {}
-    local cap = tonumber(d.spawn_cap) or 1
+    local cap = tonumber(UNIT.field(u.unit_id, "spawn_cap")) or 1
     if UNIT.trait(u) == "unique" then cap = 1 end
     local learned = tonumber(B.caps[u.uuid])
     if learned then cap = math.min(cap, learned) end
@@ -986,6 +1046,8 @@ function ADV.goals()
                 local okA, a = pcall(UNIT.score, u)
                 local okB, b = pcall(UNIT.score, evolved)
                 a, b = okA and a or 0, okB and b or 0
+                -- the game hides one of the two forms' upgrades: its strength is unknown (UNIT.hidden), not low
+                local hidden = UNIT.hidden(u0.unit_id) or UNIT.hidden(d.evolve.evolve_unit)
                 local plans, runs, unknown, ready = {}, 0, false, true
                 -- kills / takedowns come from playing the unit, not from farming items
                 local short = ADV.killsShort(u, req)
@@ -1002,15 +1064,17 @@ function ADV.goals()
                         end
                     end
                 end
-                if b > a then
-                    table.insert(out, { uuid = u0.uuid, from = u0.unit_id, to = d.evolve.evolve_unit, scoreFrom = a, scoreTo = b, gain = b - a,
-                        intoTeam = b > weakest, ready = ready, unknown = unknown, plans = plans, runs = runs, items = items, eats = eats })
+                if b > a or hidden then
+                    table.insert(out, { uuid = u0.uuid, from = u0.unit_id, to = d.evolve.evolve_unit, scoreFrom = a, scoreTo = b, gain = hidden and 0 or b - a,
+                        intoTeam = not hidden and b > weakest, ready = ready, unknown = unknown, hidden = hidden or nil, plans = plans, runs = runs, items = items, eats = eats })
                 end
             end
         end
     end
-    -- best first: ready ones, then what joins your team, by strength gained per run of farming
+    -- best first: ready ones, then what joins your team, by strength gained per run of farming (unknown
+    -- strength last)
     table.sort(out, function(x, y)
+        if (x.hidden or false) ~= (y.hidden or false) then return not x.hidden end
         if x.ready ~= y.ready then return x.ready end
         if x.unknown ~= y.unknown then return not x.unknown end
         if x.intoTeam ~= y.intoTeam then return x.intoTeam end
@@ -1034,7 +1098,9 @@ function ADV.text(g)
     for _, p in ipairs(g.plans) do if p.levels and p.levels[1] then p1 = p; break end end
     local src = p1 and (p1.best or p1.levels[1])
     if src then where = string.format(" · farm %s (≈%.0f a run, ≈%d runs)", MODE.levelName(src.level), src.per, math.ceil(g.runs)) end
-    return string.format("%s → %s · score %s → %s%s · %s%s", UNIT.name(g.from), UNIT.name(g.to), U.fmt(g.scoreFrom), U.fmt(g.scoreTo),
+    local score = g.hidden and "strength unknown (the game shows its upgrades only in a match)"
+        or string.format("score %s → %s", U.fmt(g.scoreFrom), U.fmt(g.scoreTo))
+    return string.format("%s → %s · %s%s · %s%s", UNIT.name(g.from), UNIT.name(g.to), score,
         g.intoTeam and " (joins your team)" or "", g.ready and "ready to evolve" or table.concat(parts, "; "), g.ready and "" or where)
 end
 -- refresh the goals, and give the items of the top goals their value (they're what makes you stronger)
@@ -1045,9 +1111,9 @@ function ADV.refresh()
     table.clear(B.goalNeed)
     local valued = 0
     for _, g in ipairs(goals) do
-        table.insert(B.goals, { uuid = g.uuid, from = g.from, to = g.to, ready = g.ready, intoTeam = g.intoTeam, unknown = g.unknown, text = ADV.text(g),
+        table.insert(B.goals, { uuid = g.uuid, from = g.from, to = g.to, ready = g.ready, intoTeam = g.intoTeam, unknown = g.unknown, hidden = g.hidden, text = ADV.text(g),
             gain = g.gain, runs = g.runs, plans = g.plans, items = g.items, eats = g.eats, scoreFrom = g.scoreFrom, scoreTo = g.scoreTo })
-        if CFG.goals and not g.ready and not g.unknown and (g.intoTeam or valued == 0) and valued < 2 then
+        if CFG.goals and not g.ready and not g.unknown and not g.hidden and (g.intoTeam or valued == 0) and valued < 2 then
             valued = valued + 1
             for _, p in ipairs(g.plans) do
                 if p.farm and p.farmNeed > 0 then
@@ -1190,7 +1256,8 @@ function HUB.smartEvolve()
     for _, g in ipairs(goals) do
         local why, evolved
         if g.ready and done < 2 and (HUB.evoBlocked[g.uuid] or 0) < os.time() then
-            for _, it in ipairs(g.items or {}) do
+            if g.hidden then why = "its strength is unknown (the game hides its upgrades until it's in a match), so this one is your call" end
+            for _, it in ipairs(why and {} or g.items or {}) do
                 if ADV.have(it.id) - it.amount < (reserved[it.id] or 0) then
                     why = string.format("keeps %s for a bigger evolution", (C.Items[it.id] or {}).name or it.id)
                     break
@@ -1657,10 +1724,12 @@ function HUB.summon()
         local weakest = math.huge
         for _, e in ipairs(team) do if not UNIT.isFarm(e.id) then weakest = math.min(weakest, UNIT.score(e.u)) end end
         local ok, setup = SF.request("hatch", "get_hatch_setup_data")
-        local better = {}
+        local better, unknown = {}, 0
         if ok and type(setup) == "table" and setup.EventClover and setup.EventClover.rateup_units then
             for _, id in pairs(setup.EventClover.rateup_units) do
-                if C.Units[id] and not UNIT.owns(id) then
+                -- a unit whose upgrades the game hides can't be judged: no summons on a guess
+                if C.Units[id] and not UNIT.owns(id) and UNIT.hidden(id) then unknown = unknown + 1
+                elseif C.Units[id] and not UNIT.owns(id) then
                     -- a level-1, traitless copy at full upgrade (what a fresh pull would be)
                     local fake = { unit_id = id, uuid = "sim:" .. id, xp = 0, traits = {}, trait_stats = { potency_stat = 1, speed_stat = 1, range_stat = 1 } }
                     local okS, sc = pcall(UNIT.score, fake)
@@ -1668,7 +1737,7 @@ function HUB.summon()
                 end
             end
         end
-        if #better == 0 then table.insert(msgs, "gem banner: nothing that beats your team")
+        if #better == 0 then table.insert(msgs, "gem banner: nothing that beats your team" .. (unknown > 0 and string.format(" (%d featured units can't be judged: the game hides their upgrades)", unknown) or ""))
         else
             local gems = function() return tonumber(p.gem_amount) or 0 end
             local n = pull("EventClover", "gems", gems, CFG.gemFloor, 50, "would beat your weakest unit: " .. table.concat(better, ", "), "gems")
@@ -1784,6 +1853,8 @@ end
 function HUB.run()
     SF.status("Mode", "in the lobby")
     local arrived = U.now()
+    -- units the game ships without their upgrades (a match records them when the server sends them)
+    pcall(UNIT.markHidden)
     while SF.alive do
         if CFG.master then
             -- takedown training: your own team is back before anything is ranked or simulated
@@ -2537,7 +2608,8 @@ function SIM.pool(mod)
     local best, farms = {}, {}
     for _, u0 in pairs(s.profile_data.collection.owned_units) do
         local u = s.collection:get_unit_by_uuid(u0.uuid) or u0
-        if C.Units[u.unit_id] and UNIT.rows(u.unit_id) then
+        -- (a unit whose upgrades the game hides can't be simulated: it would play at level 0)
+        if C.Units[u.unit_id] and UNIT.rows(u.unit_id) and not UNIT.hidden(u.unit_id) then
             local farm = UNIT.isFarm(u.unit_id)
             local okS, sc = pcall(farm and function() return UNIT.farm(u, UNIT.rows(u.unit_id).max) end or UNIT.score, u, mod)
             sc = okS and sc or 0
@@ -2657,23 +2729,27 @@ function SIM.plan(m, withTeam)
             -- ready evolutions: what each one does to that best team here
             local evo = {}
             for _, ev in ipairs(SIM.evolutions()) do
-                local trial = table.clone(bestUnits)
-                local swapped = false
-                for i, u in ipairs(trial) do if u.unit_id == ev.from then trial[i] = ev.evolved; swapped = true end end
-                if not swapped then
-                    -- not in the team: would the evolved unit replace the weakest attacker?
-                    local wi, ws = nil, math.huge
-                    for i, u in ipairs(trial) do
-                        if not UNIT.isFarm(u.unit_id) then local okS, sc = pcall(UNIT.score, u, mod); if okS and sc < ws then wi, ws = i, sc end end
-                    end
-                    if wi then trial[wi] = ev.evolved end
-                end
-                local r = SIM.run(info, SIM.teamFrom(trial, info.map), { hpMul = 1 })
                 local gain
-                if r.won and not br.won then gain = "turns " .. m.label .. " into a win"
-                elseif r.wave > br.wave then gain = string.format("%s: reaches wave %d instead of %d", m.label, r.wave, br.wave)
-                elseif r.won and br.won and r.t < br.t - 6 then gain = string.format("clears %s %.1f min faster", m.label, (br.t - r.t) / 60)
-                else gain = br.won and ("no difference in " .. m.label .. " (already a win)") or ("doesn't help in " .. m.label) end
+                if UNIT.hidden(ev.from) or UNIT.hidden(ev.to) then
+                    gain = "strength unknown (the game shows its upgrades only in a match)"
+                else
+                    local trial = table.clone(bestUnits)
+                    local swapped = false
+                    for i, u in ipairs(trial) do if u.unit_id == ev.from then trial[i] = ev.evolved; swapped = true end end
+                    if not swapped then
+                        -- not in the team: would the evolved unit replace the weakest attacker?
+                        local wi, ws = nil, math.huge
+                        for i, u in ipairs(trial) do
+                            if not UNIT.isFarm(u.unit_id) then local okS, sc = pcall(UNIT.score, u, mod); if okS and sc < ws then wi, ws = i, sc end end
+                        end
+                        if wi then trial[wi] = ev.evolved end
+                    end
+                    local r = SIM.run(info, SIM.teamFrom(trial, info.map), { hpMul = 1 })
+                    if r.won and not br.won then gain = "turns " .. m.label .. " into a win"
+                    elseif r.wave > br.wave then gain = string.format("%s: reaches wave %d instead of %d", m.label, r.wave, br.wave)
+                    elseif r.won and br.won and r.t < br.t - 6 then gain = string.format("clears %s %.1f min faster", m.label, (br.t - r.t) / 60)
+                    else gain = br.won and ("no difference in " .. m.label .. " (already a win)") or ("doesn't help in " .. m.label) end
+                end
                 table.insert(evo, { from = UNIT.name(ev.from), to = UNIT.name(ev.to), ready = #ev.missing == 0, missing = ev.missing[1], gain = gain, mode = m.label })
             end
             B.simEvo = evo
@@ -3766,6 +3842,9 @@ function MT.run()
     MT.setupChecks()
     MT.buildCandidates()
     MT.team = UNIT.equipped()
+    -- hidden unit stats: the game asks the server for them as the match starts (UNIT.capture keeps a copy)
+    pcall(UNIT.capture)
+    task.delay(15, function() local ok, e = pcall(UNIT.capture); if not ok then SF.log(1, "ERROR", "unit stats: " .. tostring(e)) end end)
     -- takedown training: the trainee the lobby swapped into this team
     MT.trainee, MT.trainTk = nil, 0
     for _, e in ipairs(MT.team) do if B.train.on and e.uuid == B.train.on.uuid then MT.trainee = e.uuid end end
@@ -4252,7 +4331,7 @@ function GUI.update()
         for i = 1, 8 do
             local g = B.goals[i]
             if g then
-                pcall(GUI.path.Set, tostring(i), g.text, g.ready and COL.green or (g.intoTeam and COL.purple or (g.unknown and COL.sub or COL.text)), UNIT.name(g.to))
+                pcall(GUI.path.Set, tostring(i), g.text, g.ready and not g.hidden and COL.green or (g.intoTeam and COL.purple or ((g.unknown or g.hidden) and COL.sub or COL.text)), UNIT.name(g.to))
             else
                 pcall(GUI.path.Set, tostring(i), i == 1 and "goals are worked out in the lobby" or "", COL.sub, i == 1 and "—" or "")
             end
