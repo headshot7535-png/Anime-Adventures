@@ -34,6 +34,7 @@ local CHANGELOG = {
         { "⏩", "Real wave timing", "The simulator plays waves the way the game does: each wave's yen ×2.6 (the world's money boost), the early skip vote (about 2 s + 2 s per enemy, at most 30 s) and an enemy at your base taking it down in seconds.", "NEW" },
         { "👥", "Best team finder", "Tries your other units against each mode's weak and strong elements and shows the team that does best (Battle tab). It only equips it if you switch that on.", "NEW" },
         { "🌟", "Evolution check", "Shows which evolutions your items already cover and what each one would change in the hardest mode you play.", "NEW" },
+        { "🧬", "Smart evolve", "Evolves your best copy of a unit once it's ready and gets stronger, but only with items no bigger goal needs and only using up spare copies (never one on your team or with a trait). Every evolve shows in the log and the Spending tab. Switch it off in the Path tab.", "NEW" },
     } },
 }
 local SF = { alive = true, conns = {}, loadId = string.format("%06x", math.random(0, 0xFFFFFF)) }
@@ -113,6 +114,7 @@ C.DEFAULTS = {
     goals = true,              -- items for the best evolution goals get a gem value, so the farm goes and gets them
     goalValue = 3000,          -- gem value of finishing the top goal (spread over the items it still needs)
     raidShopGoals = true,      -- buy a goal's item in the raid shop once enough raid items are in (they have no other use)
+    smartEvolve = true,        -- evolve ready units that get stronger, using only spare items and spare copies (HUB.smartEvolve)
     -- misc
     antiAfk = true, logConsole = false, logLevel = 1,
     shareStats = true,         -- anonymous match stats for the hive (only sent once a webhook is connected)
@@ -234,6 +236,7 @@ do
     B.savedTeam = tbl(b.savedTeam)       -- your own team, kept while a planned team is equipped
     B.goals = tbl(b.goals) or {}         -- the path: evolution goals ranked {from, to, gain, plan, runs, ...}
     B.goalItems = tbl(b.goalItems) or {} -- [itemId] = gem value it has because a top goal needs it
+    B.goalNeed = tbl(b.goalNeed) or {}   -- [itemId] = how many of it those goals still need
     B.raidShop = tbl(b.raidShop) or {}   -- [key] = {id, costItem, cost, stock} (lobby raid shop, cached)
     B.lb = tbl(b.lb)                     -- limit break requirement from the server {requirement, allowed}
     B.lastSuggest = tonumber(b.lastSuggest) or 0
@@ -585,8 +588,13 @@ function MODE.rec(key)
     return r
 end
 function MODE.itemValue(id, amount)
-    -- an item a top goal still needs is worth its share of that goal (the path to stronger units)
-    if B.goalItems[id] then return B.goalItems[id] * (amount or 1) end
+    -- an item a top goal still needs is worth its share of that goal (the path to stronger units) — only up to
+    -- what the goal still needs: the rest of a big drop is worth what the item is normally worth
+    if B.goalItems[id] then
+        local a = amount or 1
+        local inGoal = math.min(a, tonumber(B.goalNeed[id]) or a)
+        return B.goalItems[id] * inGoal + (C.ITEM_VALUE[id] or C.ITEM_DEFAULT) * math.max(0, a - inGoal)
+    end
     local cap = C.GS.ITEM_CAPS and C.GS.ITEM_CAPS[id]
     local s = C.session()
     local have = 0
@@ -854,9 +862,30 @@ function ADV.sources()
     return src
 end
 function ADV.have(id) local s = C.session(); local n = 0; pcall(function() n = s.inventory:get_number_of_owned_item(id) end); return n end
+-- kills / takedowns the unit still needs for its evolution (the game: _kill_requirement vs total_kills,
+-- _takedown_requirement vs total_takedowns — Tamiki needs 5,000 takedowns); nil when it has them
+function ADV.killsShort(u, req)
+    if not req then return nil end
+    local tk = tonumber(req._takedown_requirement)
+    if tk and (tonumber(u.total_takedowns) or 0) < tk then return { what = "takedowns", have = tonumber(u.total_takedowns) or 0, need = tk } end
+    local kl = tonumber(req._kill_requirement)
+    if kl and (tonumber(u.total_kills) or 0) < kl then return { what = "kills", have = tonumber(u.total_kills) or 0, need = kl } end
+    return nil
+end
+-- your copies of a unit an evolution could use up: unlocked (the game never takes a locked unit), shiny if it
+-- must be, and not the unit being evolved
+function ADV.copies(id, shiny, exclude)
+    local s = C.session()
+    local list = {}
+    for _, o in pairs(s and s.profile_data.collection.owned_units or {}) do
+        if o.unit_id == id and o.uuid ~= exclude and not o._locked and (not shiny or o.shiny) then table.insert(list, o) end
+    end
+    return list
+end
 -- where to farm an item: the most of it per minute, counting your win chance there (a big drop in a mode you
 -- lose pays nothing) — from the farm's own ranking; levels it can't play now count at half odds and 10 min
 function ADV.bestSource(levels)
+    if not (MODE.lastScored and MODE.lastScored[1]) then pcall(MODE.pick) end
     local scored = {}
     for _, m in ipairs(MODE.lastScored or {}) do if m.level then scored[m.level] = m end end
     local best, bv
@@ -897,25 +926,46 @@ function ADV.goals()
     for _, e in ipairs(team) do
         if not UNIT.isFarm(e.id) and not UNIT.allyBuff(e.id) then local ok, sc = pcall(UNIT.score, e.u); if ok then weakest = math.min(weakest, sc) end end
     end
-    local out, seen = {}, {}
+    -- the copy to evolve: your best one of each unit (score at full upgrade; the equipped one on a tie)
+    local onTeam = {}
+    for _, e in ipairs(team) do onTeam[e.uuid] = true end
+    local bestCopy = {}
     for _, u0 in pairs(s.profile_data.collection.owned_units) do
         local d = C.Units[u0.unit_id]
-        if d and d.evolve and d.evolve.evolve_unit and not d.evolve.hide_from_ui and not seen[u0.unit_id] and C.Units[d.evolve.evolve_unit] then
-            seen[u0.unit_id] = true
+        if d and d.evolve and d.evolve.evolve_unit and not d.evolve.hide_from_ui and C.Units[d.evolve.evolve_unit] then
+            local okS, sc = pcall(UNIT.score, s.collection:get_unit_by_uuid(u0.uuid) or u0)
+            sc = (okS and sc or 0) + (onTeam[u0.uuid] and 0.5 or 0)
+            if not bestCopy[u0.unit_id] or sc > bestCopy[u0.unit_id].sc then bestCopy[u0.unit_id] = { u0 = u0, sc = sc } end
+        end
+    end
+    local out = {}
+    for _, bc in pairs(bestCopy) do
+        local u0 = bc.u0
+        local d = C.Units[u0.unit_id]
+        do
             local req = u0.shiny and d.evolve.shiny or d.evolve.normal
-            local unitsOk = true
+            -- other copies it uses up, counted like the game's evolve window: your unlocked copies, not this one
+            -- (the unit itself counts as one of a requirement for its own kind)
+            local unitsOk, eats = true, {}
             for _, ur in pairs(req and req.unit_requirement or {}) do
-                local n = 0
-                for _, o in pairs(s.profile_data.collection.owned_units) do if o.unit_id == ur.unit_id and (not ur.shiny or o.shiny) then n = n + 1 end end
-                if n < (ur.amount or 1) then unitsOk = false end
+                local want = (tonumber(ur.amount) or 1) - (ur.unit_id == u0.unit_id and 1 or 0)
+                if want > 0 then
+                    if #ADV.copies(ur.unit_id, ur.shiny, u0.uuid) < want then unitsOk = false end
+                    table.insert(eats, { id = ur.unit_id, amount = want, shiny = ur.shiny and true or nil })
+                end
             end
-            if req and unitsOk and not (req._kill_requirement and (u0.total_kills or 0) < req._kill_requirement) then
+            local items = {}
+            for _, it in pairs(req and req.item_requirement or {}) do table.insert(items, { id = it.item_id, amount = tonumber(it.amount) or 1 }) end
+            if req and unitsOk then
                 local u = s.collection:get_unit_by_uuid(u0.uuid) or u0
                 local evolved = { unit_id = d.evolve.evolve_unit, uuid = "evo:" .. tostring(u.uuid), xp = u.xp, traits = u.traits, trait_stats = u.trait_stats, further_modifiers = u.further_modifiers }
                 local okA, a = pcall(UNIT.score, u)
                 local okB, b = pcall(UNIT.score, evolved)
                 a, b = okA and a or 0, okB and b or 0
                 local plans, runs, unknown, ready = {}, 0, false, true
+                -- kills / takedowns come from playing the unit, not from farming items
+                local short = ADV.killsShort(u, req)
+                if short then ready = false; table.insert(plans, { takedown = true, what = short.what, have = short.have, need = short.need }) end
                 for _, it in pairs(req.item_requirement or {}) do
                     local p = ADV.planItem(it.item_id, it.amount or 1)
                     if not p.done then
@@ -930,7 +980,7 @@ function ADV.goals()
                 end
                 if b > a then
                     table.insert(out, { uuid = u0.uuid, from = u0.unit_id, to = d.evolve.evolve_unit, scoreFrom = a, scoreTo = b, gain = b - a,
-                        intoTeam = b > weakest, ready = ready, unknown = unknown, plans = plans, runs = runs })
+                        intoTeam = b > weakest, ready = ready, unknown = unknown, plans = plans, runs = runs, items = items, eats = eats })
                 end
             end
         end
@@ -949,14 +999,16 @@ function ADV.text(g)
     local parts = {}
     for _, p in ipairs(g.plans) do
         local name = (C.Items[p.item] or {}).name or p.item
-        if p.unknown then table.insert(parts, name .. ": source unknown (event/portal)")
+        if p.takedown then table.insert(parts, string.format("%s %s/%s (it earns them on your team)", p.what, U.fmt(p.have), U.fmt(p.need)))
+        elseif p.unknown then table.insert(parts, name .. ": source unknown (event/portal)")
         elseif p.shopKey then
             table.insert(parts, string.format("%s from the raid shop: %d/%d %s", name, ADV.have(p.costItem), p.cost * (p.need - p.have), (C.Items[p.costItem] or {}).name or p.costItem))
         else table.insert(parts, string.format("%s %d/%d", name, p.have, p.need)) end
     end
     local where = ""
-    local p1 = g.plans[1]
-    local src = p1 and (p1.best or (p1.levels and p1.levels[1]))
+    local p1
+    for _, p in ipairs(g.plans) do if p.levels and p.levels[1] then p1 = p; break end end
+    local src = p1 and (p1.best or p1.levels[1])
     if src then where = string.format(" · farm %s (≈%.0f a run, ≈%d runs)", MODE.levelName(src.level), src.per, math.ceil(g.runs)) end
     return string.format("%s → %s · score %s → %s%s · %s%s", UNIT.name(g.from), UNIT.name(g.to), U.fmt(g.scoreFrom), U.fmt(g.scoreTo),
         g.intoTeam and " (joins your team)" or "", g.ready and "ready to evolve" or table.concat(parts, "; "), g.ready and "" or where)
@@ -966,16 +1018,18 @@ function ADV.refresh()
     local goals = ADV.goals()
     B.goals = {}
     table.clear(B.goalItems)
+    table.clear(B.goalNeed)
     local valued = 0
     for _, g in ipairs(goals) do
         table.insert(B.goals, { uuid = g.uuid, from = g.from, to = g.to, ready = g.ready, intoTeam = g.intoTeam, unknown = g.unknown, text = ADV.text(g),
-            gain = g.gain, runs = g.runs, plans = g.plans })
+            gain = g.gain, runs = g.runs, plans = g.plans, items = g.items, eats = g.eats, scoreFrom = g.scoreFrom, scoreTo = g.scoreTo })
         if CFG.goals and not g.ready and not g.unknown and (g.intoTeam or valued == 0) and valued < 2 then
             valued = valued + 1
             for _, p in ipairs(g.plans) do
                 if p.farm and p.farmNeed > 0 then
                     local v = CFG.goalValue * (g.intoTeam and 1 or 0.4) / (valued == 1 and 1 or 2) / math.max(1, p.farmNeed)
                     B.goalItems[p.farm] = math.max(B.goalItems[p.farm] or 0, v)
+                    B.goalNeed[p.farm] = math.max(B.goalNeed[p.farm] or 0, p.farmNeed)
                 end
             end
         end
@@ -996,7 +1050,8 @@ function ADV.buyShopGoals()
                 while U.now() - t1 < 3 and ADV.have(p.costItem) >= before do task.wait(0.2) end
                 if ok and ADV.have(p.costItem) < before then
                     SPEND.add((C.Items[p.item] or {}).name or p.item, p.cost, (C.Items[p.costItem] or {}).name or p.costItem, "for " .. UNIT.name(g.to))
-                    if SF.notify then SF.notify("Path", string.format("Bought %s — %s can evolve now (Path tab)", (C.Items[p.item] or {}).name or p.item, UNIT.name(g.from)), "success") end
+                    if SF.notify then SF.notify("Path", string.format("Bought %s for %s (Path tab)", (C.Items[p.item] or {}).name or p.item, UNIT.name(g.from)), "success") end
+                    return true
                 else
                     SF.log(1, "SHOP", "raid shop refused " .. tostring(p.shopKey) .. " (" .. tostring(r) .. ")")
                     SF.backoff("rshop", 900)
@@ -1065,22 +1120,89 @@ end
 -- ============================================================
 HUB.last = {}
 -- evolve a ready goal (only when you press the Path button twice): checks it really happened
-function HUB.evolve(g)
+function HUB.evolve(g, why)
     local s = C.session()
     local before = s.collection:get_unit_by_uuid(g.uuid)
     if not before then return false, "unit not found" end
+    local had = 0
+    for _, u in pairs(s.profile_data.collection.owned_units) do if u.unit_id == g.to then had = had + 1 end end
     local ok, r = SF.request("evolve", "evolve_unit", g.uuid)
     task.wait(2)
     local after = s.collection:get_unit_by_uuid(g.uuid)
-    local done = false
-    for _, u in pairs(s.profile_data.collection.owned_units) do if u.unit_id == g.to then done = true end end
-    if done then
-        SPEND.add("evolved " .. UNIT.name(g.from) .. " → " .. UNIT.name(g.to), 1, "evolution", "your choice (Path tab)")
+    local now = 0
+    for _, u in pairs(s.profile_data.collection.owned_units) do if u.unit_id == g.to then now = now + 1 end end
+    if now > had then
+        local used = {}
+        for _, it in ipairs(g.items or {}) do table.insert(used, string.format("%s ×%d", (C.Items[it.id] or {}).name or it.id, it.amount)) end
+        for _, e in ipairs(g.eats or {}) do table.insert(used, string.format("%d× %s", e.amount, UNIT.name(e.id))) end
+        local text = string.format("%s → %s (score %s → %s)", UNIT.name(g.from), UNIT.name(g.to), U.fmt(g.scoreFrom or 0), U.fmt(g.scoreTo or 0))
+        SPEND.add("evolved " .. text, 1, "evolution", (why or "your choice (Path tab)") .. (#used > 0 and (" · used " .. table.concat(used, ", ")) or ""))
+        SF.log(1, "EVOLVE", text .. " — " .. (why or "your choice") .. (#used > 0 and (" · used " .. table.concat(used, ", ")) or ""))
+        MODE._sigAt = nil
         pcall(ADV.refresh)
         return true, UNIT.name(g.to) .. " is yours!"
     end
     SF.log(1, "EVOLVE", "evolve refused for " .. UNIT.name(g.from) .. " (" .. tostring(r) .. "), unit now " .. tostring(after and after.unit_id))
-    return false, "the game said no (" .. tostring(r) .. ") — you may need to stand at the Evolve NPC"
+    return false, "the game said no (" .. tostring(r) .. ")"
+end
+-- smart evolve (lobby): evolves a ready unit when
+--   · the game's own requirements are met and it's your best copy of that unit,
+--   · the evolved form scores higher at full upgrade (the game's formulas: level, trait, rolls carry over),
+--   · every item it uses still leaves enough for the bigger evolution goals that need the same item,
+--   · the other copies it would use up are all spare: not on your team, no trait, weaker than the one evolving
+--     (the game picks which unlocked copies go — lock a copy in the game to keep it out)
+-- biggest gain first, at most 2 a lobby visit; each one goes in the log and the Spending tab
+HUB.evoBlocked = {}
+function HUB.smartEvolve()
+    if not CFG.smartEvolve then return SF.status("Evolve", "smart evolve is off (Path tab)") end
+    local s = C.session()
+    if not s then return end
+    local goals = {}
+    for _, g in ipairs(B.goals or {}) do table.insert(goals, g) end
+    table.sort(goals, function(a, b) return (a.gain or 0) > (b.gain or 0) end)
+    local onTeam = {}
+    for _, e in ipairs(UNIT.equipped()) do onTeam[e.uuid] = true end
+    local reserved, done, notes = {}, 0, {}
+    for _, g in ipairs(goals) do
+        local why, evolved
+        if g.ready and done < 2 and (HUB.evoBlocked[g.uuid] or 0) < os.time() then
+            for _, it in ipairs(g.items or {}) do
+                if ADV.have(it.id) - it.amount < (reserved[it.id] or 0) then
+                    why = string.format("keeps %s for a bigger evolution", (C.Items[it.id] or {}).name or it.id)
+                    break
+                end
+            end
+            local mine = s.collection:get_unit_by_uuid(g.uuid)
+            local okM, myScore = pcall(UNIT.score, mine)
+            for _, e in ipairs(g.eats or {}) do
+                if why then break end
+                for _, o in ipairs(ADV.copies(e.id, e.shiny, g.uuid)) do
+                    local u = s.collection:get_unit_by_uuid(o.uuid) or o
+                    local okS, sc = pcall(UNIT.score, u)
+                    if onTeam[o.uuid] or UNIT.trait(u) or (okM and okS and sc >= myScore) then
+                        why = string.format("would use up a %s you may want (on your team, a trait, or stronger) — lock it in the game to keep it", UNIT.name(e.id))
+                        break
+                    end
+                end
+            end
+            if not why then
+                local ok, msg = HUB.evolve(g, "smart evolve: ready, stronger at full upgrade, uses only spare items" .. (#(g.eats or {}) > 0 and " and spare copies" or ""))
+                if ok then
+                    done, evolved = done + 1, true
+                    table.insert(notes, "evolved " .. UNIT.name(g.from) .. " → " .. UNIT.name(g.to))
+                else
+                    HUB.evoBlocked[g.uuid] = os.time() + 3600
+                    why = msg
+                end
+            end
+            if why then table.insert(notes, UNIT.name(g.from) .. ": " .. why) end
+        end
+        -- a goal still waiting keeps its items for itself (one that just evolved already used them up)
+        if not evolved then
+            for _, it in ipairs(g.items or {}) do reserved[it.id] = (reserved[it.id] or 0) + it.amount end
+        end
+    end
+    SF.status("Evolve", #notes > 0 and table.concat(notes, " · ") or "nothing ready to evolve")
 end
 function HUB.every(name, sec)
     local t = U.now()
@@ -1408,7 +1530,13 @@ function HUB.run()
             end
             if HUB.every("goals", 300) then
                 local ok, e = pcall(ADV.refresh)
-                if not ok then SF.log(1, "ERROR", "goals: " .. tostring(e)) else pcall(ADV.buyShopGoals) end
+                if not ok then SF.log(1, "ERROR", "goals: " .. tostring(e)) else
+                    -- a goal item just bought can make its evolution ready right now
+                    local okS, bought = pcall(ADV.buyShopGoals)
+                    if okS and bought then pcall(ADV.refresh) end
+                    local okE, eE = pcall(HUB.smartEvolve)
+                    if not okE then SF.log(1, "ERROR", "smart evolve: " .. tostring(eE)) end
+                end
                 MODE.lastScored = nil
             end
             local top = MODE.lastScored and MODE.lastScored[1]
@@ -2149,7 +2277,8 @@ function SIM.evolutions()
                     for _, o in pairs(s.profile_data.collection.owned_units) do if o.unit_id == ur.unit_id and (not ur.shiny or o.shiny) then n = n + 1 end end
                     if n < (ur.amount or 1) then table.insert(missing, string.format("%s %d/%d", UNIT.name(ur.unit_id), n, ur.amount)) end
                 end
-                if req._kill_requirement and (u0.total_kills or 0) < req._kill_requirement then table.insert(missing, string.format("kills %d/%d", u0.total_kills or 0, req._kill_requirement)) end
+                local short = ADV.killsShort(s.collection:get_unit_by_uuid(u0.uuid) or u0, req)
+                if short then table.insert(missing, string.format("%s %s/%s", short.what, U.fmt(short.have), U.fmt(short.need))) end
                 if #missing <= 1 then
                     local u = s.collection:get_unit_by_uuid(u0.uuid) or u0
                     table.insert(out, { u = u, from = u0.unit_id, to = d.evolve.evolve_unit, missing = missing,
@@ -3367,7 +3496,7 @@ function GUI.load()
     local ok, s = pcall(function() return game:HttpGet(C.NEXUS_URL) end)
     return ok and try(s, "url") or nil
 end
-GUI.SYSTEMS = { "Mode", "Match", "Economy", "Placement", "Upgrade", "Abilities", "Targeting", "Rewards", "Gold Shop", "Summon" }
+GUI.SYSTEMS = { "Mode", "Match", "Economy", "Placement", "Upgrade", "Abilities", "Targeting", "Rewards", "Gold Shop", "Summon", "Evolve" }
 function GUI.build()
     local Lib = GUI.load()
     if not Lib then warn("[AA] NexusLib failed to load — running without a window") return end
@@ -3468,8 +3597,9 @@ function GUI.build()
     T = Win:Tab("🧭", "Path")
     T:Section("Your path to stronger units (best first)")
     GUI.path = T:KeyValue({ "1", "2", "3", "4", "5", "6", "7", "8" }, 150)
-    T:Section("Ready now — your call (evolving can't be undone)")
+    T:Section("Ready now (evolving can't be undone)")
     GUI.readyLabel = T:Label("…")
+    tog(T, "Smart Evolve", "Evolve your best copy when it gets stronger, the items it uses aren't needed by a bigger goal, and any copies it uses up are spare (lock a unit in the game to keep it safe)", "smartEvolve")
     local armed = {}
     T:Button("🌟", "Evolve The Top Ready Unit", "Click twice within 5 seconds to confirm", Color3.fromRGB(167, 139, 250), function()
         if SF.where ~= "lobby" then return notify("Evolve", "works in the lobby", "warning") end
