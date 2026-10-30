@@ -1,5 +1,5 @@
 --[[
-    ⚔️ Anime Adventures — Smart Farm v1.0  (NexusLib)
+    ⚔️ Anime Adventures — Smart Farm v1.1  (NexusLib)
 
     One script for the lobby and every match place:
       • Lobby:  free rewards → spends with floors (gold shop Star Fruits, optional summons) → rank every
@@ -10,6 +10,8 @@
                 next act / back to the lobby by the same ranking
       • Simulator: plays each mode with your team first (the game's own HP, waves, wave pay and skip timing),
                 calibrated by every real run; its odds go into the ranking and the team / evolution planner
+      • Path:   evolution goals and their items, smart evolve, and takedown training (a unit whose evolution
+                needs its own takedowns joins runs the simulator says you still win with 30% tougher enemies)
 
     Every number comes from the game's own modules (Units, Waves, Levels, Attacks, Traits, UnitServiceCore
     formulas, the live unit stats that already include level, traits, stat rolls, curses and relics) and
@@ -19,7 +21,7 @@
 
 -- claim the "running" slot synchronously, before any yield, so two queued loaders can't both start
 if _G.AA_SF and _G.AA_SF.alive then return end
-local VERSION = "1.0"
+local VERSION = "1.1"
 -- what changed, newest first (Updates tab; a one-time notice when a player first runs a new version)
 local CHANGELOG = {
     { v = "1.0", date = "Oct 30, 2026", title = "First version", items = {
@@ -37,6 +39,10 @@ local CHANGELOG = {
         { "🧬", "Smart evolve", "Evolves your best copy of a unit once it's ready and gets stronger, but only with items no bigger goal needs and only using up spare copies (never one on your team or with a trait). Every evolve shows in the log and the Spending tab. Switch it off in the Path tab.", "NEW" },
     } },
 }
+table.insert(CHANGELOG, 1, { v = "1.1", date = "Oct 30, 2026", title = "Takedown training", items = {
+    { "🎯", "Takedown training", "Some evolutions need the unit's own takedowns (Shinobi (Hood) needs 7,500). The farm puts that unit on your team only for runs the simulator says you still win with 30% tougher enemies, counts its takedowns every match, and puts your team back after each run. Path tab.", "NEW" },
+    { "📍", "Where it stands", "A takedown needs a hit before the enemy dies, so the trainee stands where enemies arrive first and goes for the newest enemy in its range, one your other units haven't killed yet.", "NEW" },
+} })
 local SF = { alive = true, conns = {}, loadId = string.format("%06x", math.random(0, 0xFFFFFF)) }
 _G.AA_SF = SF
 if not game:IsLoaded() then game.Loaded:Wait() end
@@ -63,6 +69,7 @@ local REPORT = {} -- anonymous stats (hive)
 local ECON = {} -- farm-or-damage decision (shared by the live match and the simulator)
 local SIM = {}  -- battle simulator + planners (team picks, evolutions, challenge gating)
 local ADV = {}  -- the path to stronger units: goals, where their items come from, what to farm
+local TRAIN = {} -- takedown training: a unit whose evolution needs its own takedowns joins easy runs
 local GUI = { UI = {}, LIVE = {} }
 
 C.FOLDER = "AA_SmartFarm"
@@ -115,6 +122,7 @@ C.DEFAULTS = {
     goalValue = 3000,          -- gem value of finishing the top goal (spread over the items it still needs)
     raidShopGoals = true,      -- buy a goal's item in the raid shop once enough raid items are in (they have no other use)
     smartEvolve = true,        -- evolve ready units that get stronger, using only spare items and spare copies (HUB.smartEvolve)
+    trainTakedowns = true,     -- a unit whose evolution needs takedowns joins runs the sim says you still win easily (TRAIN)
     -- misc
     antiAfk = true, logConsole = false, logLevel = 1,
     shareStats = true,         -- anonymous match stats for the hive (only sent once a webhook is connected)
@@ -233,6 +241,14 @@ do
     B.simRes = fresh and tbl(b.simRes) or {}       -- [modeKey] = last sim of your team {won, wave, p, sig, at}
     B.simTeam = fresh and tbl(b.simTeam) or {}     -- [modeKey] = best team the planner found {uuids, wave, won, cur, at}
     B.simEvo = fresh and tbl(b.simEvo) or {}       -- evolutions with their simulated gain
+    B.trainSim = fresh and tbl(b.trainSim) or {}   -- [modeKey] = training team the sim checked {sig, ok, why, uuids, out, tk, minutes, slow, at}
+    -- takedown training: on = the training team equipped now {uuid, id, to, what, have, need, got, base, uuids, out, key},
+    -- real = [modeKey] = {n, sum} takedowns measured per run, bad = [modeKey] = no training there until, log = last runs
+    B.train = tbl(b.train) or {}
+    B.train.real = tbl(B.train.real) or {}
+    B.train.bad = tbl(B.train.bad) or {}
+    B.train.log = tbl(B.train.log) or {}
+    B.train.cal = tbl(B.train.cal) or { real = 0, sim = 0, n = 0 } -- real vs simulated takedowns over trained runs
     B.savedTeam = tbl(b.savedTeam)       -- your own team, kept while a planned team is equipped
     B.goals = tbl(b.goals) or {}         -- the path: evolution goals ranked {from, to, gain, plan, runs, ...}
     B.goalItems = tbl(b.goalItems) or {} -- [itemId] = gem value it has because a top goal needs it
@@ -786,7 +802,14 @@ function MODE.minutes(m)
     return mins + MODE.OVERHEAD
 end
 function MODE.score(m)
-    local s = MODE.winP(m) * m.value / MODE.minutes(m)
+    local p, mins = MODE.winP(m), MODE.minutes(m)
+    local s = p * m.value / mins
+    -- takedown training: the trainee's progress counts too, on a run that may be a bit slower (TRAIN.valueFor)
+    local okT, tv, slow = pcall(TRAIN.valueFor, m)
+    if okT and tv > 0 then
+        local s2 = p * (m.value + tv) / (mins * slow)
+        if s2 > s then s, m.train = s2, tv end
+    end
     if m.rec.runs < 2 then s = s * (1 + CFG.exploreBonus) end
     return s
 end
@@ -799,6 +822,7 @@ function MODE.pick()
             local untrusted = sr.trust and not sr.trust.ok
             m.why = (m.why or "") .. " · sim: " .. (untrusted and string.format("not trusted here (off ×%.1f vs real runs)", sr.trust.ratio) or tostring(sr.margin))
         end
+        if m.train then m.why = (m.why or "") .. string.format(" · takedown training ≈%d gems of progress", math.floor(m.train + 0.5)) end
     end
     table.sort(list, function(a, b) return a.score > b.score end)
     MODE.lastScored = list
@@ -1204,6 +1228,263 @@ function HUB.smartEvolve()
     end
     SF.status("Evolve", #notes > 0 and table.concat(notes, " · ") or "nothing ready to evolve")
 end
+
+-- ============================================================
+--  TAKEDOWN TRAINING (Shinobi (Hood) → Storm needs 7,500 of its own takedowns: it earns them by fighting)
+-- ============================================================
+-- the game counts a takedown for every unit that hit an enemy that died (Windsong: 4,651 takedowns, 277 kills),
+-- so the trainee only has to fight where enemies die. Only an evolution that joins your team is trained. It goes
+-- into your team in place of your weakest unit that passes the checks (TRAIN.plan), only for a mode where
+--   · the sim still wins with 30% tougher enemies (twice as tough where no real run has checked the sim yet, and
+--     never where it doesn't match real runs),
+--   · your farm wins it at least 80% of the time and it isn't a limited reward (the challenges, events),
+--   · the clear is at most 40% slower than with your own team;
+-- your own team goes back before every lobby decision, and a lost training run stops training there for 6 h
+TRAIN.BONUS = 1.5 -- the trainee's buys count this much more (live and in the sim, so the sim checks the run with it)
+TRAIN.SLOW = 1.4  -- at most this much slower than your own team
+-- the trainee only earns takedowns while it's fighting: once 2 attackers are down and the defense isn't in danger
+-- (ECON's danger line: enemies near the end of what your units cover), its first copy is the next buy; its other
+-- copies (more of them = more enemies hit) once the defense is safe (live and in the sim alike, so the sim's
+-- margin check covers it)
+function TRAIN.boost(opts, attackers, pressure, cover)
+    if attackers < 2 or pressure >= math.min(CFG.dangerReach, (cover or 1) * 0.9) then return end
+    local safe = pressure < math.min(CFG.safeReach, (cover or 1) * 0.75)
+    local best = 0
+    for _, o in ipairs(opts) do if not o.farm and not o.train and o.cost > 0 then best = math.max(best, o.gain / o.cost) end end
+    for _, o in ipairs(opts) do
+        if o.train == "first" or (o.train == "more" and safe) then o.gain = math.max(o.gain, best * o.cost * 1.05) end
+    end
+end
+function TRAIN.same(a, b)
+    if #a ~= #b then return false end
+    local set = {}
+    for _, x in ipairs(a) do set[x] = true end
+    for _, x in ipairs(b) do if not set[x] then return false end end
+    return true
+end
+function TRAIN.team() local l = {}; for _, e in ipairs(UNIT.equipped()) do table.insert(l, e.uuid) end; return l end
+-- the unit to train: the best goal that joins your team once evolved and waits only on takedowns (else the best
+-- one that waits on them at all) — an evolution that stays weaker than your team isn't worth a swap
+function TRAIN.target()
+    local s = C.session()
+    if not s then return nil end
+    local any
+    for _, g in ipairs(B.goals or {}) do
+        local tp, other = nil, 0
+        for _, p in ipairs(g.plans or {}) do if p.takedown then tp = p else other = other + 1 end end
+        local u = tp and g.intoTeam and not g.unknown and s.collection:get_unit_by_uuid(g.uuid)
+        if u then
+            local have = tonumber(tp.what == "kills" and u.total_kills or u.total_takedowns) or 0
+            if have < tp.need then
+                local t = { uuid = g.uuid, id = g.from, to = g.to, what = tp.what, have = have, need = tp.need }
+                if other == 0 then return t end
+                any = any or t
+            end
+        end
+    end
+    return any
+end
+-- the target and your own team's signature, looked up at most every 10 s (the ranking asks for every mode)
+function TRAIN.now()
+    if TRAIN._at and U.now() - TRAIN._at < 10 then return TRAIN._t, TRAIN._base end
+    local base = (B.train.on and B.train.on.base) or TRAIN.team()
+    local sorted = table.clone(base)
+    table.sort(sorted)
+    TRAIN._t, TRAIN._base, TRAIN._at = TRAIN.target(), table.concat(sorted, ","), U.now()
+    return TRAIN._t, TRAIN._base
+end
+-- what a training run is worth on top of the mode's own reward: the trainee's takedowns as their share of the
+-- goal's value (Goal Value, spread over the takedowns it still needs, like a goal's items), and how much slower
+function TRAIN.valueFor(m)
+    if not (CFG.trainTakedowns and CFG.goals) then return 0, 1 end
+    local c = B.trainSim[m.key]
+    if not (c and c.ok and os.time() - (c.at or 0) < 6 * 3600) then return 0, 1 end
+    local t, baseSig = TRAIN.now()
+    if not (t and c.uuid == t.uuid and c.base == baseSig) or not TRAIN.eligible(m) then return 0, 1 end
+    local per = TRAIN.perRun(m.key) or 0
+    local left = math.max(1, t.need - t.have)
+    return CFG.goalValue * math.min(per, left) / left, c.slow or 1
+end
+-- lobby planner (every 10 min): the training team checked in the best modes it may train in, so the ranking
+-- knows what training there is worth (at most 2 new simulations a time)
+function TRAIN.scan()
+    local t = CFG.trainTakedowns and CFG.sim and TRAIN.now()
+    if not t then return end
+    local base = (B.train.on and B.train.on.base) or TRAIN.team()
+    for _, uuid in ipairs(base) do if uuid == t.uuid then return end end
+    local ok, fresh = 0, 0
+    for _, m in ipairs(MODE.lastScored or {}) do
+        if ok >= 3 or fresh >= 2 then break end
+        if TRAIN.eligible(m) then
+            local c = B.trainSim[m.key]
+            local cached = c and c.uuid == t.uuid and os.time() - (c.at or 0) < 6 * 3600
+            local p = TRAIN.plan(m, t, base)
+            if not cached then fresh = fresh + 1 end
+            if p.ok then ok = ok + 1 end
+        end
+    end
+end
+-- takedowns a run in a mode: measured in real runs there, else the sim's count corrected by how real runs
+-- elsewhere compared with it (the sim lets every unit hit for a while; in a real match your strongest unit
+-- often kills before the trainee lands a hit)
+function TRAIN.ratio()
+    local c = B.train.cal
+    if not (c and (c.n or 0) > 0 and (c.sim or 0) > 0) then return 1 end
+    return U.clamp(c.real / c.sim, 0.05, 2)
+end
+function TRAIN.perRun(key)
+    local r = B.train.real[key]
+    if r and r.n > 0 then return r.sum / r.n, true end
+    local c = B.trainSim[key]
+    return c and c.tk and c.tk * TRAIN.ratio() or nil, false
+end
+function TRAIN.eligible(m)
+    -- (a lost first clear can be played again, so it may train there: no real run there yet = the strict margin)
+    if m.kind == "daily" or m.kind == "challenge" or m.kind == "event" then return false, "a limited reward, played with your own team" end
+    if (B.train.bad[m.key] or 0) > os.time() then return false, "a training run lost there, so not before " .. os.date("%H:%M", B.train.bad[m.key]) end
+    local r = m.rec or MODE.rec(m.key)
+    if r.runs >= 3 and r.wins / r.runs < 0.8 then return false, "your farm wins it less than 80% of the time" end
+    local sr = B.simRes[m.key]
+    if sr and sr.trust and not sr.trust.ok then return false, "the simulator doesn't match real runs there yet" end
+    return true
+end
+-- the training team for a mode: the sim tries the trainee in place of each of your 3 weakest units (farm units
+-- stay), weakest first; a swap must still win with 30% tougher enemies (twice as tough where no real run has
+-- checked the sim yet). The weakest one that passes goes out, a stronger one only when that trains 1.5× faster
+function TRAIN.plan(m, t, base)
+    local s = C.session()
+    local sorted = table.clone(base)
+    table.sort(sorted)
+    local baseSig = table.concat(sorted, ",")
+    local calibrated = (tonumber((B.simCal[m.key] or {}).n) or 0) > 0
+    local margin = calibrated and 1.3 or 2
+    local sig = baseSig .. "+" .. t.uuid .. (calibrated and "#c" or "#n") .. "#r2" -- r2: weakest unit that passes first
+    local c = B.trainSim[m.key]
+    if c and c.sig == sig and os.time() - (c.at or 0) < 6 * 3600 then return c end
+    local res = { sig = sig, base = baseSig, uuid = t.uuid, at = os.time(), ok = false, margin = margin }
+    B.trainSim[m.key] = res
+    SF.saveSoon()
+    local ld, ch = SIM.levelFor(m)
+    if not ld then res.why = "the simulator can't play this mode"; return res end
+    local info = SIM.info(ld, m.key, ch, m.mod)
+    local units = {}
+    for _, uuid in ipairs(base) do local u = s.collection:get_unit_by_uuid(uuid); if u then table.insert(units, u) end end
+    local trainee = s.collection:get_unit_by_uuid(t.uuid)
+    if not trainee or #units == 0 then res.why = "the unit wasn't found"; return res end
+    local own = SIM.run(info, SIM.teamFrom(units, info.map), { hpMul = 1 })
+    local cands = {}
+    for i, u in ipairs(units) do
+        if not UNIT.isFarm(u.unit_id) then local okS, sc = pcall(UNIT.score, u, m.mod); table.insert(cands, { i = i, sc = okS and sc or 0 }) end
+    end
+    table.sort(cands, function(a, b) return a.sc < b.sc end)
+    local best
+    for k = 1, math.min(3, #cands) do
+        local trial = table.clone(units)
+        trial[cands[k].i] = trainee
+        local team = SIM.teamFrom(trial, info.map)
+        if SIM.run(info, team, { hpMul = margin, train = t.uuid }).won then
+            local r = SIM.run(info, team, { hpMul = 1, train = t.uuid })
+            local rate = (r.tk or 0) / math.max(0.5, r.t / 60)
+            if r.won and (not best or rate >= best.rate * 1.5) then best = { out = units[cands[k].i].unit_id, r = r, rate = rate, trial = trial } end
+        end
+    end
+    res.ownMin = own.t / 60
+    if not best then
+        res.why = calibrated and "no swap still wins with 30% tougher enemies in the simulator"
+            or "no swap still wins against twice as tough enemies in the simulator (no real run there yet)"
+    else
+        res.out, res.tk, res.minutes = best.out, best.r.tk or 0, best.r.t / 60
+        res.uuids = {}
+        for _, u in ipairs(best.trial) do table.insert(res.uuids, u.uuid) end
+        res.slow = own.won and res.minutes / math.max(0.1, res.ownMin) or 1
+        if res.tk <= 0 then res.why = "the simulator says it would hit nothing there"
+        elseif res.slow > TRAIN.SLOW then res.why = string.format("the clear would be %d%% slower", math.floor((res.slow - 1) * 100 + 0.5))
+        else res.ok = true end
+    end
+    SF.log(1, "TRAIN", string.format("%s: %s%s → %s", m.label, UNIT.name(t.id), res.out and (" in for " .. UNIT.name(res.out)) or "",
+        res.ok and string.format("trains here (≈%d %s a run, %.1f min vs %.1f with your team)", math.floor(res.tk * TRAIN.ratio() + 0.5), t.what, res.minutes, res.ownMin) or tostring(res.why)))
+    SF.saveSoon()
+    return res
+end
+-- your own team back (before every lobby decision, so the ranking and the sim see your real team)
+function TRAIN.home()
+    local on = B.train.on
+    if not on then return end
+    B.train.on = nil
+    SF.saveSoon()
+    if not TRAIN.same(TRAIN.team(), on.uuids or {}) then
+        SF.log(1, "TRAIN", "your team was changed outside the farm, so it stays as it is")
+        if not CFG.autoTeam then B.savedTeam = nil end
+        return
+    end
+    if B.savedTeam and TRAIN.same(B.savedTeam, on.base) then HUB.restoreTeam() else HUB.equipTeam(on.base, "back from takedown training") end
+    SF.log(1, "TRAIN", UNIT.name(on.out or "?") .. " is back in your team")
+end
+-- right before a launch: the training team when this mode qualifies, else your own team
+function TRAIN.apply(m)
+    local t = CFG.trainTakedowns and TRAIN.target() or nil
+    if not t then
+        TRAIN.home()
+        return SF.status("Training", CFG.trainTakedowns and "no evolution is waiting on takedowns" or "off (Path tab)")
+    end
+    local name = UNIT.name(t.id)
+    local prog = string.format("%s %s/%s", t.what, U.fmt(t.have), U.fmt(t.need))
+    local on = B.train.on
+    local base = on and on.base or TRAIN.team()
+    for _, uuid in ipairs(base) do
+        if uuid == t.uuid then return SF.status("Training", string.format("%s is on your team (%s)", name, prog)) end
+    end
+    local ok, why = TRAIN.eligible(m)
+    local p
+    if ok then
+        SF.status("Training", string.format("checking %s in %s with the simulator…", name, m.label))
+        p = TRAIN.plan(m, t, base)
+        ok, why = p.ok, p.why
+    end
+    if not ok then
+        TRAIN.home()
+        return SF.status("Training", string.format("%s · %s · not in %s: %s", name, prog, m.label, tostring(why)))
+    end
+    if not (on and TRAIN.same(TRAIN.team(), p.uuids)) then
+        HUB.equipTeam(p.uuids, string.format("takedown training: %s in for %s (%s)", name, UNIT.name(p.out), m.label))
+        local t0 = U.now()
+        while U.now() - t0 < 4 and not TRAIN.same(TRAIN.team(), p.uuids) do task.wait(0.25) end
+        if not TRAIN.same(TRAIN.team(), p.uuids) then
+            -- the game didn't take the swap: your own team back, and no training in this mode for an hour
+            if B.savedTeam and TRAIN.same(B.savedTeam, base) then HUB.restoreTeam() else HUB.equipTeam(base, "takedown training swap didn't work") end
+            B.train.bad[m.key] = os.time() + 3600
+            SF.log(1, "TRAIN", "the game didn't take the training team for " .. m.label .. ": your own team is back")
+            return SF.status("Training", name .. ": the swap didn't work, trying again in an hour")
+        end
+        B.train.on = { uuid = t.uuid, id = t.id, to = t.to, what = t.what, have = t.have, need = t.need, got = 0,
+            base = base, uuids = p.uuids, out = p.out, key = m.key, at = os.time() }
+        SF.log(1, "TRAIN", string.format("%s in for %s for %s (%s)", name, UNIT.name(p.out), m.label, prog))
+    end
+    B.train.on.key = m.key
+    local per, real = TRAIN.perRun(m.key)
+    SF.status("Training", string.format("%s in for %s in %s · %s · ≈%d a run%s", name, UNIT.name(p.out), m.label, prog, math.floor((per or 0) + 0.5), real and "" or " (simulated)"))
+end
+-- the Path tab's training paragraph
+function TRAIN.text()
+    if not CFG.trainTakedowns then return "Off. A unit whose evolution needs takedowns only earns them while you keep it on your team." end
+    local t = TRAIN.target()
+    if not t then return "No evolution that would join your team is waiting on takedowns." end
+    local sum, n = 0, 0
+    for _, r in pairs(B.train.real) do sum = sum + r.sum; n = n + r.n end
+    local avg = n > 0 and sum / n or nil
+    local runs = {}
+    for _, x in ipairs(B.train.log) do
+        if #runs < 5 then table.insert(runs, string.format("+%d (%s, %s)", x.got, GUI.keyName and GUI.keyName(x.key) or x.key, x.won and "won" or "lost")) end
+    end
+    return string.format("%s needs %s %s for %s and has %s.%s%s\n"
+        .. "It joins your team only where the simulator says you still win with 30%% tougher enemies (twice as tough where the farm has no real run yet), in place of your weakest unit that passes that test (a stronger one of your 3 weakest only if it trains 1.5× faster). "
+        .. "Never in challenges or events, where your farm wins under 80%% of runs, or where clearing gets more than 40%% slower. "
+        .. "Its progress counts in the mode ranking (Goal Value, spread over the takedowns it still needs). "
+        .. "Your own team goes back after every run, and a lost run stops training in that mode for 6 hours.",
+        UNIT.name(t.id), U.fmt(t.need), t.what, UNIT.name(t.to), U.fmt(t.have),
+        avg and string.format(" It gets about %d a run, so ≈%d more runs.", math.floor(avg + 0.5), math.ceil((t.need - t.have) / math.max(1, avg))) or "",
+        #runs > 0 and (" Last runs: " .. table.concat(runs, " · ") .. ".") or "")
+end
 function HUB.every(name, sec)
     local t = U.now()
     if HUB.last[name] and t - HUB.last[name] < sec then return false end
@@ -1505,6 +1786,8 @@ function HUB.run()
     local arrived = U.now()
     while SF.alive do
         if CFG.master then
+            -- takedown training: your own team is back before anything is ranked or simulated
+            if B.train.on then local okH, eH = pcall(TRAIN.home); if not okH then SF.log(1, "ERROR", "training: " .. tostring(eH)) end end
             if HUB.every("live", 60) then pcall(HUB.refreshLive) end
             if HUB.every("rewards", 45) then local ok, e = pcall(HUB.rewards); if not ok then SF.log(1, "ERROR", "rewards: " .. tostring(e)) end end
             if HUB.every("gold", 600) then local ok, e = pcall(HUB.goldShop); if not ok then SF.log(1, "ERROR", "gold shop: " .. tostring(e)) end end
@@ -1557,6 +1840,10 @@ function HUB.run()
                     end
                 end)
             end
+            -- takedown training: what training is worth in the best modes it may train in (one check per 10 min)
+            if CFG.trainTakedowns and CFG.sim and MODE.lastScored and HUB.every("trainScan", 600) then
+                task.spawn(function() local ok, e = pcall(TRAIN.scan); if not ok then SF.log(1, "ERROR", "training planner: " .. tostring(e)) end end)
+            end
             -- gate: simulate the mode with your team before spending a run on it
             if CFG.play and CFG.sim and top and not HUB.simFresh(top) and top.kind ~= "event" then
                 SF.status("Mode", "simulating " .. top.label .. " with your team…")
@@ -1569,6 +1856,8 @@ function HUB.run()
             if CFG.play and top and U.now() - arrived > 8 and not (SF.req.back.launch and U.now() < SF.req.back.launch) then
                 local inLobby = LP:FindFirstChild("AlreadyInLobby")
                 if CFG.autoTeam then pcall(HUB.teamFor, top) end
+                local okT, eT = pcall(TRAIN.apply, top)
+                if not okT then SF.log(1, "ERROR", "training: " .. tostring(eT)); pcall(TRAIN.home) end
                 if not (inLobby and inLobby.Value) then pcall(HUB.launch, top) end
             elseif not CFG.play then
                 SF.status("Mode", "Auto Play is off")
@@ -1972,11 +2261,13 @@ end
 -- one simulated run: a wave ends on its timer or (auto-skip) once cleared, enemies walk the road, each unit hits
 -- the furthest enemy on the part of the road it covers (area attacks spill onto the next ones), yen from waves
 -- (× the world's money scale), kills and farm units, buys made by ECON.decide like the live farm.
--- Returns {won, wave, t, aliveAt, dpsAt, spentAt, money}
+-- opt.train = a unit uuid: count its takedowns (enemies it hit that died) and buy for it like the live farm does.
+-- Returns {won, wave, t, aliveAt, dpsAt, spentAt, money, tk}
 function SIM.run(info, team, opt)
     opt = opt or {}
     local hpMul = opt.hpMul or 1
     local dt = SIM.DT
+    local tk = 0
     local money, t, wave, nextWave = info.start, 0, 0, 3
     local queue, alive, copies, hist, aliveAt, maxProg, incomeLog = {}, {}, {}, {}, {}, {}, {}
     local dpsAt, spentAt = {}, {}
@@ -1996,15 +2287,37 @@ function SIM.run(info, team, opt)
         end
         return waveHp[w]
     end
+    -- takedown training: the trainee stands where enemies come before your other attackers reach them (live:
+    -- MT.bestSpot), so its stretch of road ends at the first bin they cover
+    local upstream
+    if opt.train then
+        upstream = SIM.BINS
+        for _, e in ipairs(team) do
+            if not e.farm and e.u.uuid ~= opt.train then
+                local mk = SIM.mask(info.map, UNIT.range(e.u, 0) * info.rangeScale)
+                for i = 1, SIM.BINS do if mk[i] then upstream = math.min(upstream, i); break end end
+            end
+        end
+    end
     local function refresh(c)
         c.dps = c.e.farm and 0 or unitDps(c.e, c.lvl)
         c.mask = SIM.mask(info.map, UNIT.range(c.e.u, c.lvl) * info.rangeScale)
+        if upstream and c.e.u.uuid == opt.train then
+            local width = 0
+            for i = 1, SIM.BINS do if c.mask[i] then width = width + 1 end end
+            local lo = math.max(1, upstream - width + 1)
+            local m2 = {}
+            for i = 1, SIM.BINS do m2[i] = i >= lo and i <= math.min(SIM.BINS, lo + width - 1) end
+            c.mask = m2
+        end
         local r = c.e.rows[math.min(c.lvl, c.e.rows.max)]
         c.aoe = UNIT.aoe(r.atk, r.range)
         local _, base = UNIT.types(c.e.id)
         c.base = base
         c.buff = UNIT.allyBuff(c.e.id)
         c.fx = c.e.farm and 0 or UNIT.teamEffect(r.atk, r.range, r.cd)
+        c.train = opt.train ~= nil and c.e.u.uuid == opt.train
+        c.cd = tonumber(r.cd) or 2
     end
     -- the team's buffs (by damage type) and its crowd control / debuffs, from what's on the field
     local typeMult, teamMult, cover = {}, 1, nil
@@ -2083,26 +2396,34 @@ function SIM.run(info, team, opt)
                 local one = d * eff * dt / c.aoe
                 local spill = d * eff * dt - one
                 local hit = 0
+                -- the trainee tags enemies at its real attack rate (one attack every cd seconds, up to its area)
+                local swing = false
+                if c.train then c.tag = (c.tag or 0) + dt / math.max(0.3, c.cd); swing = c.tag >= 1 end
                 for _, e in ipairs(alive) do
                     if e.hp > 0 and c.mask[math.min(SIM.BINS, math.floor(e.p * SIM.BINS) + 1)] then
                         if hit == 0 then e.hp = e.hp - one
                         else local d = math.min(one, spill); e.hp = e.hp - d; spill = spill - d end
+                        if swing and hit < math.ceil(c.aoe) then e.tr = true end
                         hit = hit + 1
                         if hit > math.ceil(c.aoe) or (hit > 1 and spill <= 0) then break end
                     end
                 end
+                if swing and hit > 0 then c.tag = c.tag - 1 end
             end
         end
         for i = #alive, 1, -1 do
             local e = alive[i]
-            if e.hp <= 0 then money = money + e.bounty; table.insert(incomeLog, { t = t, y = e.bounty }); table.remove(alive, i) end
+            if e.hp <= 0 then
+                money = money + e.bounty; table.insert(incomeLog, { t = t, y = e.bounty }); table.remove(alive, i)
+                if e.tr then tk = tk + 1 end
+            end
         end
         while incomeLog[1] and t - incomeLog[1].t > 30 do table.remove(incomeLog, 1) end
         local inc = 0
         for _, x in ipairs(incomeLog) do inc = inc + x.y end
         local incomeRate = t >= 8 and inc / math.min(30, t) or ((rewards[wave + 1] or rewards[wave] or 500) / info.waveSec)
-        if baseHp <= 0 then return { won = false, wave = wave, t = t, aliveAt = aliveAt, dpsAt = dpsAt, spentAt = spentAt, money = money } end
-        if wave >= info.total and #queue == 0 and #alive == 0 then return { won = true, wave = wave, t = t, aliveAt = aliveAt, dpsAt = dpsAt, spentAt = spentAt, money = money } end
+        if baseHp <= 0 then return { won = false, wave = wave, t = t, aliveAt = aliveAt, dpsAt = dpsAt, spentAt = spentAt, money = money, tk = tk } end
+        if wave >= info.total and #queue == 0 and #alive == 0 then return { won = true, wave = wave, t = t, aliveAt = aliveAt, dpsAt = dpsAt, spentAt = spentAt, money = money, tk = tk } end
         -- the farm's own buy rules, up to 3 buys a second (the live loop runs every 0.3 s)
         local hpAll, dpsAll = 0, 0
         for _, e in ipairs(alive) do hpAll = hpAll + e.hp end
@@ -2125,7 +2446,7 @@ function SIM.run(info, team, opt)
                         if e.farm then
                             table.insert(opts, { farm = true, cost = cost, gain = UNIT.farm(e.u, c.lvl + 1) - UNIT.farm(e.u, c.lvl), c = c })
                         else
-                            table.insert(opts, { cost = cost, gain = ECON.upgradeGain(c.dps, e.rows, c.lvl, cost, info.costScale, unitDps(e, c.lvl + 1)), c = c })
+                            table.insert(opts, { cost = cost, gain = ECON.upgradeGain(c.dps, e.rows, c.lvl, cost, info.costScale, unitDps(e, c.lvl + 1)) * (c.train and TRAIN.BONUS or 1), c = c })
                             for l = c.lvl + 1, e.rows.max do wantLeft = wantLeft + e.rows[l].cost * info.costScale end
                         end
                     end
@@ -2134,13 +2455,15 @@ function SIM.run(info, team, opt)
                     local cost = (e.data.cost or 0) * info.costScale
                     if e.farm then table.insert(opts, { farm = true, place = true, cost = cost, gain = UNIT.farm(e.u, 0), e = e })
                     else
-                        local bonus = (#mine == 0 and 2.5 or 1) * (kinds < 3 and 1.3 or 1)
-                        table.insert(opts, { place = true, cost = cost, gain = unitDps(e, 0) * bonus + buffGain(e), e = e })
+                        local tr = opt.train ~= nil and e.u.uuid == opt.train
+                        local bonus = (#mine == 0 and 2.5 or 1) * (kinds < 3 and 1.3 or 1) * (tr and TRAIN.BONUS or 1)
+                        table.insert(opts, { place = true, cost = cost, gain = unitDps(e, 0) * bonus + buffGain(e), e = e, train = tr and (#mine == 0 and "first" or "more") or nil })
                         for l = 0, e.rows.max do wantLeft = wantLeft + e.rows[l].cost * info.costScale end
                     end
                 end
             end
             if #opts == 0 then break end
+            if opt.train then TRAIN.boost(opts, kinds, pressure, cover) end
             local left = math.max(0, info.total - wave)
             local future = money + farmNow * left
             for i = wave + 1, info.total do future = future + (rewards[i] or 0) end
@@ -2173,7 +2496,7 @@ function SIM.run(info, team, opt)
         steps = steps + 1
         if steps % 120 == 0 then task.wait() end
     end
-    return { won = false, wave = wave, t = t, aliveAt = aliveAt, dpsAt = dpsAt, spentAt = spentAt, money = money, timeout = true }
+    return { won = false, wave = wave, t = t, aliveAt = aliveAt, dpsAt = dpsAt, spentAt = spentAt, money = money, timeout = true, tk = tk }
 end
 -- win chance from the sim: wins with 30% tougher enemies → 0.92 · wins → 0.7 · wins only vs 25% weaker → 0.25 · else 0.05
 function SIM.evaluate(info, team)
@@ -2600,9 +2923,22 @@ function MT.fieldBuffers()
     end
     return list
 end
-function MT.bestSpot(e, wantLow)
+function MT.bestSpot(e, wantLow, train)
     local data = e.data
     local depth = MT.depth
+    -- takedown training: a takedown needs a hit before the enemy dies, so the trainee stands where enemies come
+    -- before your other attackers reach them (their earliest road, + a little overlap)
+    local entry
+    if train then
+        entry = 1
+        for _, m in ipairs(MT.mine or {}) do
+            local st = m._stats
+            if not UNIT.isFarm(st.id.Value) and not (st:FindFirstChild("uuid") and st.uuid.Value == e.uuid) then
+                local mp, r = U.flat(m:GetPivot().Position), st.range.Value
+                for _, s in ipairs(MT.samples) do if s.prog < entry and (U.flat(s.pos) - mp).Magnitude <= r then entry = s.prog end end
+            end
+        end
+    end
     -- against a leak the unit's range right now counts (it has to hit that enemy before it gets upgraded)
     local range = UNIT.range(e.u, (depth and depth.leak) and 0 or math.min(3, UNIT.rows(e.id).max))
     local myBuff = UNIT.allyBuff(e.id)
@@ -2633,6 +2969,12 @@ function MT.bestSpot(e, wantLow)
             local sc
             if wantLow then
                 sc = -MT.cover(p, range)
+            elseif entry then
+                sc = 0
+                local fp = U.flat(p)
+                for _, s in ipairs(MT.samples) do
+                    if (U.flat(s.pos) - fp).Magnitude <= range then sc = sc + (s.prog <= entry + 0.05 and 1 or 0.1) end
+                end
             elseif myBuff and allyTotal > 0 then
                 -- a buffer stands where its range holds the most damage of the units it buffs (the road still counts a bit)
                 local inRange = 0
@@ -2663,7 +3005,7 @@ function MT.lookAt(p)
 end
 function MT.place(e, why)
     local farm = UNIT.isFarm(e.id)
-    local p, n = MT.bestSpot(e, farm)
+    local p, n = MT.bestSpot(e, farm, MT.trainee ~= nil and e.uuid == MT.trainee)
     if not p then
         MT.noSpot[e.uuid] = (MT.noSpot[e.uuid] or 0) + 1
         SF.status("Placement", "no free spot for " .. UNIT.name(e.id))
@@ -3006,6 +3348,7 @@ function MT.econ()
         local rows = UNIT.rows(e.id)
         local farm = UNIT.isFarm(e.id)
         local placed = byUuid[e.uuid] or {}
+        local trainee = MT.trainee == e.uuid and TRAIN.BONUS or 1 -- takedown training: it gets bought for, like in the sim
         if not farm and #placed > 0 then attackers = attackers + 1 end
         -- upgrades of placed copies
         for _, m in ipairs(placed) do
@@ -3019,7 +3362,7 @@ function MT.econ()
                     local gain = UNIT.farm(e.u, lvl + 1) - UNIT.farm(e.u, lvl)
                     table.insert(opts, { farm = true, cost = cost, gain = gain, m = m, e = e, what = string.format("upgrade %s to level %d", UNIT.name(e.id), lvl + 1) })
                 else
-                    local gain = ECON.upgradeGain(MT.liveDps(m, e.id), rows, lvl, cost, upMult, UNIT.dps(e.u, lvl + 1, MT.mod))
+                    local gain = ECON.upgradeGain(MT.liveDps(m, e.id), rows, lvl, cost, upMult, UNIT.dps(e.u, lvl + 1, MT.mod)) * trainee
                     table.insert(opts, { cost = cost, gain = gain, m = m, e = e, what = string.format("upgrade %s to level %d", UNIT.name(e.id), lvl + 1) })
                     for l = lvl + 1, rows.max do wantLeft = wantLeft + rows[l].cost * upMult end
                 end
@@ -3032,14 +3375,16 @@ function MT.econ()
             if farm then
                 table.insert(opts, { farm = true, place = true, cost = cost, gain = UNIT.farm(e.u, 0), e = e, what = "place " .. UNIT.name(e.id) })
             else
-                local bonus = #placed == 0 and 2.5 or 1
+                local bonus = (#placed == 0 and 2.5 or 1) * trainee
                 if attackers < 3 then bonus = bonus * 1.3 end
-                table.insert(opts, { place = true, cost = cost, gain = UNIT.dps(e.u, 0, MT.mod) * bonus + MT.buffGain(e), e = e, what = "place " .. UNIT.name(e.id) })
+                table.insert(opts, { place = true, cost = cost, gain = UNIT.dps(e.u, 0, MT.mod) * bonus + MT.buffGain(e), e = e, what = "place " .. UNIT.name(e.id),
+                    train = trainee ~= 1 and (#placed == 0 and "first" or "more") or nil })
                 for l = 0, rows.max do wantLeft = wantLeft + rows[l].cost * (l == 0 and spawnMult or upMult) end
             end
         end
     end
     if #opts == 0 then return SF.status("Economy", "everything is placed and fully upgraded ✓") end
+    if MT.trainee then TRAIN.boost(opts, attackers, MT.pressure or 0, MT.depth and MT.depth.units > 0 and MT.depth.covEnd or nil) end
     -- future yen: wave rewards still to come + what the farm units pay every wave
     local future = money + farmNow * left
     for i = wave + 1, MT.total do future = future + MT.waveReward(i) end
@@ -3164,6 +3509,17 @@ end
 -- whole team can hit; heavy single-target hitters take the boss ("strongest") while one is alive
 MT.prioAt = setmetatable({}, { __mode = "k" })
 function MT.targeting()
+    -- takedown training: the trainee hits the newest enemy in its range ("last"), one your other units haven't
+    -- killed yet ("first" chases the enemy your strongest unit is already finishing)
+    for _, m in ipairs(MT.trainee and MT.mine or {}) do
+        local st = m._stats
+        local pr = st:FindFirstChild("priority")
+        if pr and st:FindFirstChild("uuid") and st.uuid.Value == MT.trainee and pr.Value ~= "last" and U.now() - (MT.prioAt[m] or 0) > 8 then
+            MT.prioAt[m] = U.now()
+            if SF.request("prio", "change_priority", m, "last") then SF.log(2, "TARGET", UNIT.name(st.id.Value) .. " → last (takedown training)") end
+            return
+        end
+    end
     if not CFG.smartTarget then return end
     local bossAlive = false
     for _, e in ipairs(MT.enemies) do if e.boss then bossAlive = true; break end end
@@ -3171,7 +3527,8 @@ function MT.targeting()
         local st = m._stats
         local id = st.id.Value
         local pr = st:FindFirstChild("priority")
-        if pr and not UNIT.isFarm(id) and not UNIT.allyBuff(id) then
+        local trainee = MT.trainee and st:FindFirstChild("uuid") and st.uuid.Value == MT.trainee
+        if pr and not trainee and not UNIT.isFarm(id) and not UNIT.allyBuff(id) then
             local atk = st:FindFirstChild("primary_attack") and st.primary_attack.Value or nil
             local info = UNIT.attackInfo(atk, st.range.Value)
             local heavy = info.n <= 1.4 and info.slow == 0 and info.stun == 0
@@ -3246,6 +3603,46 @@ function MT.learn()
         end
     end
 end
+-- takedown training: the trainee's takedowns this match (the game counts them on each placed unit)
+function MT.trainCount()
+    local on = B.train.on
+    if not (on and MT.trainee) then return end
+    local n = 0
+    for _, m in ipairs(MT.mine) do
+        local st = m._stats
+        local uuid = st:FindFirstChild("uuid") and st.uuid.Value
+        local v = uuid == MT.trainee and st:FindFirstChild(on.what == "kills" and "kill_count" or "takedown_count")
+        if v then n = n + (tonumber(v.Value) or 0) end
+    end
+    MT.trainTk = math.max(MT.trainTk or 0, n)
+    SF.status("Training", string.format("%s: %d %s this match · %s/%s", UNIT.name(on.id), MT.trainTk, on.what, U.fmt(on.have + (on.got or 0) + MT.trainTk), U.fmt(on.need)))
+end
+function MT.trainDone(key, won)
+    local on = B.train.on
+    if not (on and MT.trainee) then return end
+    MT.trainCount()
+    local got = MT.trainTk or 0
+    on.got = (on.got or 0) + got
+    local est = B.trainSim[key] and tonumber(B.trainSim[key].tk)
+    if not MT.joinedMid then
+        local r = B.train.real[key] or { n = 0, sum = 0 }
+        r.n, r.sum = r.n + 1, r.sum + got
+        B.train.real[key] = r
+        -- real vs simulated takedowns: corrects the sim's count for modes not trained in yet
+        if est and est > 0 then
+            local c = B.train.cal
+            c.real, c.sim, c.n = (c.real or 0) + got, (c.sim or 0) + est, (c.n or 0) + 1
+        end
+    end
+    table.insert(B.train.log, 1, { key = key, got = got, won = won, at = os.time() })
+    while #B.train.log > 20 do table.remove(B.train.log) end
+    SF.log(1, "TRAIN", string.format("%s: +%d %s this run (%s%s) · %s/%s", UNIT.name(on.id), got, on.what, won and "won" or "lost",
+        est and string.format(", the simulator said ≈%d", est) or "", U.fmt(on.have + on.got), U.fmt(on.need)))
+    if not won then
+        B.train.bad[key] = os.time() + 6 * 3600
+        SF.log(1, "TRAIN", "the training team lost here: no training in this mode for 6 h")
+    end
+end
 function MT.finish()
     if MT.finished then return end
     MT.finished = true
@@ -3305,6 +3702,8 @@ function MT.finish()
     while #B.history > 30 do table.remove(B.history) end
     B.lastMatch = { label = label, spent = MT.spent, actions = #MT.actions, refusals = MT.refusals or 0, at = os.time() }
     pcall(MT.learn)
+    local okTr, eTr = pcall(MT.trainDone, key, won)
+    if not okTr then SF.log(1, "ERROR", "training: " .. tostring(eTr)) end
     local okC, eC = pcall(MT.calMerge, won)
     if not okC then SF.log(1, "ERROR", "sim calibration: " .. tostring(eC)) end
     REPORT.record({ mode = key, won = won, sec = math.floor(sec), wave = MT.wave(), gems = gems, coins = coins, mid = MT.joinedMid or nil })
@@ -3321,6 +3720,11 @@ function MT.finish()
         if okN and nxt == top.level and top.diff == MT.ld._difficulty then vote, why = "next_story", "next act: " .. top.label end
     end
     if vote ~= "replay" and vote ~= "next_story" and top then why = "lobby for: " .. top.label end
+    -- takedown training: replay only the mode it was checked for, while the trainee still needs takedowns
+    local on = B.train.on
+    if on and MT.trainee and (vote == "next_story" or (vote == "replay" and on.have + (on.got or 0) >= on.need)) then
+        vote, why = "lobby", "lobby: your own team goes back in (takedown training)"
+    end
     B.pending = (vote == "replay" or vote == "next_story") and { key = top.key, kind = top.kind, level = top.level, diff = top.diff, label = top.label, at = os.time() } or nil
     SF.saveNow()
     SF.status("Match", why)
@@ -3362,6 +3766,9 @@ function MT.run()
     MT.setupChecks()
     MT.buildCandidates()
     MT.team = UNIT.equipped()
+    -- takedown training: the trainee the lobby swapped into this team
+    MT.trainee, MT.trainTk = nil, 0
+    for _, e in ipairs(MT.team) do if B.train.on and e.uuid == B.train.on.uuid then MT.trainee = e.uuid end end
     -- simulator: this mode's description, what to measure, the map's coverage, and a prediction to check later
     local chId = MT.ld._challenge or (MT.key == "dc" and B.live.daily and B.live.daily.challenge) or nil
     MT.calRun = { waveSec = {}, walk = {}, hp = {}, baseRel = {}, alive = {}, spawn = {}, spawnLast = {}, dpsAt = {}, dens = {},
@@ -3391,7 +3798,7 @@ function MT.run()
             task.wait(5)
             local units = {}
             for _, e in ipairs(MT.team) do table.insert(units, e.u) end
-            local ok, r = pcall(SIM.run, MT.info, SIM.teamFrom(units, MT.info.map), { hpMul = 1 })
+            local ok, r = pcall(SIM.run, MT.info, SIM.teamFrom(units, MT.info.map), { hpMul = 1, train = MT.trainee })
             if ok then MT.pred = r; SF.log(1, "SIM", string.format("prediction for this run: %s at wave %d", r.won and "win" or "loss", r.wave)) end
         end)
     end
@@ -3429,6 +3836,7 @@ function MT.run()
                 MT.econ()
                 if HUB.every("act", 0.5) then MT.actives() end
                 if HUB.every("prio", 2) then local okT, eT = pcall(MT.targeting); if not okT and HUB.every("prioErr", 30) then SF.log(1, "ERROR", "targeting: " .. tostring(eT)) end end
+                if MT.trainee and HUB.every("train", 2) then pcall(MT.trainCount) end
                 -- watchdog: no wave change for 6 min → leave
                 local w = MT.wave()
                 if w ~= lastWave then lastWave, lastWaveAt = w, U.now() end
@@ -3496,7 +3904,7 @@ function GUI.load()
     local ok, s = pcall(function() return game:HttpGet(C.NEXUS_URL) end)
     return ok and try(s, "url") or nil
 end
-GUI.SYSTEMS = { "Mode", "Match", "Economy", "Placement", "Upgrade", "Abilities", "Targeting", "Rewards", "Gold Shop", "Summon", "Evolve" }
+GUI.SYSTEMS = { "Mode", "Match", "Economy", "Placement", "Upgrade", "Abilities", "Targeting", "Rewards", "Gold Shop", "Summon", "Evolve", "Training" }
 function GUI.build()
     local Lib = GUI.load()
     if not Lib then warn("[AA] NexusLib failed to load — running without a window") return end
@@ -3613,6 +4021,9 @@ function GUI.build()
         armed[g.uuid] = nil
         task.spawn(function() local ok, msg = HUB.evolve(g); notify("Evolve", msg, ok and "success" or "error") end)
     end)
+    T:Section("Takedown training")
+    LIVE.train = T:Paragraph("…")
+    tog(T, "Takedown Training", "A unit whose evolution needs its own takedowns joins your team for runs the simulator says you still win easily. Your team goes back after each run", "trainTakedowns")
     T:Section("Limit break")
     LIVE.lb = T:Paragraph("checked in the lobby…")
     T:Section("Trait rerolls")
@@ -3851,6 +4262,7 @@ function GUI.update()
         if GUI.readyLabel then pcall(GUI.readyLabel.Set, #ready > 0 and ("Ready: " .. table.concat(ready, " · ")) or "Nothing ready yet — the farm is collecting the items") end
     end
     local LIVEp = GUI.LIVE
+    if LIVEp.train then pcall(LIVEp.train.Set, TRAIN.text()) end
     if LIVEp.lb then pcall(LIVEp.lb.Set, ADV.lbText()) end
     if LIVEp.traits then pcall(LIVEp.traits.Set, ADV.traitText()) end
     if GUI.econCard and SF.where == "match" then
@@ -3913,7 +4325,7 @@ pcall(function()
 end)
 
 SF.C, SF.B, SF.CFG, SF.MT, SF.HUB, SF.ST, SF.UNIT, SF.MODE = C, B, CFG, MT, HUB, ST, UNIT, MODE -- for live inspection
-SF.SIM, SF.ECON, SF.GUI = SIM, ECON, GUI
+SF.SIM, SF.ECON, SF.GUI, SF.TRAIN = SIM, ECON, GUI, TRAIN
 SF.version = VERSION
 task.spawn(GUI.build)
 task.spawn(function() task.wait(2); GUI.loop() end)
