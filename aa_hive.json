@@ -1,0 +1,60 @@
+{
+ "v": 1,
+ "updated": 1793643270,
+ "players": 1,
+ "matchRecords": 6,
+ "dropped": 3,
+ "units": {
+  "aizen_hog_evolved": {
+   "eff": 0.479,
+   "players": 1,
+   "matches": 1
+  },
+  "metal_knight_evolved": {
+   "eff": 0.649,
+   "players": 1,
+   "matches": 1
+  },
+  "rikka_evolved": {
+   "eff": 1.216,
+   "players": 1,
+   "matches": 1
+  }
+ },
+ "train": {},
+ "modes": {
+  "inf:shibuya_infinite": {
+   "runs": 3,
+   "wins": 3,
+   "winRate": 1.0,
+   "medMin": 33.2,
+   "medWave": 53,
+   "players": 1
+  },
+  "st:amegakure_level_1:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 4.0,
+   "medWave": 15,
+   "players": 1
+  },
+  "dc": {
+   "runs": 1,
+   "wins": 0,
+   "winRate": 0.0,
+   "medMin": 12.1,
+   "medWave": 25,
+   "players": 1
+  },
+  "ch": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 3.5,
+   "medWave": 15,
+   "players": 1
+  }
+ },
+ "under": []
+}
