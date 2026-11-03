@@ -1,8 +1,8 @@
 {
  "v": 1,
- "updated": 1793665603,
+ "updated": 1793687206,
  "players": 1,
- "matchRecords": 17,
+ "matchRecords": 24,
  "dropped": 4,
  "units": {
   "aizen_hog_evolved": {
@@ -11,32 +11,60 @@
    "matches": 2
   },
   "metal_knight_evolved": {
-   "eff": 0.957,
+   "eff": 0.963,
    "players": 1,
-   "matches": 12
+   "matches": 19
   },
   "rikka_evolved": {
-   "eff": 1.223,
+   "eff": 1.245,
    "players": 1,
-   "matches": 12
+   "matches": 19
   },
   "rukia_bankai_evolved": {
-   "eff": 1.181,
+   "eff": 1.1,
    "players": 1,
-   "matches": 10
+   "matches": 14
   },
   "pucci_heaven": {
-   "eff": 0.609,
+   "eff": 0.561,
    "players": 1,
-   "matches": 10
+   "matches": 11
   },
   "wendy": {
    "eff": 0.416,
    "players": 1,
    "matches": 2
+  },
+  "sasuke_3_evolved": {
+   "eff": 0.3,
+   "players": 1,
+   "matches": 2
+  },
+  "dokuro_evolved": {
+   "eff": 0.3,
+   "players": 1,
+   "matches": 2
+  },
+  "giselle": {
+   "eff": 0.908,
+   "players": 1,
+   "matches": 1
   }
  },
- "train": {},
+ "train": {
+  "ev:summer2_event": {
+   "perRun": 2801,
+   "perMin": 78.7,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "giselle": {
+     "perRun": 2801,
+     "runs": 1
+    }
+   }
+  }
+ },
  "modes": {
   "inf:shibuya_infinite": {
    "runs": 3,
@@ -55,11 +83,11 @@
    "players": 1
   },
   "dc": {
-   "runs": 1,
+   "runs": 7,
    "wins": 0,
    "winRate": 0.0,
-   "medMin": 12.1,
-   "medWave": 25,
+   "medMin": 14.3,
+   "medWave": 22,
    "players": 1
   },
   "ch": {
@@ -71,11 +99,11 @@
    "players": 1
   },
   "ev:summer2_event": {
-   "runs": 10,
-   "wins": 9,
-   "winRate": 0.9,
-   "medMin": 23.2,
-   "medWave": 50.0,
+   "runs": 11,
+   "wins": 10,
+   "winRate": 0.909,
+   "medMin": 24.0,
+   "medWave": 50,
    "players": 1
   }
  },
@@ -198,23 +226,647 @@
      "range": 33
     }
    ]
+  },
+  "leafa_evolved": {
+   "active_attack": "leafa:buff",
+   "primary_attack_no_upgrades": "leafa:one",
+   "spawn_cap": 6,
+   "upgrade": [
+    {
+     "attack_cooldown": 10,
+     "cost": 1500,
+     "damage": 900,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 10,
+     "cost": 2000,
+     "damage": 1350,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 3500,
+     "damage": 1800,
+     "note": "+ Wind Needles",
+     "primary_attack": "leafa:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 4500,
+     "damage": 2250,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 7500,
+     "damage": 3000,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 10000,
+     "damage": 4500,
+     "range": 25
+    }
+   ]
+  },
+  "tengen_2_evolved": {
+   "primary_attack_no_upgrades": "tengen_2:slam",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7.5,
+     "cost": 2100,
+     "damage": 1890.0000000000002,
+     "range": 20.5
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 3250,
+     "damage": 3105,
+     "note": "+ Orchestral Performance",
+     "primary_attack": "tengen_2:combo_1",
+     "range": 21
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 4000,
+     "damage": 4320,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 5500,
+     "damage": 6265.35,
+     "range": 23.5
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 6250,
+     "damage": 8055.450000000001,
+     "note": "+ String Bombs",
+     "primary_attack": "tengen_2:combo_2",
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 8500,
+     "damage": 10057.5,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 10000,
+     "damage": 11205,
+     "range": 24.5
+    },
+    {
+     "attack_cooldown": 13,
+     "cost": 14500,
+     "damage": 19575,
+     "note": "+ String Bombs: Final Performance",
+     "primary_attack": "tengen_2:ult",
+     "range": 24.5
+    },
+    {
+     "attack_cooldown": 12.5,
+     "cost": 17000,
+     "damage": 22275,
+     "range": 24.5
+    },
+    {
+     "attack_cooldown": 12,
+     "cost": 20000,
+     "damage": 27000,
+     "range": 25
+    }
+   ]
+  },
+  "archer_evolved": {
+   "primary_attack_no_upgrades": "archer:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 1500,
+     "damage": 1485,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 2200,
+     "damage": 1755.0000000000002,
+     "note": "+ Arrowblade Whirl",
+     "primary_attack": "archer:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 3500,
+     "damage": 2565,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4500,
+     "damage": 3510.0000000000005,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 6000,
+     "damage": 7830.000000000001,
+     "note": "+ Blade Onslaught",
+     "primary_attack": "archer:three",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 7500,
+     "damage": 10125,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 10000,
+     "damage": 13500,
+     "range": 35
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 12000,
+     "damage": 16875,
+     "note": "+ Imitation Shot",
+     "primary_attack": "archer:four",
+     "range": 40
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 14000,
+     "damage": 20250,
+     "range": 42
+    }
+   ]
+  },
+  "hakari_evolved": {
+   "active_attack": "hakari:active",
+   "primary_attack_no_upgrades": "hakari:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6,
+     "cost": 2100,
+     "damage": 875,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 2800,
+     "damage": 1375,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 3500,
+     "damage": 2500,
+     "note": "+ Jackpot Crash",
+     "primary_attack": "hakari:two",
+     "range": 26
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 5500,
+     "damage": 3500,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 8000,
+     "damage": 5000,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 5,
+     "cost": 20000,
+     "damage": 6937.5,
+     "note": "+ Love Train",
+     "primary_attack": "hakari:three",
+     "range": 32
+    },
+    {
+     "attack_cooldown": 5,
+     "cost": 23000,
+     "damage": 10000,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 4.5,
+     "cost": 27500,
+     "damage": 12500,
+     "range": 35
+    }
+   ]
+  },
+  "sasuke_3": {
+   "primary_attack_no_upgrades": "sasuke_3:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 2000,
+     "damage": 500,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3300,
+     "damage": 1000,
+     "note": "+ Samurai Crush",
+     "primary_attack": "sasuke_3:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 3750,
+     "damage": 1250,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4500,
+     "damage": 2000,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 5500,
+     "damage": 3400,
+     "range": 28
+    }
+   ]
+  },
+  "demiurge_evolved": {
+   "primary_attack_no_upgrades": "demiurge:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 7.5,
+     "cost": 2000,
+     "damage": 910,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 2500,
+     "damage": 1430,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3500,
+     "damage": 1820,
+     "note": "+ Inflammation",
+     "primary_attack": "demiurge:two",
+     "range": 27
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 5000,
+     "damage": 2665,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 6500,
+     "damage": 3770,
+     "range": 29
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 8000,
+     "damage": 4940,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 13,
+     "cost": 12000,
+     "damage": 11050,
+     "note": "+ Scorching Hell",
+     "primary_attack": "demiurge:three",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 12.5,
+     "cost": 15000,
+     "damage": 13650,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 12,
+     "cost": 17500,
+     "damage": 17290,
+     "range": 35
+    }
+   ]
+  },
+  "usopp_ts_evolved": {
+   "primary_attack_no_upgrades": "usopp_ts:trap",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 1500,
+     "damage": 3000,
+     "range": 10
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2500,
+     "damage": 5250,
+     "range": 10
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4000,
+     "damage": 7500,
+     "max_path_units": 7,
+     "note": "+ Plants",
+     "note2": "[+2 Max Traps]",
+     "primary_attack": "usopp_ts:trap2",
+     "range": 10
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 6500,
+     "damage": 11250,
+     "range": 10
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 8000,
+     "damage": 15000,
+     "range": 10
+    },
+    {
+     "attack_cooldown": 5,
+     "cost": 10000,
+     "damage": 21000,
+     "max_path_units": 10,
+     "note": "+ Mushrooms",
+     "note2": "[+3 Max Traps] [+Permanent Traps]",
+     "primary_attack": "usopp_ts:trap3",
+     "range": 10
+    },
+    {
+     "attack_cooldown": 5,
+     "cost": 35000,
+     "damage": 45000,
+     "range": 10
+    }
+   ]
   }
  },
  "maps": {
   "ev:summer2_event": {
    "hpCal": 1.23,
-   "runs": 8,
+   "runs": 9,
+   "players": 1
+  },
+  "dc": {
+   "hpCal": 2.0,
+   "runs": 6,
    "players": 1
   }
  },
  "drops": {
   "summer2_event": {
-   "runs": 10,
+   "runs": 11,
    "players": 1,
    "items": {
-    "star_remnant_limited": 0.5,
-    "portal_item__skypiea": 0.1
+    "star_remnant_limited": 0.455,
+    "portal_item__skypiea": 0.091
    }
   }
- }
+ },
+ "teams": {
+  "inf:shibuya_infinite": [
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "ishmael",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "sasuke_3_evolved"
+    ],
+    "runs": 3,
+    "wins": 3,
+    "medWave": 53,
+    "players": 1
+   }
+  ],
+  "st:amegakure_level_1:Normal": [
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "rukia_bankai_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "dc": [
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "rukia_bankai_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 25,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "dokuro_evolved",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "rukia_bankai_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 24,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "rikka_evolved",
+     "rukia_bankai_evolved",
+     "wendy"
+    ],
+    "runs": 2,
+    "wins": 0,
+    "medWave": 22.0,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "dokuro_evolved",
+     "gojo_evolved",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 22,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "emilia",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "sasuke_3_evolved",
+     "wendy"
+    ],
+    "runs": 2,
+    "wins": 0,
+    "medWave": 16.5,
+    "players": 1
+   }
+  ],
+  "ch": [
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "rikka_evolved",
+     "wendy"
+    ],
+    "runs": 2,
+    "wins": 2,
+    "medWave": 15.0,
+    "players": 1
+   }
+  ],
+  "ev:summer2_event": [
+   {
+    "ids": [
+     "bulma",
+     "giselle",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "rikka_evolved",
+     "rukia_bankai_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 50,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "rikka_evolved",
+     "rukia_bankai_evolved",
+     "wendy"
+    ],
+    "runs": 10,
+    "wins": 9,
+    "medWave": 50.0,
+    "players": 1
+   }
+  ]
+ },
+ "search": {
+  "ev:summer2_event": {
+   "runs": 1,
+   "played": 0,
+   "predWins": 0,
+   "realWins": 0
+  }
+ },
+ "mapInfo": {
+  "hxhant_summer": {
+   "runs": 1,
+   "players": 1,
+   "walk": 0.0071,
+   "spots": 134,
+   "hill": true,
+   "dens": [
+    1,
+    0.67,
+    0.39,
+    0.23,
+    0.22,
+    0.21,
+    0.16,
+    0.14,
+    0.13,
+    0.06,
+    0.03,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ },
+ "cal": {
+  "ev:summer2_event": {
+   "countCal": 0.9211,
+   "waveSec": 28.6108,
+   "spawnGap": 0.7448,
+   "skipDelay": 3.2965,
+   "yenCal": 1
+  }
+ },
+ "enemyMods": {
+  "Armor": {
+   "f": 0.13,
+   "players": 1,
+   "pairs": 43
+  },
+  "Ice": {
+   "f": 0.333,
+   "players": 1,
+   "pairs": 80
+  }
+ },
+ "enemyTypes": {
+  "hxhant_summer": {
+   "Armor": 2,
+   "Flying": 1
+  }
+ },
+ "daily": {}
 }
