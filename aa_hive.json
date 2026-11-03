@@ -1,24 +1,39 @@
 {
  "v": 1,
- "updated": 1793643996,
+ "updated": 1793665603,
  "players": 1,
- "matchRecords": 6,
- "dropped": 3,
+ "matchRecords": 17,
+ "dropped": 4,
  "units": {
   "aizen_hog_evolved": {
-   "eff": 0.479,
+   "eff": 1.715,
    "players": 1,
-   "matches": 1
+   "matches": 2
   },
   "metal_knight_evolved": {
-   "eff": 0.649,
+   "eff": 0.957,
    "players": 1,
-   "matches": 1
+   "matches": 12
   },
   "rikka_evolved": {
-   "eff": 1.216,
+   "eff": 1.223,
    "players": 1,
-   "matches": 1
+   "matches": 12
+  },
+  "rukia_bankai_evolved": {
+   "eff": 1.181,
+   "players": 1,
+   "matches": 10
+  },
+  "pucci_heaven": {
+   "eff": 0.609,
+   "players": 1,
+   "matches": 10
+  },
+  "wendy": {
+   "eff": 0.416,
+   "players": 1,
+   "matches": 2
   }
  },
  "train": {},
@@ -48,14 +63,158 @@
    "players": 1
   },
   "ch": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 2,
+   "wins": 2,
    "winRate": 1.0,
-   "medMin": 3.5,
-   "medWave": 15,
+   "medMin": 3.4,
+   "medWave": 15.0,
+   "players": 1
+  },
+  "ev:summer2_event": {
+   "runs": 10,
+   "wins": 9,
+   "winRate": 0.9,
+   "medMin": 23.2,
+   "medWave": 50.0,
    "players": 1
   }
  },
  "under": [],
- "toggles": {}
+ "toggles": {
+  "rukia_bankai_evolved": {
+   "from": 1,
+   "fill": 2.4,
+   "drain": 4.83,
+   "players": 1
+  }
+ },
+ "stats": {
+  "konan_unit_evolved": {
+   "primary_attack_no_upgrades": "konan_unit:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 1250,
+     "damage": 1620,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 2500,
+     "damage": 3105,
+     "note": "+ Akane Skewer",
+     "primary_attack": "konan_unit:two",
+     "range": 26
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 3000,
+     "damage": 4725,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 4000,
+     "damage": 6075,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 4500,
+     "damage": 6750,
+     "note": "+ Paper Dance",
+     "primary_attack": "konan_unit:three",
+     "range": 32
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4750,
+     "damage": 8100.000000000001,
+     "range": 33
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 5000,
+     "damage": 8775,
+     "range": 35
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 7000,
+     "damage": 10800,
+     "note": "+ Paper Dance: Explosion",
+     "primary_attack": "konan_unit:four",
+     "range": 37
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 8000,
+     "damage": 13500,
+     "range": 40
+    }
+   ]
+  },
+  "ishmael": {
+   "primary_attack_no_upgrades": "ishmael:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7.5,
+     "cost": 1500,
+     "damage": 1460,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 2000,
+     "damage": 2020,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3500,
+     "damage": 3740,
+     "note": "+ From the Depths",
+     "primary_attack": "ishmael:two",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 5500,
+     "damage": 5360,
+     "range": 29
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 6000,
+     "damage": 6940,
+     "range": 31
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 13000,
+     "damage": 10500,
+     "range": 33
+    }
+   ]
+  }
+ },
+ "maps": {
+  "ev:summer2_event": {
+   "hpCal": 1.23,
+   "runs": 8,
+   "players": 1
+  }
+ },
+ "drops": {
+  "summer2_event": {
+   "runs": 10,
+   "players": 1,
+   "items": {
+    "star_remnant_limited": 0.5,
+    "portal_item__skypiea": 0.1
+   }
+  }
+ }
 }
