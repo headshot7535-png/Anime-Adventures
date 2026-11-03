@@ -1,29 +1,29 @@
 {
  "v": 1,
- "updated": 1793730412,
+ "updated": 1793743827,
  "players": 1,
- "matchRecords": 24,
+ "matchRecords": 25,
  "dropped": 4,
  "units": {
   "aizen_hog_evolved": {
-   "eff": 1.715,
+   "eff": 1.267,
    "players": 1,
-   "matches": 2
+   "matches": 3
   },
   "metal_knight_evolved": {
-   "eff": 0.963,
+   "eff": 0.957,
    "players": 1,
-   "matches": 19
+   "matches": 20
   },
   "rikka_evolved": {
-   "eff": 1.245,
+   "eff": 1.247,
    "players": 1,
-   "matches": 19
+   "matches": 20
   },
   "rukia_bankai_evolved": {
-   "eff": 1.1,
+   "eff": 1.132,
    "players": 1,
-   "matches": 14
+   "matches": 15
   },
   "pucci_heaven": {
    "eff": 0.561,
@@ -31,9 +31,9 @@
    "matches": 11
   },
   "wendy": {
-   "eff": 0.416,
+   "eff": 0.3,
    "players": 1,
-   "matches": 2
+   "matches": 3
   },
   "sasuke_3_evolved": {
    "eff": 0.3,
@@ -99,11 +99,11 @@
    "players": 1
   },
   "ev:summer2_event": {
-   "runs": 11,
+   "runs": 12,
    "wins": 10,
-   "winRate": 0.909,
-   "medMin": 24.0,
-   "medWave": 50,
+   "winRate": 0.833,
+   "medMin": 24.3,
+   "medWave": 50.0,
    "players": 1
   }
  },
@@ -626,12 +626,82 @@
      "range": 10
     }
    ]
+  },
+  "stain_evolved": {
+   "primary_attack_no_upgrades": "stain:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6,
+     "cost": 2100,
+     "damage": 968.8,
+     "range": 20
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3000,
+     "damage": 1615.6,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3500,
+     "damage": 2153.2,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 5000,
+     "damage": 3015.6,
+     "note": "+ Frenzy",
+     "primary_attack": "stain:two",
+     "range": 26
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 6500,
+     "damage": 4092.2,
+     "range": 27
+    },
+    {
+     "active_attack": "stain:active",
+     "active_attack_stats": {
+      "attack_cooldown": 20,
+      "damage": 0
+     },
+     "attack_cooldown": 7,
+     "cost": 8000,
+     "damage": 4846.799999999999,
+     "note": "+ Terror",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 10000,
+     "damage": 5707.799999999999,
+     "note": "+ Blade Dance",
+     "primary_attack": "stain:three",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 12000,
+     "damage": 6784.4,
+     "range": 31
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 15000,
+     "damage": 8615.599999999999,
+     "range": 33
+    }
+   ]
   }
  },
  "maps": {
   "ev:summer2_event": {
    "hpCal": 1.23,
-   "runs": 9,
+   "runs": 10,
    "players": 1
   },
   "dc": {
@@ -642,11 +712,11 @@
  },
  "drops": {
   "summer2_event": {
-   "runs": 11,
+   "runs": 12,
    "players": 1,
    "items": {
-    "star_remnant_limited": 0.455,
-    "portal_item__skypiea": 0.091
+    "portal_item__skypiea": 0.083,
+    "star_remnant_limited": 0.417
    }
   }
  },
@@ -799,15 +869,31 @@
     "wins": 9,
     "medWave": 50.0,
     "players": 1
+   },
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "rukia_bankai_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 50,
+    "players": 1
    }
   ]
  },
  "search": {
   "ev:summer2_event": {
-   "runs": 1,
-   "played": 0,
-   "predWins": 0,
-   "realWins": 0
+   "runs": 2,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 0,
+   "gap": 0,
+   "players": 1
   }
  },
  "mapInfo": {
@@ -839,15 +925,45 @@
     0,
     0
    ]
+  },
+  "demonslayer": {
+   "runs": 1,
+   "players": 1,
+   "walk": 0.0091,
+   "spots": 156,
+   "hill": true,
+   "dens": [
+    1,
+    0.58,
+    0.44,
+    0.39,
+    0.36,
+    0.33,
+    0.27,
+    0.26,
+    0.16,
+    0.17,
+    0.09,
+    0.08,
+    0.04,
+    0.04,
+    0.03,
+    0.02,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+   ]
   }
  },
  "cal": {
   "ev:summer2_event": {
-   "countCal": 0.9211,
-   "waveSec": 28.6108,
-   "spawnGap": 0.7448,
-   "skipDelay": 3.2965,
-   "yenCal": 1
+   "countCal": 0.9189,
+   "waveSec": 29.1238,
+   "spawnGap": 0.7495,
+   "skipDelay": 3.2995,
+   "yenCal": 1.0,
+   "baseRel": 0.3805
   }
  },
  "enemyMods": {
@@ -857,6 +973,11 @@
    "pairs": 43
   },
   "Ice": {
+   "f": 0.162,
+   "players": 1,
+   "pairs": 80
+  },
+  "Ice@snow": {
    "f": 0.333,
    "players": 1,
    "pairs": 80
@@ -864,6 +985,10 @@
  },
  "enemyTypes": {
   "hxhant_summer": {
+   "Armor": 2,
+   "Flying": 1
+  },
+  "demonslayer": {
    "Armor": 2,
    "Flying": 1
   }
