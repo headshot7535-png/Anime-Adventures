@@ -1,79 +1,79 @@
 {
  "v": 1,
- "updated": 1793787034,
- "players": 30,
- "matchRecords": 444,
- "dropped": 43,
+ "updated": 1793808638,
+ "players": 53,
+ "matchRecords": 880,
+ "dropped": 57,
  "units": {
   "aizen_hog_evolved": {
-   "eff": 0.979,
-   "players": 1,
-   "matches": 15
+   "eff": 0.873,
+   "players": 2,
+   "matches": 29
   },
   "metal_knight_evolved": {
    "eff": 1.029,
-   "players": 2,
-   "matches": 41
+   "players": 3,
+   "matches": 73
   },
   "rikka_evolved": {
-   "eff": 1.245,
+   "eff": 1.21,
    "players": 1,
-   "matches": 37
+   "matches": 52
   },
   "rukia_bankai_evolved": {
-   "eff": 1.165,
+   "eff": 0.812,
    "players": 3,
-   "matches": 53
+   "matches": 75
   },
   "pucci_heaven": {
-   "eff": 0.446,
+   "eff": 0.443,
    "players": 3,
-   "matches": 35
+   "matches": 56
   },
   "wendy": {
    "eff": 0.899,
    "players": 4,
-   "matches": 13
+   "matches": 16
   },
   "sasuke_3_evolved": {
-   "eff": 0.3,
-   "players": 1,
-   "matches": 2
+   "eff": 1.207,
+   "players": 2,
+   "matches": 12
   },
   "dokuro_evolved": {
-   "eff": 0.3,
-   "players": 1,
-   "matches": 3
+   "eff": 0.726,
+   "players": 2,
+   "matches": 11
   },
   "giselle": {
-   "eff": 0.614,
-   "players": 5,
-   "matches": 30
+   "eff": 1.0,
+   "players": 6,
+   "matches": 108
   },
   "goku": {
    "eff": 1.0,
-   "players": 5,
-   "matches": 16
+   "players": 9,
+   "matches": 30
   },
   "cid": {
-   "eff": 1.757,
+   "eff": 1.752,
    "players": 1,
-   "matches": 111
+   "matches": 136
   },
   "vegeta_majin": {
-   "eff": 0.777,
+   "eff": 0.768,
    "players": 3,
-   "matches": 127
+   "matches": 219
   },
   "megumi2": {
-   "eff": 0.894,
-   "players": 1,
-   "matches": 92
+   "eff": 0.737,
+   "players": 2,
+   "matches": 115
   },
   "konan_unit": {
-   "eff": 1.13,
+   "eff": 1.167,
    "players": 1,
-   "matches": 94
+   "matches": 118
   },
   "juvia": {
    "eff": 1.319,
@@ -81,9 +81,9 @@
    "matches": 11
   },
   "frieren_evolved": {
-   "eff": 1.11,
-   "players": 2,
-   "matches": 4
+   "eff": 1.919,
+   "players": 3,
+   "matches": 10
   },
   "nobara": {
    "eff": 1.163,
@@ -92,28 +92,28 @@
   },
   "naruto": {
    "eff": 0.99,
-   "players": 5,
-   "matches": 17
+   "players": 7,
+   "matches": 20
   },
   "usopp_ts": {
-   "eff": 0.546,
-   "players": 1,
-   "matches": 1
+   "eff": 0.3,
+   "players": 2,
+   "matches": 29
   },
   "ichigo": {
    "eff": 0.967,
-   "players": 8,
-   "matches": 40
+   "players": 15,
+   "matches": 63
   },
   "sanji": {
    "eff": 0.749,
-   "players": 3,
-   "matches": 15
+   "players": 6,
+   "matches": 27
   },
   "nagumo_evolved": {
-   "eff": 1.192,
-   "players": 3,
-   "matches": 50
+   "eff": 1.211,
+   "players": 6,
+   "matches": 87
   },
   "aqua": {
    "eff": 1.68,
@@ -122,13 +122,13 @@
   },
   "darkness_evolved": {
    "eff": 1.24,
-   "players": 1,
-   "matches": 5
+   "players": 3,
+   "matches": 7
   },
   "ainz_evolved": {
-   "eff": 1.018,
+   "eff": 1.395,
    "players": 2,
-   "matches": 8
+   "matches": 19
   },
   "femto_egg": {
    "eff": 0.3,
@@ -136,44 +136,44 @@
    "matches": 4
   },
   "judar_evolved": {
-   "eff": 0.781,
-   "players": 1,
-   "matches": 18
+   "eff": 0.702,
+   "players": 3,
+   "matches": 40
   },
   "elyssia_evolved": {
    "eff": 0.3,
-   "players": 4,
-   "matches": 37
+   "players": 11,
+   "matches": 91
   },
   "chihiro": {
-   "eff": 1.526,
+   "eff": 1.446,
    "players": 1,
-   "matches": 13
+   "matches": 14
   },
   "dokuro": {
    "eff": 2.045,
-   "players": 1,
-   "matches": 3
+   "players": 2,
+   "matches": 4
   },
   "monet_evolved": {
-   "eff": 0.565,
-   "players": 2,
-   "matches": 14
+   "eff": 0.548,
+   "players": 3,
+   "matches": 31
   },
   "goku_ssj3": {
-   "eff": 0.793,
-   "players": 2,
-   "matches": 13
+   "eff": 0.859,
+   "players": 3,
+   "matches": 17
   },
   "gremmy_evolved": {
-   "eff": 0.651,
+   "eff": 0.599,
    "players": 1,
-   "matches": 14
+   "matches": 15
   },
   "inosuke": {
-   "eff": 0.455,
+   "eff": 0.921,
    "players": 2,
-   "matches": 3
+   "matches": 16
   },
   "osaka": {
    "eff": 0.3,
@@ -182,13 +182,13 @@
   },
   "elyssia": {
    "eff": 0.3,
-   "players": 2,
-   "matches": 50
+   "players": 3,
+   "matches": 63
   },
   "sukuna": {
    "eff": 0.3,
-   "players": 1,
-   "matches": 1
+   "players": 2,
+   "matches": 2
   },
   "levi": {
    "eff": 0.354,
@@ -201,9 +201,9 @@
    "matches": 3
   },
   "crocodile": {
-   "eff": 0.462,
-   "players": 3,
-   "matches": 22
+   "eff": 0.677,
+   "players": 4,
+   "matches": 25
   },
   "issei_evolved": {
    "eff": 0.398,
@@ -217,13 +217,13 @@
   },
   "blackbeard": {
    "eff": 0.594,
-   "players": 3,
-   "matches": 9
+   "players": 4,
+   "matches": 13
   },
   "hisoka": {
    "eff": 1.432,
-   "players": 2,
-   "matches": 9
+   "players": 3,
+   "matches": 10
   },
   "gaara": {
    "eff": 1.815,
@@ -231,44 +231,44 @@
    "matches": 2
   },
   "luffy": {
-   "eff": 0.362,
-   "players": 2,
-   "matches": 4
+   "eff": 0.61,
+   "players": 4,
+   "matches": 6
   },
   "feitan_evolved": {
-   "eff": 1.946,
+   "eff": 1.426,
    "players": 1,
-   "matches": 6
+   "matches": 17
   },
   "goku_ssj3_evolved": {
    "eff": 0.3,
-   "players": 1,
-   "matches": 6
+   "players": 3,
+   "matches": 15
   },
   "cid_evolved": {
-   "eff": 1.041,
-   "players": 1,
-   "matches": 6
+   "eff": 0.962,
+   "players": 2,
+   "matches": 10
   },
   "vanilla_ice_evolved": {
-   "eff": 0.5,
+   "eff": 0.669,
    "players": 1,
-   "matches": 4
+   "matches": 5
   },
   "rukia": {
-   "eff": 0.3,
-   "players": 1,
-   "matches": 9
+   "eff": 0.963,
+   "players": 3,
+   "matches": 18
   },
   "killua": {
    "eff": 1.388,
-   "players": 1,
-   "matches": 11
+   "players": 5,
+   "matches": 18
   },
   "stain_evolved": {
-   "eff": 0.53,
-   "players": 1,
-   "matches": 3
+   "eff": 0.795,
+   "players": 3,
+   "matches": 20
   },
   "escanor_evolved": {
    "eff": 0.3,
@@ -276,24 +276,24 @@
    "matches": 1
   },
   "ghostkun": {
-   "eff": 3.0,
-   "players": 1,
-   "matches": 1
+   "eff": 2.199,
+   "players": 2,
+   "matches": 3
   },
   "osaragi_evolved": {
-   "eff": 0.519,
+   "eff": 0.529,
    "players": 1,
-   "matches": 5
+   "matches": 16
   },
   "giselle_evolved": {
-   "eff": 0.39,
-   "players": 1,
-   "matches": 1
+   "eff": 0.961,
+   "players": 3,
+   "matches": 12
   },
   "josuke_2": {
    "eff": 0.3,
    "players": 1,
-   "matches": 6
+   "matches": 7
   },
   "toge": {
    "eff": 0.482,
@@ -301,14 +301,14 @@
    "matches": 2
   },
   "vanilla_ice": {
-   "eff": 0.762,
+   "eff": 0.713,
    "players": 1,
-   "matches": 6
+   "matches": 7
   },
   "sakamoto_evolved": {
-   "eff": 0.992,
-   "players": 1,
-   "matches": 1
+   "eff": 0.367,
+   "players": 3,
+   "matches": 5
   },
   "nezuko": {
    "eff": 0.706,
@@ -316,64 +316,64 @@
    "matches": 4
   },
   "tatsumaki_evolved": {
-   "eff": 3.0,
-   "players": 1,
-   "matches": 1
-  },
-  "sasuke_3": {
-   "eff": 1.221,
-   "players": 1,
-   "matches": 5
-  },
-  "gajeel": {
-   "eff": 1.146,
-   "players": 1,
-   "matches": 11
-  },
-  "illya": {
-   "eff": 0.306,
-   "players": 1,
-   "matches": 3
-  },
-  "itachi": {
-   "eff": 0.708,
-   "players": 1,
-   "matches": 18
-  },
-  "zenitsu": {
-   "eff": 0.926,
-   "players": 1,
-   "matches": 18
-  },
-  "jotaro": {
-   "eff": 1.179,
+   "eff": 1.934,
    "players": 1,
    "matches": 2
   },
-  "genos": {
-   "eff": 3.0,
+  "sasuke_3": {
+   "eff": 0.71,
    "players": 1,
-   "matches": 1
+   "matches": 9
+  },
+  "gajeel": {
+   "eff": 1.146,
+   "players": 3,
+   "matches": 14
+  },
+  "illya": {
+   "eff": 0.303,
+   "players": 1,
+   "matches": 6
+  },
+  "itachi": {
+   "eff": 0.668,
+   "players": 2,
+   "matches": 104
+  },
+  "zenitsu": {
+   "eff": 0.758,
+   "players": 1,
+   "matches": 99
+  },
+  "jotaro": {
+   "eff": 0.3,
+   "players": 1,
+   "matches": 15
+  },
+  "genos": {
+   "eff": 1.713,
+   "players": 1,
+   "matches": 14
   },
   "touka": {
-   "eff": 0.736,
+   "eff": 0.3,
    "players": 1,
-   "matches": 17
+   "matches": 94
   },
   "grimmjow": {
-   "eff": 1.165,
-   "players": 1,
-   "matches": 17
+   "eff": 0.931,
+   "players": 2,
+   "matches": 97
   },
   "kizaru_unit": {
-   "eff": 1.092,
-   "players": 1,
-   "matches": 17
+   "eff": 1.26,
+   "players": 3,
+   "matches": 109
   },
   "usopp": {
-   "eff": 0.471,
-   "players": 1,
-   "matches": 1
+   "eff": 0.745,
+   "players": 3,
+   "matches": 3
   },
   "krillin": {
    "eff": 0.721,
@@ -391,12 +391,152 @@
    "matches": 1
   },
   "metal_knight": {
-   "eff": 1.151,
+   "eff": 1.338,
    "players": 1,
-   "matches": 4
+   "matches": 5
   },
   "asta_evolved": {
    "eff": 0.3,
+   "players": 1,
+   "matches": 1
+  },
+  "fujitora": {
+   "eff": 1.654,
+   "players": 1,
+   "matches": 1
+  },
+  "all_might": {
+   "eff": 0.3,
+   "players": 1,
+   "matches": 1
+  },
+  "ishmael_evolved": {
+   "eff": 0.446,
+   "players": 1,
+   "matches": 9
+  },
+  "charmy_evolved": {
+   "eff": 0.502,
+   "players": 1,
+   "matches": 1
+  },
+  "law_2_evolved": {
+   "eff": 0.3,
+   "players": 2,
+   "matches": 10
+  },
+  "ghostkun_evolved": {
+   "eff": 0.571,
+   "players": 1,
+   "matches": 1
+  },
+  "vegeta_majin_evolved": {
+   "eff": 0.3,
+   "players": 2,
+   "matches": 5
+  },
+  "bee_girl": {
+   "eff": 1.651,
+   "players": 2,
+   "matches": 29
+  },
+  "tatsumaki": {
+   "eff": 0.3,
+   "players": 2,
+   "matches": 34
+  },
+  "tengen_2_evolved": {
+   "eff": 0.886,
+   "players": 3,
+   "matches": 9
+  },
+  "guts_berserker": {
+   "eff": 0.3,
+   "players": 1,
+   "matches": 1
+  },
+  "kaneki_2": {
+   "eff": 1.0,
+   "players": 1,
+   "matches": 4
+  },
+  "uryu": {
+   "eff": 1.49,
+   "players": 1,
+   "matches": 2
+  },
+  "gon_adult": {
+   "eff": 0.317,
+   "players": 1,
+   "matches": 6
+  },
+  "bee_girl_evolved": {
+   "eff": 1.916,
+   "players": 1,
+   "matches": 2
+  },
+  "kaneki": {
+   "eff": 0.3,
+   "players": 1,
+   "matches": 7
+  },
+  "juuzou": {
+   "eff": 1.153,
+   "players": 1,
+   "matches": 1
+  },
+  "goku_ssb": {
+   "eff": 0.3,
+   "players": 1,
+   "matches": 1
+  },
+  "meliodas_evolved": {
+   "eff": 1.574,
+   "players": 1,
+   "matches": 10
+  },
+  "harribel_evolved": {
+   "eff": 0.805,
+   "players": 1,
+   "matches": 10
+  },
+  "fujitora_evolved": {
+   "eff": 1.029,
+   "players": 1,
+   "matches": 1
+  },
+  "escanor": {
+   "eff": 0.677,
+   "players": 1,
+   "matches": 1
+  },
+  "kira": {
+   "eff": 3.0,
+   "players": 1,
+   "matches": 3
+  },
+  "yami_evolved": {
+   "eff": 0.821,
+   "players": 1,
+   "matches": 7
+  },
+  "all_might_evolved": {
+   "eff": 0.845,
+   "players": 1,
+   "matches": 7
+  },
+  "meliodas": {
+   "eff": 2.639,
+   "players": 1,
+   "matches": 6
+  },
+  "ichigo_mask": {
+   "eff": 1.147,
+   "players": 1,
+   "matches": 4
+  },
+  "marco": {
+   "eff": 0.482,
    "players": 1,
    "matches": 1
   }
@@ -433,23 +573,31 @@
   "inf:shibuya_infinite": {
    "perRun": 2048,
    "perMin": 62.8,
-   "runs": 2,
-   "players": 1,
+   "runs": 3,
+   "players": 2,
    "units": {
     "giselle": {
      "perRun": 2048,
      "runs": 2
+    },
+    "marco": {
+     "perRun": 2529,
+     "runs": 1
     }
    }
   },
   "pt:shibuya_portal": {
    "perRun": 23,
    "perMin": 3.0,
-   "runs": 1,
-   "players": 1,
+   "runs": 2,
+   "players": 2,
    "units": {
     "giselle": {
      "perRun": 23,
+     "runs": 1
+    },
+    "megumi2": {
+     "perRun": 140,
      "runs": 1
     }
    }
@@ -465,15 +613,135 @@
      "runs": 1
     }
    }
+  },
+  "pt:shibuya_portal_megumi2": {
+   "perRun": 353,
+   "perMin": 18.1,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "megumi2": {
+     "perRun": 353,
+     "runs": 1
+    }
+   }
+  },
+  "st:jojo_level_2:Hard": {
+   "perRun": 361,
+   "perMin": 39.6,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 361,
+     "runs": 1
+    }
+   }
+  },
+  "st:magnolia_level_2:Hard": {
+   "perRun": 180,
+   "perMin": 29.7,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 180,
+     "runs": 1
+    }
+   }
+  },
+  "st:opm_level_2:Hard": {
+   "perRun": 140,
+   "perMin": 22.2,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 140,
+     "runs": 1
+    }
+   }
+  },
+  "st:opm_level_3:Hard": {
+   "perRun": 156,
+   "perMin": 24.2,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 156,
+     "runs": 1
+    }
+   }
+  },
+  "st:jojo_level_3:Hard": {
+   "perRun": 438,
+   "perMin": 58.3,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 438,
+     "runs": 1
+    }
+   }
+  },
+  "st:opm_level_4:Hard": {
+   "perRun": 256,
+   "perMin": 37.8,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 256,
+     "runs": 1
+    }
+   }
+  },
+  "st:opm_level_6:Hard": {
+   "perRun": 136,
+   "perMin": 19.9,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 136,
+     "runs": 1
+    }
+   }
+  },
+  "st:7ds_level_1:Normal": {
+   "perRun": 336,
+   "perMin": 52.5,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 336,
+     "runs": 1
+    }
+   }
+  },
+  "st:jojo_level_4:Hard": {
+   "perRun": 198,
+   "perMin": 27.6,
+   "runs": 1,
+   "players": 1,
+   "units": {
+    "kira": {
+     "perRun": 198,
+     "runs": 1
+    }
+   }
   }
  },
  "modes": {
   "inf:shibuya_infinite": {
-   "runs": 5,
-   "wins": 5,
+   "runs": 9,
+   "wins": 9,
    "winRate": 1.0,
-   "medMin": 33.2,
-   "medWave": 53,
+   "medMin": 32.4,
+   "medWave": 52,
    "players": 2
   },
   "st:amegakure_level_1:Normal": {
@@ -485,52 +753,52 @@
    "players": 1
   },
   "dc": {
-   "runs": 27,
-   "wins": 4,
-   "winRate": 0.148,
-   "medMin": 0.5,
-   "medWave": 4,
-   "players": 11
+   "runs": 36,
+   "wins": 11,
+   "winRate": 0.306,
+   "medMin": 4.7,
+   "medWave": 11.0,
+   "players": 19
   },
   "ch": {
-   "runs": 12,
-   "wins": 7,
-   "winRate": 0.583,
-   "medMin": 4.7,
+   "runs": 28,
+   "wins": 16,
+   "winRate": 0.571,
+   "medMin": 5.3,
    "medWave": 15.0,
-   "players": 8
+   "players": 18
   },
   "ev:summer2_event": {
-   "runs": 181,
-   "wins": 34,
-   "winRate": 0.188,
-   "medMin": 5.5,
-   "medWave": 14,
-   "players": 17
+   "runs": 323,
+   "wins": 67,
+   "winRate": 0.207,
+   "medMin": 5.1,
+   "medWave": 13,
+   "players": 24
   },
   "st:namek_level_1:Normal": {
-   "runs": 6,
-   "wins": 6,
+   "runs": 86,
+   "wins": 86,
    "winRate": 1.0,
-   "medMin": 6.9,
+   "medMin": 3.8,
    "medWave": 15.0,
-   "players": 6
+   "players": 9
   },
   "st:namek_level_6:Hard": {
-   "runs": 12,
-   "wins": 12,
+   "runs": 13,
+   "wins": 13,
    "winRate": 1.0,
-   "medMin": 5.2,
-   "medWave": 15.0,
-   "players": 2
+   "medMin": 5.3,
+   "medWave": 15,
+   "players": 3
   },
   "rd:west_city_raid": {
-   "runs": 2,
-   "wins": 1,
-   "winRate": 0.5,
-   "medMin": 6.5,
-   "medWave": 15.0,
-   "players": 2
+   "runs": 3,
+   "wins": 2,
+   "winRate": 0.667,
+   "medMin": 9.2,
+   "medWave": 20,
+   "players": 3
   },
   "rd:entertainment_district_level_1": {
    "runs": 1,
@@ -541,12 +809,12 @@
    "players": 1
   },
   "st:namek_level_6:Normal": {
-   "runs": 101,
-   "wins": 101,
+   "runs": 128,
+   "wins": 128,
    "winRate": 1.0,
    "medMin": 5.2,
-   "medWave": 15,
-   "players": 2
+   "medWave": 15.0,
+   "players": 4
   },
   "rd:west_city_frieza_level_1": {
    "runs": 1,
@@ -565,12 +833,12 @@
    "players": 1
   },
   "rd:uchiha_level_1": {
-   "runs": 1,
-   "wins": 1,
-   "winRate": 1.0,
+   "runs": 3,
+   "wins": 2,
+   "winRate": 0.667,
    "medMin": 17.1,
    "medWave": 20,
-   "players": 1
+   "players": 3
   },
   "rd:uchiha_level_2": {
    "runs": 1,
@@ -605,52 +873,52 @@
    "players": 2
   },
   "dg": {
-   "runs": 47,
-   "wins": 33,
-   "winRate": 0.702,
-   "medMin": 5.8,
+   "runs": 83,
+   "wins": 59,
+   "winRate": 0.711,
+   "medMin": 5.6,
    "medWave": 15,
-   "players": 10
+   "players": 18
   },
   "st:namek_level_2:Normal": {
-   "runs": 2,
-   "wins": 2,
+   "runs": 4,
+   "wins": 4,
    "winRate": 1.0,
-   "medMin": 5.5,
+   "medMin": 6.6,
    "medWave": 15.0,
-   "players": 2
+   "players": 4
   },
   "st:namek_level_3:Normal": {
-   "runs": 2,
-   "wins": 2,
+   "runs": 3,
+   "wins": 3,
    "winRate": 1.0,
-   "medMin": 6.2,
-   "medWave": 15.0,
-   "players": 2
+   "medMin": 7.3,
+   "medWave": 15,
+   "players": 3
   },
   "st:namek_level_4:Normal": {
-   "runs": 2,
-   "wins": 2,
+   "runs": 4,
+   "wins": 4,
    "winRate": 1.0,
-   "medMin": 5.8,
+   "medMin": 6.7,
    "medWave": 15.0,
-   "players": 2
+   "players": 4
   },
   "st:demonslayer_level_1:Normal": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 4,
+   "wins": 4,
    "winRate": 1.0,
-   "medMin": 5.1,
-   "medWave": 15,
-   "players": 1
+   "medMin": 6.4,
+   "medWave": 15.0,
+   "players": 4
   },
   "st:demonslayer_level_2:Normal": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 4,
+   "wins": 4,
    "winRate": 1.0,
-   "medMin": 5.2,
-   "medWave": 15,
-   "players": 1
+   "medMin": 7.4,
+   "medWave": 15.0,
+   "players": 4
   },
   "pt:skypiea_portal:t3": {
    "runs": 4,
@@ -669,20 +937,20 @@
    "players": 1
   },
   "pt:shibuya_portal": {
-   "runs": 6,
-   "wins": 6,
+   "runs": 15,
+   "wins": 15,
    "winRate": 1.0,
-   "medMin": 7.3,
-   "medWave": 15.0,
-   "players": 1
+   "medMin": 7.0,
+   "medWave": 15,
+   "players": 2
   },
   "st:naruto_level_6:Normal": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 2,
+   "wins": 2,
    "winRate": 1.0,
    "medMin": 6.0,
-   "medWave": 15,
-   "players": 1
+   "medWave": 15.0,
+   "players": 2
   },
   "st:jjk_level_2:Hard": {
    "runs": 1,
@@ -693,28 +961,28 @@
    "players": 1
   },
   "st:opm_level_2:Hard": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 2,
+   "wins": 2,
    "winRate": 1.0,
-   "medMin": 10.5,
-   "medWave": 15,
-   "players": 1
+   "medMin": 8.4,
+   "medWave": 15.0,
+   "players": 2
   },
   "ar:artifact_usopp_ts": {
-   "runs": 1,
+   "runs": 2,
    "wins": 0,
    "winRate": 0.0,
-   "medMin": 7.9,
-   "medWave": 14,
-   "players": 1
+   "medMin": 6.9,
+   "medWave": 13.5,
+   "players": 2
   },
   "st:marineford_level_2:Hard": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 3,
+   "wins": 3,
    "winRate": 1.0,
-   "medMin": 8.2,
+   "medMin": 7.5,
    "medWave": 15,
-   "players": 1
+   "players": 3
   },
   "st:aot_level_1:Hard": {
    "runs": 1,
@@ -725,12 +993,12 @@
    "players": 1
   },
   "st:namek_level_5:Normal": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 3,
+   "wins": 3,
    "winRate": 1.0,
-   "medMin": 5.6,
+   "medMin": 7.9,
    "medWave": 15,
-   "players": 1
+   "players": 3
   },
   "st:bleach_legend_6:Hard": {
    "runs": 1,
@@ -741,28 +1009,28 @@
    "players": 1
   },
   "st:opm_level_3:Hard": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 2,
+   "wins": 2,
    "winRate": 1.0,
-   "medMin": 7.5,
-   "medWave": 15,
-   "players": 1
+   "medMin": 7.0,
+   "medWave": 15.0,
+   "players": 2
   },
   "st:shibuya_level_1:Normal": {
-   "runs": 2,
-   "wins": 0,
-   "winRate": 0.0,
-   "medMin": 10.0,
+   "runs": 4,
+   "wins": 1,
+   "winRate": 0.25,
+   "medMin": 7.9,
    "medWave": 15.0,
-   "players": 1
+   "players": 2
   },
   "st:opm_level_4:Hard": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 2,
+   "wins": 2,
    "winRate": 1.0,
-   "medMin": 6.5,
-   "medWave": 15,
-   "players": 1
+   "medMin": 6.6,
+   "medWave": 15.0,
+   "players": 2
   },
   "st:bleach_legend_1:Hard": {
    "runs": 1,
@@ -773,28 +1041,28 @@
    "players": 1
   },
   "st:aot_level_1:Normal": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 4,
+   "wins": 4,
    "winRate": 1.0,
-   "medMin": 5.0,
-   "medWave": 15,
-   "players": 1
+   "medMin": 5.6,
+   "medWave": 15.0,
+   "players": 4
   },
   "st:clover_level_2:Hard": {
-   "runs": 1,
-   "wins": 1,
+   "runs": 2,
+   "wins": 2,
    "winRate": 1.0,
-   "medMin": 7.9,
-   "medWave": 15,
-   "players": 1
+   "medMin": 8.2,
+   "medWave": 15.0,
+   "players": 2
   },
   "st:aot_level_2:Normal": {
-   "runs": 1,
-   "wins": 1,
-   "winRate": 1.0,
-   "medMin": 6.2,
-   "medWave": 15,
-   "players": 1
+   "runs": 4,
+   "wins": 3,
+   "winRate": 0.75,
+   "medMin": 6.7,
+   "medWave": 15.0,
+   "players": 4
   },
   "pt:shibuya_portal_final": {
    "runs": 1,
@@ -813,20 +1081,416 @@
    "players": 1
   },
   "st:clover_level_3:Hard": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 7.7,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:bleach_legend_3:Hard": {
    "runs": 1,
    "wins": 1,
    "winRate": 1.0,
-   "medMin": 7.6,
+   "medMin": 8.0,
+   "medWave": 20,
+   "players": 1
+  },
+  "st:jojo_level_2:Hard": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 8.7,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "pt:skypiea_portal:t5": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 13.3,
+   "medWave": 20,
+   "players": 1
+  },
+  "st:bleach_legend_4:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 8.0,
+   "medWave": 20,
+   "players": 1
+  },
+  "pt:skypiea_portal:t8": {
+   "runs": 9,
+   "wins": 0,
+   "winRate": 0.0,
+   "medMin": 16.2,
+   "medWave": 18,
+   "players": 1
+  },
+  "st:bleach_legend_5:Hard": {
+   "runs": 2,
+   "wins": 1,
+   "winRate": 0.5,
+   "medMin": 9.6,
+   "medWave": 20.0,
+   "players": 1
+  },
+  "st:aot_level_3:Normal": {
+   "runs": 3,
+   "wins": 3,
+   "winRate": 1.0,
+   "medMin": 5.0,
+   "medWave": 15,
+   "players": 3
+  },
+  "st:aot_level_4:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 5.9,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:aot_level_5:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 6.1,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:aot_level_6:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 6.9,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:demonslayer_level_3:Normal": {
+   "runs": 3,
+   "wins": 3,
+   "winRate": 1.0,
+   "medMin": 7.0,
+   "medWave": 15,
+   "players": 3
+  },
+  "st:demonslayer_level_4:Normal": {
+   "runs": 3,
+   "wins": 3,
+   "winRate": 1.0,
+   "medMin": 7.1,
+   "medWave": 15,
+   "players": 3
+  },
+  "pt:shibuya_portal_megumi2": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 19.5,
+   "medWave": 30,
+   "players": 1
+  },
+  "st:demonslayer_level_5:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 7.0,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:demonslayer_level_6:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 7.1,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:marineford_level_1:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 6.7,
+   "medWave": 15,
+   "players": 1
+  },
+  "pt:skypiea_portal:t7": {
+   "runs": 5,
+   "wins": 0,
+   "winRate": 0.0,
+   "medMin": 20.4,
+   "medWave": 20,
+   "players": 1
+  },
+  "st:marineford_level_3:Hard": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 6.3,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:naruto_level_1:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 5.8,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:naruto_level_2:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 6.1,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:marineford_level_4:Hard": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 6.1,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:naruto_level_3:Normal": {
+   "runs": 2,
+   "wins": 2,
+   "winRate": 1.0,
+   "medMin": 6.2,
+   "medWave": 15.0,
+   "players": 2
+  },
+  "st:naruto_level_4:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.2,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:naruto_level_5:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.7,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:namek_level_4:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.9,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:namek_level_5:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 6.9,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:marineford_level_1:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 6.1,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:marineford_level_2:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 4.9,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:marineford_level_3:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 4.9,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:marineford_level_4:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.0,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:marineford_level_5:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.1,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:tokyoghoul_level_6:Normal": {
+   "runs": 1,
+   "wins": 0,
+   "winRate": 0.0,
+   "medMin": 11.8,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:marineford_level_6:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.4,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:magnolia_level_2:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 6.1,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:sao_legend_1:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 9.3,
+   "medWave": 20,
+   "players": 1
+  },
+  "st:hxhant_level_2:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 7.4,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:jojo_level_3:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 7.5,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:magnolia_level_6:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 7.8,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:opm_level_5:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 7.2,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:clover_level_4:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 8.3,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:jjk_level_1:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.2,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:opm_level_6:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 6.8,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:clover_level_5:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 8.1,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:jjk_level_6:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 5.5,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:7ds_level_1:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 6.4,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:clover_level_6:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 9.3,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:jojo_level_4:Hard": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 7.2,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:clover_level_6:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 8.8,
+   "medWave": 15,
+   "players": 1
+  },
+  "st:jojo_level_1:Normal": {
+   "runs": 1,
+   "wins": 1,
+   "winRate": 1.0,
+   "medMin": 8.1,
    "medWave": 15,
    "players": 1
   }
  },
- "under": [],
+ "under": [
+  "meliodas",
+  "ghostkun",
+  "dokuro"
+ ],
  "toggles": {
   "rukia_bankai_evolved": {
    "from": 1,
    "fill": 2.4,
-   "drain": 4.83,
+   "drain": 4.84,
    "players": 3
   }
  },
@@ -4240,38 +4904,1812 @@
      "range": 30
     }
    ]
+  },
+  "gilgamesh_evolved": {
+   "primary_attack_no_upgrades": "gilgamesh:wheel_gates",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 3000,
+     "damage": 1680,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3500,
+     "damage": 3639.9999999999995,
+     "note": "+ Collapse",
+     "primary_attack": "gilgamesh:collapse",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 5000,
+     "damage": 4900,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 6000,
+     "damage": 7699.999999999999,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 9.5,
+     "cost": 7000,
+     "damage": 11900,
+     "note": "+ Divine Portals",
+     "primary_attack": "gilgamesh:jump_and_gates",
+     "range": 29
+    },
+    {
+     "attack_cooldown": 9,
+     "cost": 9000,
+     "damage": 14000,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 9,
+     "cost": 12000,
+     "damage": 18200,
+     "range": 31
+    },
+    {
+     "attack_cooldown": 14,
+     "cost": 15000,
+     "damage": 32199.999999999996,
+     "note": "+ Sword of Creation",
+     "primary_attack": "gilgamesh:enuma_elish",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 13,
+     "cost": 25000,
+     "damage": 42000,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 12,
+     "cost": 30000,
+     "damage": 49000,
+     "range": 35
+    }
+   ]
+  },
+  "fujitora": {
+   "primary_attack_no_upgrades": "fujitora:touch",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 8.5,
+     "cost": 2100,
+     "damage": 1050,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 3500,
+     "damage": 1900,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 4500,
+     "damage": 2900,
+     "note": "+ Gravity Meteor",
+     "primary_attack": "fujitora:meteor",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 6000,
+     "damage": 3800,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 7500,
+     "damage": 4600,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 8500,
+     "damage": 5600,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 9500,
+     "damage": 7200,
+     "range": 35
+    }
+   ]
+  },
+  "hoshino_evolved": {
+   "spawn_cap": 1,
+   "upgrade": [
+    {
+     "aura_buff": {
+      "_global": true,
+      "_only_same_player": true,
+      "buffs": [
+       {
+        "name": "damage_buff__sakura",
+        "params": {
+         "damage_add": 0.07
+        }
+       },
+       {
+        "name": "upgrade_cost_buff",
+        "params": {
+         "cost_add": -0.1
+        }
+       }
+      ],
+      "fx": [
+       {
+        "id": "hoshino_buff_fx"
+       }
+      ]
+     },
+     "cost": 2500,
+     "note": "+ Stage"
+    },
+    {
+     "aura_buff": {
+      "_global": true,
+      "_only_same_player": true,
+      "buffs": [
+       {
+        "name": "damage_buff__sakura",
+        "params": {
+         "damage_add": 0.1
+        }
+       },
+       {
+        "name": "upgrade_cost_buff",
+        "params": {
+         "cost_add": -0.15
+        }
+       }
+      ],
+      "fx": [
+       {
+        "id": "hoshino_buff_fx"
+       }
+      ]
+     },
+     "cost": 5000,
+     "note": "+ Lights"
+    },
+    {
+     "aura_buff": {
+      "_global": true,
+      "_only_same_player": true,
+      "buffs": [
+       {
+        "name": "damage_buff__sakura",
+        "params": {
+         "damage_add": 0.15
+        }
+       },
+       {
+        "name": "upgrade_cost_buff",
+        "params": {
+         "cost_add": -0.2
+        }
+       }
+      ],
+      "fx": [
+       {
+        "id": "hoshino_buff_fx"
+       }
+      ]
+     },
+     "cost": 7500,
+     "note": "+ Concert"
+    }
+   ]
+  },
+  "rikka": {
+   "primary_attack_no_upgrades": "rikka:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 2200,
+     "damage": 1250,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3000,
+     "damage": 2500,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 4000,
+     "damage": 4000,
+     "note": "+ Schwarzsparkle",
+     "primary_attack": "rikka:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 5000,
+     "damage": 6000,
+     "range": 25.5
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 7500,
+     "damage": 8000,
+     "range": 26
+    }
+   ]
+  },
+  "darkness_evolved": {
+   "primary_attack_no_upgrades": "darkness:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 1200,
+     "damage": 2125,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 1800,
+     "damage": 3250,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2500,
+     "damage": 4500,
+     "note": "+ Heavy Slashes",
+     "primary_attack": "darkness:two",
+     "range": 27
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 3500,
+     "damage": 6250,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4500,
+     "damage": 8500,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 7000,
+     "damage": 13250,
+     "note": "+ Noble Sacrifice",
+     "primary_attack": "darkness:four",
+     "range": 31
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 10000,
+     "damage": 16625,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 13000,
+     "damage": 21875,
+     "range": 33
+    }
+   ]
+  },
+  "ishmael_evolved": {
+   "primary_attack_no_upgrades": "ishmael:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7.5,
+     "cost": 1500,
+     "damage": 1825,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 2000,
+     "damage": 2525,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3500,
+     "damage": 4675,
+     "note": "+ From the Depths",
+     "primary_attack": "ishmael:two",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 5500,
+     "damage": 6700,
+     "range": 29
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 6000,
+     "damage": 8675,
+     "range": 31
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 13000,
+     "damage": 13875,
+     "note": "+ Sightless Maw",
+     "primary_attack": "ishmael:three",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 15000,
+     "damage": 24250,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 25000,
+     "damage": 38375,
+     "range": 35
+    }
+   ]
+  },
+  "aqua_evolved": {
+   "primary_attack_no_upgrades": "aqua:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 1300,
+     "damage": 1350,
+     "range": 29
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 1900,
+     "damage": 2025.0000000000002,
+     "range": 31
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2800,
+     "damage": 2970,
+     "note": "+ Water Prayer",
+     "primary_attack": "aqua:two",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3800,
+     "damage": 4185,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 5000,
+     "damage": 5805,
+     "range": 35
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 8500,
+     "damage": 10125,
+     "note": "+ Torrent Prayer",
+     "primary_attack": "aqua:three",
+     "range": 37
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 11000,
+     "damage": 13095,
+     "range": 38
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 14000,
+     "damage": 17280,
+     "range": 40
+    }
+   ]
+  },
+  "gaku_evolved": {
+   "primary_attack_no_upgrades": "gaku:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 4.5,
+     "cost": 1500,
+     "damage": 1250,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 4,
+     "cost": 2500,
+     "damage": 2500,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3000,
+     "damage": 4375,
+     "note": "+ Game Over",
+     "primary_attack": "gaku:two",
+     "range": 27
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 5000,
+     "damage": 6250,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 8000,
+     "damage": 9375,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 12000,
+     "damage": 18750,
+     "note": "+ Killing Speedrun",
+     "primary_attack": "gaku:three",
+     "range": 37
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 20000,
+     "damage": 25000,
+     "range": 40
+    }
+   ]
+  },
+  "rukia_bankai": {
+   "primary_attack_no_upgrades": "rukia_bankai:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2200,
+     "damage": 2000,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2600,
+     "damage": 3100,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3200,
+     "damage": 3600,
+     "note": "+ Ice Ripple",
+     "primary_attack": "rukia_bankai:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 6000,
+     "damage": 5500,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 10000,
+     "damage": 7000,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 14000,
+     "damage": 10000,
+     "range": 28
+    }
+   ]
+  },
+  "aizen_christmas": {
+   "active_attack": "aizen_christmas:active",
+   "active_attack_stats": {
+    "attack_cooldown": 360
+   },
+   "primary_attack_no_upgrades": "aizen_christmas:one",
+   "spawn_cap": 1,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 30000,
+     "damage": 20000,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 50000,
+     "damage": 25000,
+     "note": "+ Mirage Shatter",
+     "primary_attack": "aizen_christmas:three",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 65000,
+     "damage": 35000,
+     "note": "+ Ultimate Hypnosis Blossom",
+     "primary_attack": "aizen_christmas:two",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 80000,
+     "damage": 45000,
+     "range": 35
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 100000,
+     "damage": 50000,
+     "note": "+ God's Dream",
+     "primary_attack": "aizen_christmas:four",
+     "range": 38
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 150000,
+     "damage": 75000,
+     "range": 40
+    }
+   ]
+  },
+  "charmy_evolved": {
+   "primary_attack_no_upgrades": "charmy:ball",
+   "spawn_cap": 5,
+   "upgrade": [
+    {
+     "attack_cooldown": 7.5,
+     "cost": 2000,
+     "damage": 780,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 2500,
+     "damage": 1300,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3000,
+     "damage": 1625,
+     "note": "+ Sheep Punch",
+     "primary_attack": "charmy:sheep",
+     "range": 29
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 4500,
+     "damage": 2600,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 6000,
+     "damage": 3250,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 7500,
+     "damage": 3900,
+     "range": 33
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 10000,
+     "damage": 4550,
+     "note": "+ Cotton Strike",
+     "primary_attack": "charmy:sheep2",
+     "range": 34
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 12500,
+     "damage": 5200,
+     "range": 35
+    }
+   ]
+  },
+  "megumi2_evolved": {
+   "primary_attack_no_upgrades": "megumi2:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2000,
+     "damage": 1330,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 3000,
+     "damage": 2240,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 5000,
+     "damage": 3038,
+     "note": "+ Shadow Rabbits",
+     "primary_attack": "megumi2:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 8000,
+     "damage": 4900,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 11000,
+     "damage": 7279.999999999999,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 21000,
+     "damage": 10920,
+     "note": "+ Shadow Elephant",
+     "primary_attack": "megumi2:three",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 25000,
+     "damage": 15399.999999999998,
+     "range": 29
+    },
+    {
+     "active_attack": "megumi2:mahoraga",
+     "active_attack_stats": {
+      "attack_cooldown": 999999,
+      "damage": 0
+     },
+     "attack_cooldown": 5.5,
+     "cost": 30000,
+     "damage": 19600,
+     "health": 6000,
+     "note": "+ Ritual",
+     "range": 30
+    }
+   ]
+  },
+  "sasuke_3_evolved": {
+   "primary_attack_no_upgrades": "sasuke_3:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 2000,
+     "damage": 700,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3300,
+     "damage": 1400,
+     "note": "+ Samurai Crush",
+     "primary_attack": "sasuke_3:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 3750,
+     "damage": 1750,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4500,
+     "damage": 2800,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 9,
+     "cost": 5500,
+     "damage": 4200,
+     "note": "+ Dark Arrow",
+     "primary_attack": "sasuke_3:three",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 7000,
+     "damage": 5180,
+     "range": 29
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 9000,
+     "damage": 7000,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 10,
+     "cost": 12500,
+     "damage": 8400,
+     "note": "+ Eternal Flame Control",
+     "primary_attack": "sasuke_3:four",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 9.5,
+     "cost": 15000,
+     "damage": 12600,
+     "range": 35
+    },
+    {
+     "attack_cooldown": 9,
+     "cost": 20000,
+     "damage": 16800,
+     "range": 37
+    }
+   ]
+  },
+  "law_2_evolved": {
+   "active_attack": "law_2:shambles",
+   "active_attack_stats": {
+    "attack_cooldown": 75,
+    "damage": 0
+   },
+   "primary_attack_no_upgrades": "law_2:shot",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 8,
+     "cost": 2200,
+     "damage": 2240,
+     "range": 19
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 3400,
+     "damage": 3220,
+     "note": "+ Radio Knife",
+     "primary_attack": "law_2:radio",
+     "range": 22
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 4000,
+     "damage": 4480,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 5200,
+     "damage": 5880,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 6250,
+     "damage": 7279.999999999999,
+     "note": "+ Counter Shock",
+     "primary_attack": "law_2:shock",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 7500,
+     "damage": 8400,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 8000,
+     "damage": 9800,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 9500,
+     "damage": 10500,
+     "note": "+ Radiation Knife",
+     "primary_attack": "law_2:gamma",
+     "range": 31
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 12000,
+     "damage": 11900,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 13500,
+     "damage": 14000,
+     "range": 33
+    }
+   ]
+  },
+  "enel": {
+   "primary_attack_no_upgrades": "enel:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6.5,
+     "cost": 1600,
+     "damage": 1428.5714285714287,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 2400,
+     "damage": 2321.4285714285716,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3400,
+     "damage": 6071.428571428572,
+     "note": "+ Heavenbolt",
+     "primary_attack": "enel:two",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4600,
+     "damage": 8214.285714285716,
+     "range": 31
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 6000,
+     "damage": 10714.285714285716,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 7800,
+     "damage": 16785.714285714286,
+     "range": 34
+    }
+   ]
+  },
+  "bee_girl": {
+   "primary_attack_no_upgrades": "bee_girl:one",
+   "spawn_cap": 5,
+   "upgrade": [
+    {
+     "attack_cooldown": 1,
+     "cost": 1250,
+     "damage": 250,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 1,
+     "cost": 2000,
+     "damage": 450,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 1,
+     "cost": 3000,
+     "damage": 600,
+     "note": "+ Hivemind",
+     "range": 27,
+     "secondary_attacks": [
+      {
+       "id": "bee_girl:two",
+       "priority": 0
+      }
+     ]
+    },
+    {
+     "attack_cooldown": 1,
+     "cost": 4500,
+     "damage": 1000,
+     "range": 28
+    }
+   ]
+  },
+  "sakamoto": {
+   "primary_attack_no_upgrades": "sakamoto:three",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6.5,
+     "cost": 1500,
+     "damage": 1600,
+     "range": 18
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2700,
+     "damage": 2900,
+     "note": "+ Fine-Point Fatality",
+     "primary_attack": "sakamoto:one",
+     "range": 21
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4000,
+     "damage": 4500,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 7000,
+     "damage": 5700,
+     "note": "+ Garbage Disposal",
+     "primary_attack": "sakamoto:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 10000,
+     "damage": 8500,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 12000,
+     "damage": 9500,
+     "note": "+ No Refunds",
+     "primary_attack": "sakamoto:four",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 17000,
+     "damage": 12000,
+     "range": 33
+    }
+   ]
+  },
+  "sabo_evolved": {
+   "primary_attack_no_upgrades": "sabo:fireball",
+   "spawn_cap": 5,
+   "upgrade": [
+    {
+     "attack_cooldown": 9,
+     "cost": 1500,
+     "damage": 1012.5000000000001,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 9,
+     "cost": 2000,
+     "damage": 1620,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 3000,
+     "damage": 2025.0000000000002,
+     "note": "+ Dragon Claw",
+     "primary_attack": "sabo:leap",
+     "range": 27
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 4200,
+     "damage": 2970,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 5000,
+     "damage": 3712.5000000000005,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 6500,
+     "damage": 4455,
+     "note": "+ Flame Dragon King",
+     "primary_attack": "sabo:three",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 8000,
+     "damage": 6075,
+     "range": 35
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 9500,
+     "damage": 8775,
+     "range": 36
+    }
+   ]
+  },
+  "feitan_evolved": {
+   "primary_attack_no_upgrades": "feitan:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6,
+     "cost": 2200,
+     "damage": 3500,
+     "range": 20
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3000,
+     "damage": 5600,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 4000,
+     "damage": 8400,
+     "note": "+ Mirage Ambush",
+     "primary_attack": "feitan:two",
+     "range": 23
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 5000,
+     "damage": 9800,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 7500,
+     "damage": 14000,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 16,
+     "cost": 21000,
+     "damage": 19600,
+     "note": "+ Burning Wrath",
+     "primary_attack": "feitan:three",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 14,
+     "cost": 25000,
+     "damage": 22400,
+     "range": 33
+    },
+    {
+     "attack_cooldown": 12,
+     "cost": 30000,
+     "damage": 25200,
+     "range": 35
+    }
+   ]
+  },
+  "narberal": {
+   "primary_attack_no_upgrades": "narberal:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 5.5,
+     "cost": 2500,
+     "damage": 700,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 5,
+     "cost": 3500,
+     "damage": 1000,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 5,
+     "cost": 4500,
+     "damage": 2000,
+     "note": "+ Electro Discharge",
+     "primary_attack": "narberal:two",
+     "range": 33
+    },
+    {
+     "attack_cooldown": 4.5,
+     "cost": 6000,
+     "damage": 2500,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 4,
+     "cost": 7500,
+     "damage": 3000,
+     "range": 35
+    }
+   ]
+  },
+  "koichi": {
+   "primary_attack_no_upgrades": "koichi:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 8,
+     "cost": 1500,
+     "damage": 1500,
+     "range": 17
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 2000,
+     "damage": 1750,
+     "note": "+ Echoes Act2",
+     "primary_attack": "koichi:two",
+     "range": 20
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 3000,
+     "damage": 2200,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 4500,
+     "damage": 3300,
+     "range": 24
+    }
+   ]
+  },
+  "albedo": {
+   "primary_attack_no_upgrades": "albedo:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6,
+     "cost": 3000,
+     "damage": 2000,
+     "range": 16
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 4500,
+     "damage": 4000,
+     "note": "+ Outrage",
+     "primary_attack": "albedo:two",
+     "range": 17
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 6000,
+     "damage": 6000,
+     "range": 18
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 8000,
+     "damage": 7500,
+     "range": 20
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 9000,
+     "damage": 8000,
+     "note": "+ Demon's Kiss",
+     "primary_attack": "albedo:three",
+     "range": 21
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 13500,
+     "damage": 9000,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 15000,
+     "damage": 11000,
+     "range": 23
+    }
+   ]
+  },
+  "gyutaro_evolved": {
+   "primary_attack_no_upgrades": "gyutaro:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2000,
+     "damage": 1015,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 2500,
+     "damage": 1450,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3500,
+     "damage": 1740,
+     "note": "+ Rampant Arc Rampage",
+     "primary_attack": "gyutaro:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 4200,
+     "damage": 2175,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 5500,
+     "damage": 3480,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 5.5,
+     "cost": 6000,
+     "damage": 4350,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 6750,
+     "damage": 8700,
+     "note": "+ Blood Crescent Rampage",
+     "primary_attack": "gyutaro:three",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 12500,
+     "damage": 10875,
+     "range": 33
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 17500,
+     "damage": 13775,
+     "range": 35
+    }
+   ]
+  },
+  "fujitora_evolved": {
+   "primary_attack_no_upgrades": "fujitora:touch",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 8.5,
+     "cost": 2100,
+     "damage": 1470,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 3500,
+     "damage": 2660,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 4500,
+     "damage": 4059.9999999999995,
+     "note": "+ Gravity Meteor",
+     "primary_attack": "fujitora:meteor",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 6000,
+     "damage": 5320,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 7500,
+     "damage": 6440,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 8500,
+     "damage": 7839.999999999999,
+     "range": 34
+    },
+    {
+     "attack_cooldown": 12,
+     "cost": 9000,
+     "damage": 13300,
+     "note": "+ Gravity Festival",
+     "primary_attack": "fujitora:meteors",
+     "range": 36
+    },
+    {
+     "attack_cooldown": 11.5,
+     "cost": 11000,
+     "damage": 14000,
+     "range": 38
+    },
+    {
+     "attack_cooldown": 11,
+     "cost": 13000,
+     "damage": 17080,
+     "range": 40
+    }
+   ]
+  },
+  "law_2": {
+   "primary_attack_no_upgrades": "law_2:shot",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 8,
+     "cost": 2200,
+     "damage": 1600,
+     "range": 19
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 3400,
+     "damage": 2300,
+     "note": "+ Radio Knife",
+     "primary_attack": "law_2:radio",
+     "range": 22
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 4000,
+     "damage": 3200,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 5200,
+     "damage": 4200,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 6250,
+     "damage": 5200,
+     "note": "+ Counter Shock",
+     "primary_attack": "law_2:shock",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 7500,
+     "damage": 6000,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 8000,
+     "damage": 7000,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 9000,
+     "damage": 7500,
+     "range": 29
+    }
+   ]
+  },
+  "avdol_evolved": {
+   "primary_attack_no_upgrades": "avdol:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7.5,
+     "cost": 2200,
+     "damage": 1350,
+     "range": 19
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3500,
+     "damage": 2160,
+     "range": 20
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 4500,
+     "damage": 3240,
+     "note": "+ Cross-Fire Smash",
+     "primary_attack": "avdol:two",
+     "range": 21
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 5500,
+     "damage": 4455,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 7500,
+     "damage": 5670,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 10000,
+     "damage": 7020.000000000001,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 9,
+     "cost": 12000,
+     "damage": 10800,
+     "note": "+ Flame Hurricane",
+     "primary_attack": "avdol:three",
+     "range": 27
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 15000,
+     "damage": 12825,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 8.5,
+     "cost": 20000,
+     "damage": 16875,
+     "range": 29
+    }
+   ]
+  },
+  "frieren": {
+   "primary_attack_no_upgrades": "frieren:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 1500,
+     "damage": 1400,
+     "range": 26
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 2200,
+     "damage": 2300,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3200,
+     "damage": 3500,
+     "note": "+ Lightning Magic",
+     "primary_attack": "frieren:two",
+     "range": 30
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 4500,
+     "damage": 4800,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 7000,
+     "damage": 6500,
+     "range": 35
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 10000,
+     "damage": 8200,
+     "range": 40
+    }
+   ]
+  },
+  "leafa": {
+   "primary_attack_no_upgrades": "leafa:one",
+   "spawn_cap": 6,
+   "upgrade": [
+    {
+     "attack_cooldown": 10,
+     "cost": 1500,
+     "damage": 600,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 10,
+     "cost": 2000,
+     "damage": 900,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 3500,
+     "damage": 1200,
+     "note": "+ Wind Needles",
+     "primary_attack": "leafa:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 4500,
+     "damage": 1500,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 7500,
+     "damage": 2000,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 10000,
+     "damage": 3000,
+     "range": 25
+    }
+   ]
+  },
+  "harribel_evolved": {
+   "primary_attack_no_upgrades": "harribel:one",
+   "spawn_cap": 4,
+   "upgrade": [
+    {
+     "attack_cooldown": 7,
+     "cost": 2500,
+     "damage": 1625,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 3500,
+     "damage": 2600,
+     "range": 25
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 5000,
+     "damage": 3250,
+     "note": "+ Demon Splash",
+     "primary_attack": "harribel:two",
+     "range": 29
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 6000,
+     "damage": 4550,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 7500,
+     "damage": 5850,
+     "range": 32
+    },
+    {
+     "attack_cooldown": 8,
+     "cost": 9000,
+     "damage": 7800,
+     "range": 33
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 13000,
+     "damage": 10400,
+     "note": "+ Shark Queen",
+     "primary_attack": "harribel:three",
+     "range": 35
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 16000,
+     "damage": 13000,
+     "range": 36
+    }
+   ]
+  },
+  "hidan_unit_evolved": {
+   "primary_attack_no_upgrades": "hidan_unit:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6,
+     "cost": 2500,
+     "damage": 1050,
+     "range": 20
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3500,
+     "damage": 1750,
+     "range": 22
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 4000,
+     "damage": 2800,
+     "note": "+ Punishment",
+     "primary_attack": "hidan_unit:two",
+     "range": 23
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 5500,
+     "damage": 3500,
+     "range": 24
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 7500,
+     "damage": 4900,
+     "range": 25
+    },
+    {
+     "active_attack": "hidan_unit:active",
+     "active_attack_stats": {
+      "attack_cooldown": 20,
+      "damage": 0
+     },
+     "attack_cooldown": 7,
+     "cost": 9000,
+     "damage": 5600,
+     "note": "+ Soul Hunt, + Blood Curse",
+     "primary_attack": "hidan_unit:three",
+     "range": 26
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 13000,
+     "damage": 6300,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 16500,
+     "damage": 7699.999999999999,
+     "range": 29
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 20000,
+     "damage": 10500,
+     "range": 30
+    }
+   ]
+  },
+  "mechamaru": {
+   "primary_attack_no_upgrades": "mechamaru:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 6.5,
+     "cost": 1400,
+     "damage": 1500,
+     "range": 21
+    },
+    {
+     "attack_cooldown": 6.5,
+     "cost": 2000,
+     "damage": 2200,
+     "range": 23
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 3000,
+     "damage": 2700,
+     "note": "+ Ultra Missiles",
+     "primary_attack": "mechamaru:two",
+     "range": 25
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 6000,
+     "damage": 4200,
+     "range": 28
+    },
+    {
+     "attack_cooldown": 6,
+     "cost": 9000,
+     "damage": 7000,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 10,
+     "cost": 15000,
+     "damage": 14000,
+     "note": "+ Ultra Cannon",
+     "primary_attack": "mechamaru:three",
+     "range": 36
+    },
+    {
+     "attack_cooldown": 9.5,
+     "cost": 23000,
+     "damage": 22000,
+     "range": 38
+    },
+    {
+     "attack_cooldown": 9,
+     "cost": 26000,
+     "damage": 29000,
+     "range": 40
+    }
+   ]
+  },
+  "marco": {
+   "primary_attack_no_upgrades": "marco:one",
+   "spawn_cap": 3,
+   "upgrade": [
+    {
+     "attack_cooldown": 7.5,
+     "cost": 2500,
+     "damage": 2500,
+     "range": 27
+    },
+    {
+     "attack_cooldown": 7.5,
+     "cost": 4000,
+     "damage": 6250,
+     "note": "+ Talon Strike",
+     "primary_attack": "marco:two",
+     "range": 28
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 6000,
+     "damage": 10400,
+     "range": 30
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 8000,
+     "damage": 13700,
+     "range": 31
+    },
+    {
+     "attack_cooldown": 7,
+     "cost": 11000,
+     "damage": 18500,
+     "range": 32
+    }
+   ]
   }
  },
  "maps": {
   "ev:summer2_event": {
    "hpCal": 1.517,
-   "runs": 179,
-   "players": 17
+   "runs": 321,
+   "players": 24
   },
   "dc": {
    "hpCal": 2.0,
-   "runs": 26,
-   "players": 11
+   "runs": 35,
+   "players": 19
   },
   "st:namek_level_1:Normal": {
    "hpCal": 1.0,
-   "runs": 6,
-   "players": 6
+   "runs": 86,
+   "players": 9
   },
   "st:namek_level_6:Hard": {
    "hpCal": 1.0,
-   "runs": 12,
-   "players": 2
+   "runs": 13,
+   "players": 3
   },
   "rd:west_city_raid": {
    "hpCal": 1.0,
-   "runs": 2,
-   "players": 2
+   "runs": 3,
+   "players": 3
   },
   "ch": {
    "hpCal": 1.0,
-   "runs": 10,
-   "players": 7
+   "runs": 26,
+   "players": 17
   },
   "rd:entertainment_district_level_1": {
    "hpCal": 1.0,
@@ -4280,8 +6718,8 @@
   },
   "st:namek_level_6:Normal": {
    "hpCal": 1.0,
-   "runs": 101,
-   "players": 2
+   "runs": 128,
+   "players": 4
   },
   "rd:west_city_frieza_level_1": {
    "hpCal": 1.0,
@@ -4295,8 +6733,8 @@
   },
   "rd:uchiha_level_1": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 3,
+   "players": 3
   },
   "rd:uchiha_level_2": {
    "hpCal": 1.0,
@@ -4320,33 +6758,33 @@
   },
   "dg": {
    "hpCal": 2.0,
-   "runs": 47,
-   "players": 10
+   "runs": 83,
+   "players": 18
   },
   "st:namek_level_2:Normal": {
    "hpCal": 1.0,
-   "runs": 2,
-   "players": 2
+   "runs": 4,
+   "players": 4
   },
   "st:namek_level_3:Normal": {
    "hpCal": 1.0,
-   "runs": 2,
-   "players": 2
+   "runs": 3,
+   "players": 3
   },
   "st:namek_level_4:Normal": {
    "hpCal": 1.0,
-   "runs": 2,
-   "players": 2
+   "runs": 4,
+   "players": 4
   },
   "st:demonslayer_level_1:Normal": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 4,
+   "players": 4
   },
   "st:demonslayer_level_2:Normal": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 4,
+   "players": 4
   },
   "pt:skypiea_portal:t3": {
    "hpCal": 0.331,
@@ -4360,18 +6798,18 @@
   },
   "inf:shibuya_infinite": {
    "hpCal": 1.0,
-   "runs": 2,
-   "players": 1
+   "runs": 4,
+   "players": 2
   },
   "pt:shibuya_portal": {
    "hpCal": 2.0,
-   "runs": 6,
-   "players": 1
+   "runs": 15,
+   "players": 2
   },
   "st:naruto_level_6:Normal": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 2,
+   "players": 2
   },
   "st:jjk_level_2:Hard": {
    "hpCal": 1.0,
@@ -4380,18 +6818,18 @@
   },
   "st:opm_level_2:Hard": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 2,
+   "players": 2
   },
   "ar:artifact_usopp_ts": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 2,
+   "players": 2
   },
   "st:marineford_level_2:Hard": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 3,
+   "players": 3
   },
   "st:aot_level_1:Hard": {
    "hpCal": 1.0,
@@ -4400,8 +6838,8 @@
   },
   "st:namek_level_5:Normal": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 3,
+   "players": 3
   },
   "st:bleach_legend_6:Hard": {
    "hpCal": 1.0,
@@ -4410,18 +6848,18 @@
   },
   "st:opm_level_3:Hard": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 2,
+   "players": 2
   },
   "st:shibuya_level_1:Normal": {
    "hpCal": 1.0,
-   "runs": 2,
-   "players": 1
+   "runs": 4,
+   "players": 2
   },
   "st:opm_level_4:Hard": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 2,
+   "players": 2
   },
   "st:bleach_legend_1:Hard": {
    "hpCal": 1.0,
@@ -4430,18 +6868,18 @@
   },
   "st:aot_level_1:Normal": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 4,
+   "players": 4
   },
   "st:clover_level_2:Hard": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 2,
+   "players": 2
   },
   "st:aot_level_2:Normal": {
    "hpCal": 1.0,
-   "runs": 1,
-   "players": 1
+   "runs": 4,
+   "players": 4
   },
   "pt:shibuya_portal_final": {
    "hpCal": 1.0,
@@ -4455,49 +6893,302 @@
   },
   "st:clover_level_3:Hard": {
    "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:bleach_legend_3:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:jojo_level_2:Hard": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "pt:skypiea_portal:t5": {
+   "hpCal": 0.294,
+   "runs": 1,
+   "players": 1
+  },
+  "st:bleach_legend_4:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "pt:skypiea_portal:t8": {
+   "hpCal": 0.294,
+   "runs": 9,
+   "players": 1
+  },
+  "st:bleach_legend_5:Hard": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 1
+  },
+  "st:aot_level_3:Normal": {
+   "hpCal": 1.0,
+   "runs": 3,
+   "players": 3
+  },
+  "st:aot_level_4:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:aot_level_5:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:aot_level_6:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:demonslayer_level_3:Normal": {
+   "hpCal": 1.0,
+   "runs": 3,
+   "players": 3
+  },
+  "st:demonslayer_level_4:Normal": {
+   "hpCal": 1.0,
+   "runs": 3,
+   "players": 3
+  },
+  "pt:shibuya_portal_megumi2": {
+   "hpCal": 2.8,
+   "runs": 1,
+   "players": 1
+  },
+  "st:demonslayer_level_5:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:demonslayer_level_6:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:marineford_level_1:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "pt:skypiea_portal:t7": {
+   "hpCal": 0.294,
+   "runs": 5,
+   "players": 1
+  },
+  "st:marineford_level_3:Hard": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:naruto_level_1:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:naruto_level_2:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:marineford_level_4:Hard": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:naruto_level_3:Normal": {
+   "hpCal": 1.0,
+   "runs": 2,
+   "players": 2
+  },
+  "st:naruto_level_4:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:naruto_level_5:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:namek_level_4:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:namek_level_5:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:marineford_level_1:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:marineford_level_2:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:marineford_level_3:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:marineford_level_4:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:marineford_level_5:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:tokyoghoul_level_6:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:marineford_level_6:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:magnolia_level_2:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:sao_legend_1:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:hxhant_level_2:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:jojo_level_3:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:magnolia_level_6:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:opm_level_5:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:clover_level_4:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:jjk_level_1:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:opm_level_6:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:clover_level_5:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:jjk_level_6:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:7ds_level_1:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:clover_level_6:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:jojo_level_4:Hard": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:clover_level_6:Normal": {
+   "hpCal": 1.0,
+   "runs": 1,
+   "players": 1
+  },
+  "st:jojo_level_1:Normal": {
+   "hpCal": 1.0,
    "runs": 1,
    "players": 1
   }
  },
  "drops": {
   "shibuya_infinite": {
-   "runs": 5,
+   "runs": 9,
    "players": 2,
    "items": {
-    "jjk_talisman2": 3.0
+    "jjk_talisman2": 2.45
+   }
+  },
+  "__DAILY_CHALLENGE": {
+   "runs": 36,
+   "players": 19,
+   "items": {
+    "star_remnant_limited": 19.0,
+    "reroll_stat_all": 3.0
    }
   },
   "namek_level_1": {
-   "runs": 7,
-   "players": 7,
+   "runs": 87,
+   "players": 10,
    "items": {
     "senzu_bean": 2.0
    }
   },
   "aot_level_1": {
-   "runs": 3,
-   "players": 3,
+   "runs": 6,
+   "players": 6,
    "items": {
     "aot_fluid": 2.0
    }
   },
   "namek_level_6": {
-   "runs": 113,
-   "players": 3,
+   "runs": 141,
+   "players": 6,
    "items": {
-    "senzu_bean": 4.126
+    "senzu_bean": 6.0
    }
   },
   "west_city_raid": {
-   "runs": 2,
-   "players": 2,
+   "runs": 3,
+   "players": 3,
    "items": {
-    "westcity_cell": 3.0
+    "westcity_cell": 6.0
    }
   },
   "uchiha_level_1": {
-   "runs": 1,
-   "players": 1,
+   "runs": 3,
+   "players": 3,
    "items": {
     "uchiha_item": 7.0
    }
@@ -4510,82 +7201,75 @@
    }
   },
   "demonslayer_level_4": {
-   "runs": 2,
-   "players": 2,
+   "runs": 5,
+   "players": 5,
    "items": {
-    "StarFruitGreen": 0.5,
-    "StarFruit": 1.0,
-    "StarFruitEpic": 0.5,
-    "wisteria_flower": 3.0,
-    "StarFruitBlue": 0.5
+    "wisteria_flower": 4.0
    }
   },
   "namek_level_2": {
-   "runs": 2,
-   "players": 2,
+   "runs": 4,
+   "players": 4,
    "items": {
     "senzu_bean": 2.0
    }
   },
   "namek_level_3": {
-   "runs": 2,
-   "players": 2,
+   "runs": 3,
+   "players": 3,
    "items": {
-    "senzu_bean": 3.0
+    "senzu_bean": 2.0
    }
   },
   "namek_level_4": {
-   "runs": 2,
-   "players": 2,
+   "runs": 5,
+   "players": 5,
    "items": {
-    "senzu_bean": 3.0
+    "senzu_bean": 2.0
    }
   },
   "demonslayer_level_1": {
-   "runs": 1,
-   "players": 1,
+   "runs": 5,
+   "players": 5,
    "items": {
     "wisteria_flower": 2.0
    }
   },
   "demonslayer_level_2": {
-   "runs": 1,
-   "players": 1,
+   "runs": 4,
+   "players": 4,
    "items": {
     "wisteria_flower": 2.0
    }
   },
   "skypiea_portal": {
-   "runs": 7,
+   "runs": 22,
    "players": 1,
    "items": {
-    "jjk_talisman2": 2.857,
-    "star_remnant_limited": 0.857
+    "jjk_talisman2": 1.091,
+    "star_remnant_limited": 0.318
    }
   },
   "aot_level_2": {
-   "runs": 3,
-   "players": 3,
+   "runs": 6,
+   "players": 5,
    "items": {
-    "aot_fluid": 4.0
+    "aot_fluid": 2.0
    }
   },
   "naruto_level_6": {
-   "runs": 2,
-   "players": 2,
+   "runs": 3,
+   "players": 3,
    "items": {
-    "StarFruitGreen": 0.5,
-    "StarFruit": 2.0,
-    "StarFruitBlue": 0.5,
-    "ramen_xp": 5.0
+    "ramen_xp": 6.0
    }
   },
   "shibuya_portal": {
-   "runs": 6,
-   "players": 1,
+   "runs": 15,
+   "players": 2,
    "items": {
-    "shibuya_wheel": 13.0,
-    "jjk_talisman2": 5.667
+    "shibuya_wheel": 13.5,
+    "jjk_talisman2": 3.583
    }
   },
   "jjk_level_2": {
@@ -4596,56 +7280,65 @@
    }
   },
   "opm_level_2": {
-   "runs": 1,
-   "players": 1,
+   "runs": 2,
+   "players": 2,
    "items": {
-    "opm_core": 2.0
+    "opm_core": 3.0
+   }
+  },
+  "naruto_level_5": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "ramen_xp": 1.0
    }
   },
   "naruto_level_1": {
-   "runs": 1,
-   "players": 1,
+   "runs": 6,
+   "players": 6,
    "items": {
-    "StarFruitGreen": 2.0,
-    "StarFruit": 2.0,
-    "StarFruitBlue": 1.0,
+    "StarFruitGreen": 0.5,
     "ramen_xp": 2.0
    }
   },
   "marineford_level_2": {
-   "runs": 1,
-   "players": 1,
+   "runs": 4,
+   "players": 3,
    "items": {
     "xp_devil_fruit": 2.0
    }
   },
   "aot_level_6": {
-   "runs": 1,
-   "players": 1,
+   "runs": 6,
+   "players": 6,
    "items": {
-    "StarFruit": 4.0,
-    "aot_fluid": 2.0,
-    "StarFruitBlue": 1.0,
-    "StarFruitPink": 1.0
+    "aot_fluid": 2.0
    }
   },
   "namek_level_5": {
-   "runs": 1,
-   "players": 1,
+   "runs": 5,
+   "players": 5,
    "items": {
     "senzu_bean": 4.0
    }
   },
   "opm_level_3": {
-   "runs": 1,
-   "players": 1,
+   "runs": 2,
+   "players": 2,
    "items": {
     "opm_core": 2.0
    }
   },
+  "shibuya_level_1": {
+   "runs": 4,
+   "players": 2,
+   "items": {
+    "jjk_talisman2": 1.0
+   }
+  },
   "opm_level_4": {
-   "runs": 1,
-   "players": 1,
+   "runs": 2,
+   "players": 2,
    "items": {
     "opm_core": 2.0
    }
@@ -4659,10 +7352,10 @@
    }
   },
   "clover_level_2": {
-   "runs": 1,
-   "players": 1,
+   "runs": 2,
+   "players": 2,
    "items": {
-    "black_clover_stone": 4.0
+    "black_clover_stone": 3.0
    }
   },
   "shibuya_portal_final": {
@@ -4682,15 +7375,285 @@
    }
   },
   "clover_level_3": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "black_clover_stone": 3.0
+   }
+  },
+  "jojo_level_1": {
+   "runs": 3,
+   "players": 3,
+   "items": {
+    "StarFruitRed": 1.0,
+    "jojo_pendant": 2.0,
+    "StarFruit": 1.0,
+    "StarFruitEpic": 1.0
+   }
+  },
+  "bleach_legend_3": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "soul_weiss": 1.0,
+    "soul_candy": 2.0
+   }
+  },
+  "jojo_level_2": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "jojo_pendant": 3.0
+   }
+  },
+  "bleach_legend_4": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "soul_barragan": 1.0,
+    "soul_candy": 2.0
+   }
+  },
+  "bleach_legend_5": {
+   "runs": 2,
+   "players": 1,
+   "items": {
+    "soul_candy": 1.0,
+    "soul_gin": 0.5
+   }
+  },
+  "aot_level_3": {
+   "runs": 3,
+   "players": 3,
+   "items": {
+    "aot_fluid": 2.0
+   }
+  },
+  "mha_level_3": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "StarFruit": 2.0,
+    "StarFruitGreen": 1.0,
+    "quirk_shard": 2.0
+   }
+  },
+  "aot_level_4": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "aot_fluid": 4.0
+   }
+  },
+  "aot_level_5": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "aot_fluid": 2.0
+   }
+  },
+  "demonslayer_level_3": {
+   "runs": 3,
+   "players": 3,
+   "items": {
+    "wisteria_flower": 2.0
+   }
+  },
+  "shibuya_portal_megumi2": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "shibuya_wheel_final": 1.0,
+    "shibuya_wheel": 43.0,
+    "jjk_talisman2": 8.0
+   }
+  },
+  "demonslayer_level_5": {
+   "runs": 4,
+   "players": 4,
+   "items": {
+    "wisteria_flower": 4.0
+   }
+  },
+  "demonslayer_level_6": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "wisteria_flower": 4.0
+   }
+  },
+  "marineford_level_1": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "xp_devil_fruit": 2.0
+   }
+  },
+  "marineford_level_3": {
+   "runs": 3,
+   "players": 2,
+   "items": {
+    "xp_devil_fruit": 3.0
+   }
+  },
+  "naruto_level_2": {
+   "runs": 3,
+   "players": 3,
+   "items": {
+    "ramen_xp": 2.0
+   }
+  },
+  "marineford_level_4": {
+   "runs": 3,
+   "players": 2,
+   "items": {
+    "xp_devil_fruit": 3.0
+   }
+  },
+  "naruto_level_3": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "ramen_xp": 2.0
+   }
+  },
+  "naruto_level_4": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "ramen_xp": 4.0
+   }
+  },
+  "marineford_level_5": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "xp_devil_fruit": 4.0
+   }
+  },
+  "marineford_level_6": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "xp_devil_fruit": 2.0
+   }
+  },
+  "magnolia_level_2": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "fairy_tail_exp": 2.0
+   }
+  },
+  "sao_legend_1": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "sao_crystal_purple": 2.0,
+    "sao_xp_item": 2.0
+   }
+  },
+  "hxhant_level_2": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "hxh_fish": 2.0
+   }
+  },
+  "jojo_level_3": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "jojo_pendant": 2.0
+   }
+  },
+  "magnolia_level_6": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "fairy_tail_exp": 2.0
+   }
+  },
+  "opm_level_5": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "opm_core": 2.0
+   }
+  },
+  "clover_level_4": {
    "runs": 1,
    "players": 1,
    "items": {
     "black_clover_stone": 4.0
    }
+  },
+  "jjk_level_1": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "jjk_talisman": 2.0
+   }
+  },
+  "opm_level_6": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "opm_core": 2.0
+   }
+  },
+  "clover_level_5": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "black_clover_stone": 2.0
+   }
+  },
+  "jjk_level_6": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "jjk_talisman": 8.0
+   }
+  },
+  "7ds_level_1": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "7ds_pie": 2.0
+   }
+  },
+  "clover_level_6": {
+   "runs": 2,
+   "players": 2,
+   "items": {
+    "black_clover_stone": 4.0
+   }
+  },
+  "jojo_level_4": {
+   "runs": 1,
+   "players": 1,
+   "items": {
+    "jojo_pendant": 2.0
+   }
   }
  },
  "teams": {
   "inf:shibuya_infinite": [
+   {
+    "ids": [
+     "bulma",
+     "marco",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "rukia_bankai_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 63,
+    "players": 1
+   },
    {
     "ids": [
      "bulma",
@@ -4703,6 +7666,34 @@
     "runs": 3,
     "wins": 3,
     "medWave": 53,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "judar_evolved",
+     "nagumo_evolved",
+     "rukia_bankai_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 52,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "goku_ssj3_evolved",
+     "nagumo_evolved",
+     "rukia_bankai_evolved",
+     "speedwagon"
+    ],
+    "runs": 2,
+    "wins": 2,
+    "medWave": 48.0,
     "players": 1
    },
    {
@@ -4811,6 +7802,34 @@
   "ch": [
    {
     "ids": [
+     "bulma",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "sasuke_3",
+     "speedwagon",
+     "wendy"
+    ],
+    "runs": 3,
+    "wins": 3,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "judar_evolved",
+     "nagumo_evolved",
+     "rukia_bankai_evolved",
+     "speedwagon"
+    ],
+    "runs": 3,
+    "wins": 3,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
      "aizen_hog_evolved",
      "bulma",
      "metal_knight_evolved",
@@ -4826,11 +7845,11 @@
    {
     "ids": [
      "bulma",
-     "metal_knight_evolved",
-     "pucci_heaven",
-     "sasuke_3",
-     "speedwagon",
-     "wendy"
+     "cid_evolved",
+     "ghostkun",
+     "goku_ssj3",
+     "monet_evolved",
+     "speedwagon"
     ],
     "runs": 2,
     "wins": 2,
@@ -4867,11 +7886,9 @@
    {
     "ids": [
      "bulma",
-     "cid_evolved",
-     "ghostkun",
-     "goku_ssj3",
-     "monet_evolved",
-     "speedwagon"
+     "elyssia",
+     "killua",
+     "rukia"
     ],
     "runs": 1,
     "wins": 1,
@@ -4880,39 +7897,14 @@
    },
    {
     "ids": [
-     "blackbeard",
-     "hisoka",
-     "ichigo",
-     "juvia",
-     "nezuko",
-     "speedwagon"
-    ],
-    "runs": 1,
-    "wins": 0,
-    "medWave": 15,
-    "players": 1
-   },
-   {
-    "ids": [
-     "juvia",
+     "bee_girl",
+     "elyssia",
      "konan_unit",
-     "megumi2"
-    ],
-    "runs": 2,
-    "wins": 0,
-    "medWave": 13.0,
-    "players": 1
-   },
-   {
-    "ids": [
-     "genos",
-     "inosuke",
-     "jotaro",
      "speedwagon"
     ],
     "runs": 1,
-    "wins": 0,
-    "medWave": 10,
+    "wins": 1,
+    "medWave": 15,
     "players": 1
    }
   ],
@@ -4926,6 +7918,20 @@
      "speedwagon",
      "vegeta_majin_evolved"
     ],
+    "runs": 16,
+    "wins": 16,
+    "medWave": 50.0,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "law_2_evolved",
+     "metal_knight_evolved",
+     "sasuke_3_evolved",
+     "tengen_2_evolved"
+    ],
     "runs": 5,
     "wins": 5,
     "medWave": 50,
@@ -4938,6 +7944,20 @@
      "giselle",
      "nagumo_evolved",
      "rukia_bankai_evolved",
+     "speedwagon"
+    ],
+    "runs": 2,
+    "wins": 2,
+    "medWave": 50.0,
+    "players": 1
+   },
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "giselle",
+     "nagumo_evolved",
+     "pucci_heaven",
      "speedwagon"
     ],
     "runs": 2,
@@ -5000,45 +8020,45 @@
     "wins": 1,
     "medWave": 50,
     "players": 1
-   },
-   {
-    "ids": [
-     "bulma",
-     "metal_knight_evolved",
-     "pucci_heaven",
-     "rikka_evolved",
-     "rukia_bankai_evolved",
-     "wendy"
-    ],
-    "runs": 11,
-    "wins": 10,
-    "medWave": 50,
-    "players": 1
-   },
-   {
-    "ids": [
-     "bulma",
-     "elyssia_evolved",
-     "judar_evolved",
-     "nagumo_evolved",
-     "rukia_bankai_evolved",
-     "speedwagon"
-    ],
-    "runs": 5,
-    "wins": 4,
-    "medWave": 50,
-    "players": 1
    }
   ],
   "st:namek_level_1:Normal": [
    {
     "ids": [
+     "bulma",
+     "erwin",
+     "giselle",
+     "illya",
+     "speedwagon",
+     "vegeta_majin"
+    ],
+    "runs": 62,
+    "wins": 62,
+    "medWave": 15.0,
+    "players": 1
+   },
+   {
+    "ids": [
+     "grimmjow",
+     "itachi",
+     "kizaru_unit",
+     "speedwagon",
+     "touka",
+     "zenitsu"
+    ],
+    "runs": 17,
+    "wins": 17,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
      "goku"
     ],
-    "runs": 3,
-    "wins": 3,
+    "runs": 5,
+    "wins": 5,
     "medWave": 15,
-    "players": 3
+    "players": 5
    },
    {
     "ids": [
@@ -5054,20 +8074,6 @@
      "crocodile",
      "killua",
      "rukia"
-    ],
-    "runs": 1,
-    "wins": 1,
-    "medWave": 15,
-    "players": 1
-   },
-   {
-    "ids": [
-     "bulma",
-     "erwin",
-     "giselle",
-     "illya",
-     "speedwagon",
-     "vegeta_majin"
     ],
     "runs": 1,
     "wins": 1,
@@ -5102,6 +8108,17 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
+   },
+   {
+    "ids": [
+     "blackbeard",
+     "kizaru_unit",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
    }
   ],
   "rd:west_city_raid": [
@@ -5112,6 +8129,20 @@
      "giselle",
      "nagumo_evolved",
      "rukia_bankai_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 20,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "cid_evolved",
+     "ghostkun",
+     "goku_ssj3",
+     "monet_evolved",
      "speedwagon"
     ],
     "runs": 1,
@@ -5166,9 +8197,9 @@
      "speedwagon",
      "vegeta_majin"
     ],
-    "runs": 100,
-    "wins": 100,
-    "medWave": 15.0,
+    "runs": 125,
+    "wins": 125,
+    "medWave": 15,
     "players": 1
    },
    {
@@ -5176,6 +8207,27 @@
      "crocodile",
      "killua",
      "rukia"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "goku"
     ],
     "runs": 1,
     "wins": 1,
@@ -5219,6 +8271,34 @@
     "runs": 1,
     "wins": 1,
     "medWave": 20,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "erwin",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 20,
+    "players": 1
+   },
+   {
+    "ids": [
+     "goku",
+     "ichigo",
+     "krillin",
+     "naruto",
+     "sasuke",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 3,
     "players": 1
    }
   ],
@@ -5292,6 +8372,48 @@
    {
     "ids": [
      "bulma",
+     "elyssia_evolved",
+     "leafa_evolved",
+     "monet_evolved",
+     "nagumo_evolved",
+     "stain_evolved"
+    ],
+    "runs": 5,
+    "wins": 5,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "nagumo_evolved",
+     "rukia_bankai_evolved",
+     "speedwagon",
+     "usopp_ts_evolved"
+    ],
+    "runs": 3,
+    "wins": 3,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "charmy_evolved",
+     "elyssia_evolved",
+     "law_2_evolved",
+     "metal_knight_evolved",
+     "sasuke_3_evolved"
+    ],
+    "runs": 3,
+    "wins": 3,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
      "chihiro",
      "gremmy_evolved",
      "speedwagon",
@@ -5307,10 +8429,24 @@
     "ids": [
      "bulma",
      "elyssia_evolved",
-     "nagumo_evolved",
-     "rukia_bankai_evolved",
-     "speedwagon",
-     "usopp_ts_evolved"
+     "judar_evolved",
+     "leafa_evolved",
+     "megumi2",
+     "monet_evolved"
+    ],
+    "runs": 2,
+    "wins": 2,
+    "medWave": 15.0,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "leafa_evolved",
+     "megumi2",
+     "monet_evolved",
+     "stain_evolved"
     ],
     "runs": 2,
     "wins": 2,
@@ -5344,62 +8480,6 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
-   },
-   {
-    "ids": [
-     "bulma",
-     "chihiro",
-     "gremmy_evolved",
-     "monet_evolved",
-     "osaka",
-     "speedwagon"
-    ],
-    "runs": 1,
-    "wins": 1,
-    "medWave": 15,
-    "players": 1
-   },
-   {
-    "ids": [
-     "bulma",
-     "chihiro",
-     "goku_ssj3",
-     "monet_evolved",
-     "speedwagon",
-     "vegeta_majin"
-    ],
-    "runs": 1,
-    "wins": 1,
-    "medWave": 15,
-    "players": 1
-   },
-   {
-    "ids": [
-     "bulma",
-     "goku_ssj3",
-     "gremmy_evolved",
-     "monet_evolved",
-     "vegeta_majin",
-     "wendy"
-    ],
-    "runs": 1,
-    "wins": 1,
-    "medWave": 15,
-    "players": 1
-   },
-   {
-    "ids": [
-     "bulma",
-     "cid_evolved",
-     "goku_ssj3",
-     "speedwagon",
-     "stain_evolved",
-     "vanilla_ice_evolved"
-    ],
-    "runs": 1,
-    "wins": 1,
-    "medWave": 15,
-    "players": 1
    }
   ],
   "st:namek_level_2:Normal": [
@@ -5407,10 +8487,10 @@
     "ids": [
      "goku"
     ],
-    "runs": 1,
-    "wins": 1,
+    "runs": 3,
+    "wins": 3,
     "medWave": 15,
-    "players": 1
+    "players": 3
    },
    {
     "ids": [
@@ -5429,10 +8509,10 @@
     "ids": [
      "goku"
     ],
-    "runs": 1,
-    "wins": 1,
-    "medWave": 15,
-    "players": 1
+    "runs": 2,
+    "wins": 2,
+    "medWave": 15.0,
+    "players": 2
    },
    {
     "ids": [
@@ -5451,6 +8531,17 @@
     "ids": [
      "goku"
     ],
+    "runs": 2,
+    "wins": 2,
+    "medWave": 15.0,
+    "players": 2
+   },
+   {
+    "ids": [
+     "crocodile",
+     "killua",
+     "rukia"
+    ],
     "runs": 1,
     "wins": 1,
     "medWave": 15,
@@ -5458,9 +8549,10 @@
    },
    {
     "ids": [
-     "crocodile",
-     "killua",
-     "rukia"
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
     ],
     "runs": 1,
     "wins": 1,
@@ -5527,56 +8619,58 @@
    },
    {
     "ids": [
-     "elyssia",
-     "konan_unit",
-     "megumi2",
-     "speedwagon"
+     "all_might",
+     "bulma",
+     "fujitora",
+     "sasuke_3",
+     "speedwagon",
+     "wendy"
     ],
-    "runs": 2,
-    "wins": 0,
-    "medWave": 4.0,
+    "runs": 1,
+    "wins": 1,
+    "medWave": 30,
     "players": 1
    },
    {
     "ids": [
-     "elyssia",
-     "killua",
-     "konan_unit",
-     "law",
-     "megumi2",
-     "speedwagon"
+     "bulma",
+     "chihiro",
+     "goku_ssj3",
+     "gremmy_evolved",
+     "monet_evolved",
+     "vegeta_majin"
     ],
-    "runs": 2,
-    "wins": 0,
-    "medWave": 4.0,
+    "runs": 1,
+    "wins": 1,
+    "medWave": 30,
     "players": 1
    },
    {
     "ids": [
-     "crocodile",
-     "ichigo",
-     "killua",
-     "naruto",
-     "rukia",
-     "sanji"
+     "bulma",
+     "elyssia_evolved",
+     "goku_ssj3_evolved",
+     "leafa_evolved",
+     "monet_evolved",
+     "nagumo_evolved"
     ],
-    "runs": 2,
-    "wins": 0,
-    "medWave": 4.0,
+    "runs": 1,
+    "wins": 1,
+    "medWave": 30,
     "players": 1
    },
    {
     "ids": [
-     "blackbeard",
-     "hisoka",
-     "ichigo",
-     "juvia",
-     "nezuko",
-     "speedwagon"
+     "bee_girl_evolved",
+     "bulma",
+     "elyssia_evolved",
+     "erwin",
+     "giselle",
+     "sakamoto_evolved"
     ],
-    "runs": 2,
-    "wins": 0,
-    "medWave": 4.0,
+    "runs": 1,
+    "wins": 1,
+    "medWave": 30,
     "players": 1
    }
   ],
@@ -5591,6 +8685,45 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "erwin",
+     "ichigo",
+     "kaneki",
+     "sakura",
+     "sanji",
+     "usopp"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
    }
   ],
   "st:demonslayer_level_2:Normal": [
@@ -5599,6 +8732,45 @@
      "juvia",
      "konan_unit",
      "megumi2"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "erwin",
+     "ichigo",
+     "kaneki",
+     "sakura",
+     "sanji",
+     "usopp"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
     ],
     "runs": 1,
     "wins": 1,
@@ -5662,9 +8834,23 @@
      "rukia_bankai_evolved",
      "speedwagon"
     ],
-    "runs": 6,
-    "wins": 6,
+    "runs": 12,
+    "wins": 12,
     "medWave": 15.0,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "judar_evolved",
+     "megumi2",
+     "monet_evolved",
+     "stain_evolved"
+    ],
+    "runs": 3,
+    "wins": 3,
+    "medWave": 15,
     "players": 1
    }
   ],
@@ -5676,6 +8862,19 @@
      "konan_unit",
      "megumi2",
      "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
     ],
     "runs": 1,
     "wins": 1,
@@ -5711,6 +8910,20 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
    }
   ],
   "ar:artifact_usopp_ts": [
@@ -5727,6 +8940,20 @@
     "wins": 0,
     "medWave": 14,
     "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "cid_evolved",
+     "elyssia_evolved",
+     "giselle_evolved",
+     "guts_berserker",
+     "nagumo_evolved"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 13,
+    "players": 1
    }
   ],
   "st:marineford_level_2:Hard": [
@@ -5738,6 +8965,31 @@
      "speedwagon",
      "touka",
      "zenitsu"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "gon_adult",
+     "speedwagon",
+     "tatsumaki",
+     "uryu"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
     ],
     "runs": 1,
     "wins": 1,
@@ -5767,6 +9019,27 @@
      "crocodile",
      "killua",
      "rukia"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "goku"
     ],
     "runs": 1,
     "wins": 1,
@@ -5804,9 +9077,37 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
    }
   ],
   "st:shibuya_level_1:Normal": [
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "law_2_evolved",
+     "metal_knight_evolved",
+     "sasuke_3_evolved",
+     "tengen_2_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
    {
     "ids": [
      "bulma",
@@ -5820,6 +9121,20 @@
     "wins": 0,
     "medWave": 15.0,
     "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "sasuke_3_evolved",
+     "speedwagon",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 7,
+    "players": 1
    }
   ],
   "st:opm_level_4:Hard": [
@@ -5831,6 +9146,20 @@
      "metal_knight",
      "speedwagon",
      "vanilla_ice"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
     ],
     "runs": 1,
     "wins": 1,
@@ -5865,6 +9194,40 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "goku"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
    }
   ],
   "st:clover_level_2:Hard": [
@@ -5881,6 +9244,20 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
+   },
+   {
+    "ids": [
+     "akainu",
+     "all_might_evolved",
+     "erwin",
+     "meliodas",
+     "speedwagon",
+     "yami_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
    }
   ],
   "st:aot_level_2:Normal": [
@@ -5892,6 +9269,40 @@
     ],
     "runs": 1,
     "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "goku"
+    ],
+    "runs": 1,
+    "wins": 0,
     "medWave": 15,
     "players": 1
    }
@@ -5942,17 +9353,1024 @@
     "wins": 1,
     "medWave": 15,
     "players": 1
+   },
+   {
+    "ids": [
+     "akainu",
+     "all_might_evolved",
+     "erwin",
+     "meliodas",
+     "speedwagon",
+     "yami_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:bleach_legend_3:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "erwin",
+     "giselle",
+     "illya",
+     "speedwagon",
+     "vegeta_majin"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 20,
+    "players": 1
+   }
+  ],
+  "st:jojo_level_2:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "erwin",
+     "josuke_2",
+     "metal_knight",
+     "speedwagon",
+     "vanilla_ice"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "pt:skypiea_portal:t5": [
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "metal_knight_evolved",
+     "pitou_evolved",
+     "rikka_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 20,
+    "players": 1
+   }
+  ],
+  "st:bleach_legend_4:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "erwin",
+     "giselle",
+     "illya",
+     "speedwagon",
+     "vegeta_majin"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 20,
+    "players": 1
+   }
+  ],
+  "pt:skypiea_portal:t8": [
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "rikka_evolved",
+     "wendy"
+    ],
+    "runs": 8,
+    "wins": 0,
+    "medWave": 18.5,
+    "players": 1
+   },
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "gojo_evolved",
+     "metal_knight_evolved",
+     "rikka_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 14,
+    "players": 1
+   }
+  ],
+  "st:bleach_legend_5:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "erwin",
+     "giselle",
+     "illya",
+     "speedwagon",
+     "vegeta_majin"
+    ],
+    "runs": 2,
+    "wins": 1,
+    "medWave": 20.0,
+    "players": 1
+   }
+  ],
+  "st:aot_level_3:Normal": [
+   {
+    "ids": [
+     "bulma",
+     "elyssia",
+     "killua",
+     "rukia"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:aot_level_4:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:aot_level_5:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:aot_level_6:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:demonslayer_level_3:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "erwin",
+     "ichigo",
+     "kaneki",
+     "sakura",
+     "sanji",
+     "usopp"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:demonslayer_level_4:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "erwin",
+     "ichigo",
+     "kaneki",
+     "sakura",
+     "sanji",
+     "usopp"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "genos",
+     "inosuke",
+     "jotaro",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "pt:shibuya_portal_megumi2": [
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "judar_evolved",
+     "megumi2",
+     "monet_evolved",
+     "stain_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 30,
+    "players": 1
+   }
+  ],
+  "st:demonslayer_level_5:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "erwin",
+     "ichigo",
+     "kaneki",
+     "sakura",
+     "sanji",
+     "usopp"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:demonslayer_level_6:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "erwin",
+     "ichigo",
+     "kaneki",
+     "sakura",
+     "sanji",
+     "usopp"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_1:Hard": [
+   {
+    "ids": [
+     "gon_adult",
+     "speedwagon",
+     "tatsumaki",
+     "uryu"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "pt:skypiea_portal:t7": [
+   {
+    "ids": [
+     "aizen_hog_evolved",
+     "bulma",
+     "metal_knight_evolved",
+     "pucci_heaven",
+     "rikka_evolved",
+     "wendy"
+    ],
+    "runs": 4,
+    "wins": 0,
+    "medWave": 20.0,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bulma",
+     "elyssia_evolved",
+     "metal_knight_evolved",
+     "pitou_evolved",
+     "rikka_evolved",
+     "wendy"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 20,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_3:Hard": [
+   {
+    "ids": [
+     "gon_adult",
+     "speedwagon",
+     "tatsumaki",
+     "uryu"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:naruto_level_1:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "crocodile",
+     "erwin",
+     "ichigo_mask",
+     "killua",
+     "sanji",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:naruto_level_2:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "crocodile",
+     "erwin",
+     "ichigo_mask",
+     "killua",
+     "sanji",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_4:Hard": [
+   {
+    "ids": [
+     "gon_adult",
+     "speedwagon",
+     "tatsumaki",
+     "uryu"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:naruto_level_3:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   },
+   {
+    "ids": [
+     "crocodile",
+     "erwin",
+     "ichigo_mask",
+     "killua",
+     "sanji",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:naruto_level_4:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:naruto_level_5:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:namek_level_4:Hard": [
+   {
+    "ids": [
+     "blackbeard",
+     "grimmjow",
+     "ichigo",
+     "itachi",
+     "kizaru_unit",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:namek_level_5:Hard": [
+   {
+    "ids": [
+     "blackbeard",
+     "kizaru_unit",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_1:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_2:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_3:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_4:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_5:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:tokyoghoul_level_6:Normal": [
+   {
+    "ids": [
+     "blackbeard",
+     "kizaru_unit",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 0,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:marineford_level_6:Normal": [
+   {
+    "ids": [
+     "bee_girl",
+     "ichigo",
+     "speedwagon",
+     "tatsumaki",
+     "usopp_ts"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:magnolia_level_2:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:sao_legend_1:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "dio",
+     "elyssia",
+     "hoshino_evolved",
+     "law_2_evolved",
+     "tengen_2_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 20,
+    "players": 1
+   }
+  ],
+  "st:hxhant_level_2:Hard": [
+   {
+    "ids": [
+     "eren",
+     "erwin",
+     "giselle",
+     "killua"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:jojo_level_3:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:magnolia_level_6:Normal": [
+   {
+    "ids": [
+     "eren",
+     "erwin",
+     "giselle",
+     "killua"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:opm_level_5:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "hoshino_2_evolved",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:clover_level_4:Hard": [
+   {
+    "ids": [
+     "akainu",
+     "all_might_evolved",
+     "erwin",
+     "meliodas",
+     "speedwagon",
+     "yami_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:jjk_level_1:Normal": [
+   {
+    "ids": [
+     "eren",
+     "erwin",
+     "giselle",
+     "killua"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:opm_level_6:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:clover_level_5:Hard": [
+   {
+    "ids": [
+     "akainu",
+     "all_might_evolved",
+     "erwin",
+     "meliodas",
+     "speedwagon",
+     "yami_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:jjk_level_6:Normal": [
+   {
+    "ids": [
+     "eren",
+     "erwin",
+     "giselle",
+     "killua"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:7ds_level_1:Normal": [
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:clover_level_6:Hard": [
+   {
+    "ids": [
+     "akainu",
+     "all_might_evolved",
+     "erwin",
+     "meliodas",
+     "speedwagon",
+     "yami_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:jojo_level_4:Hard": [
+   {
+    "ids": [
+     "bulma",
+     "escanor",
+     "harribel_evolved",
+     "kira",
+     "meliodas_evolved",
+     "speedwagon"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:clover_level_6:Normal": [
+   {
+    "ids": [
+     "eren",
+     "erwin",
+     "giselle",
+     "killua"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
+   }
+  ],
+  "st:jojo_level_1:Normal": [
+   {
+    "ids": [
+     "akainu",
+     "all_might_evolved",
+     "erwin",
+     "meliodas",
+     "speedwagon",
+     "yami_evolved"
+    ],
+    "runs": 1,
+    "wins": 1,
+    "medWave": 15,
+    "players": 1
    }
   ]
  },
  "search": {
   "ev:summer2_event": {
-   "runs": 143,
-   "played": 120,
-   "predWins": 25,
-   "realWins": 16,
+   "runs": 242,
+   "played": 219,
+   "predWins": 40,
+   "realWins": 31,
    "gap": 0.0,
-   "players": 16
+   "players": 23
   },
   "st:namek_level_6:Hard": {
    "runs": 11,
@@ -5963,12 +10381,12 @@
    "players": 1
   },
   "rd:west_city_raid": {
-   "runs": 2,
-   "played": 1,
-   "predWins": 0,
-   "realWins": 0,
-   "gap": 5,
-   "players": 1
+   "runs": 3,
+   "played": 2,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 2.5,
+   "players": 2
   },
   "dc:20760": {
    "runs": 2,
@@ -5979,12 +10397,12 @@
    "players": 1
   },
   "ch": {
-   "runs": 8,
-   "played": 8,
-   "predWins": 6,
-   "realWins": 3,
-   "gap": 0.0,
-   "players": 6
+   "runs": 22,
+   "played": 22,
+   "predWins": 15,
+   "realWins": 10,
+   "gap": 0,
+   "players": 15
   },
   "rd:entertainment_district_level_1": {
    "runs": 1,
@@ -5995,12 +10413,12 @@
    "players": 1
   },
   "st:namek_level_6:Normal": {
-   "runs": 100,
-   "played": 100,
-   "predWins": 100,
-   "realWins": 100,
-   "gap": 0.0,
-   "players": 1
+   "runs": 127,
+   "played": 127,
+   "predWins": 127,
+   "realWins": 127,
+   "gap": 0,
+   "players": 3
   },
   "rd:west_city_frieza_level_1": {
    "runs": 1,
@@ -6019,12 +10437,12 @@
    "players": 1
   },
   "rd:uchiha_level_1": {
-   "runs": 1,
-   "played": 1,
-   "predWins": 0,
-   "realWins": 1,
+   "runs": 3,
+   "played": 3,
+   "predWins": 1,
+   "realWins": 2,
    "gap": 0,
-   "players": 1
+   "players": 3
   },
   "rd:uchiha_level_2": {
    "runs": 1,
@@ -6059,6 +10477,14 @@
    "players": 2
   },
   "st:namek_level_1:Normal": {
+   "runs": 23,
+   "played": 23,
+   "predWins": 23,
+   "realWins": 23,
+   "gap": 0,
+   "players": 7
+  },
+  "st:namek_level_2:Normal": {
    "runs": 4,
    "played": 4,
    "predWins": 4,
@@ -6066,53 +10492,45 @@
    "gap": 0.0,
    "players": 4
   },
-  "st:namek_level_2:Normal": {
-   "runs": 2,
-   "played": 2,
-   "predWins": 2,
-   "realWins": 2,
-   "gap": 0.0,
-   "players": 2
-  },
   "st:namek_level_3:Normal": {
-   "runs": 2,
-   "played": 2,
-   "predWins": 2,
-   "realWins": 2,
-   "gap": 0.0,
-   "players": 2
+   "runs": 3,
+   "played": 3,
+   "predWins": 3,
+   "realWins": 3,
+   "gap": 0,
+   "players": 3
   },
   "st:namek_level_4:Normal": {
-   "runs": 1,
-   "played": 1,
-   "predWins": 1,
-   "realWins": 1,
+   "runs": 3,
+   "played": 3,
+   "predWins": 3,
+   "realWins": 3,
    "gap": 0,
-   "players": 1
+   "players": 3
   },
   "dc:20761": {
-   "runs": 18,
-   "played": 18,
+   "runs": 24,
+   "played": 24,
    "predWins": 2,
-   "realWins": 4,
-   "gap": -3.0,
-   "players": 11
+   "realWins": 9,
+   "gap": 0,
+   "players": 17
   },
   "st:demonslayer_level_1:Normal": {
-   "runs": 1,
-   "played": 1,
-   "predWins": 1,
-   "realWins": 1,
-   "gap": 0,
-   "players": 1
+   "runs": 4,
+   "played": 4,
+   "predWins": 4,
+   "realWins": 4,
+   "gap": 0.0,
+   "players": 4
   },
   "st:demonslayer_level_2:Normal": {
-   "runs": 1,
-   "played": 1,
-   "predWins": 1,
-   "realWins": 1,
-   "gap": 0,
-   "players": 1
+   "runs": 4,
+   "played": 4,
+   "predWins": 4,
+   "realWins": 4,
+   "gap": 0.0,
+   "players": 4
   },
   "pt:skypiea_portal:t3": {
    "runs": 4,
@@ -6131,18 +10549,20 @@
    "players": 1
   },
   "inf:shibuya_infinite": {
-   "runs": 2,
-   "played": 0,
+   "runs": 6,
+   "played": 3,
    "predWins": 0,
-   "realWins": 0
+   "realWins": 3,
+   "gap": -9,
+   "players": 1
   },
   "pt:shibuya_portal": {
-   "runs": 6,
-   "played": 5,
-   "predWins": 5,
-   "realWins": 5,
-   "gap": 0,
-   "players": 1
+   "runs": 15,
+   "played": 13,
+   "predWins": 13,
+   "realWins": 13,
+   "gap": 0.0,
+   "players": 2
   },
   "st:jjk_level_2:Hard": {
    "runs": 1,
@@ -6153,7 +10573,7 @@
    "players": 1
   },
   "st:opm_level_2:Hard": {
-   "runs": 1,
+   "runs": 2,
    "played": 1,
    "predWins": 1,
    "realWins": 1,
@@ -6161,20 +10581,20 @@
    "players": 1
   },
   "ar:artifact_usopp_ts": {
-   "runs": 1,
-   "played": 1,
+   "runs": 2,
+   "played": 2,
    "predWins": 0,
    "realWins": 0,
-   "gap": -3,
-   "players": 1
+   "gap": -3.0,
+   "players": 2
   },
   "st:marineford_level_2:Hard": {
-   "runs": 1,
-   "played": 1,
-   "predWins": 1,
-   "realWins": 1,
+   "runs": 3,
+   "played": 3,
+   "predWins": 3,
+   "realWins": 3,
    "gap": 0,
-   "players": 1
+   "players": 3
   },
   "st:aot_level_1:Hard": {
    "runs": 1,
@@ -6193,7 +10613,7 @@
    "players": 1
   },
   "st:opm_level_3:Hard": {
-   "runs": 1,
+   "runs": 2,
    "played": 1,
    "predWins": 1,
    "realWins": 1,
@@ -6209,7 +10629,7 @@
    "players": 1
   },
   "st:opm_level_4:Hard": {
-   "runs": 1,
+   "runs": 2,
    "played": 1,
    "predWins": 1,
    "realWins": 1,
@@ -6217,12 +10637,12 @@
    "players": 1
   },
   "st:clover_level_2:Hard": {
-   "runs": 1,
-   "played": 1,
-   "predWins": 1,
-   "realWins": 1,
-   "gap": 0,
-   "players": 1
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
   },
   "pt:shibuya_portal_final": {
    "runs": 1,
@@ -6233,12 +10653,338 @@
    "players": 1
   },
   "st:clover_level_3:Hard": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:jojo_level_2:Hard": {
+   "runs": 2,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "pt:skypiea_portal:t5": {
    "runs": 1,
    "played": 1,
    "predWins": 1,
    "realWins": 1,
    "gap": 0,
    "players": 1
+  },
+  "pt:skypiea_portal:t8": {
+   "runs": 9,
+   "played": 9,
+   "predWins": 0,
+   "realWins": 0,
+   "gap": -2,
+   "players": 1
+  },
+  "st:aot_level_3:Normal": {
+   "runs": 3,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:aot_level_1:Normal": {
+   "runs": 3,
+   "played": 3,
+   "predWins": 3,
+   "realWins": 3,
+   "gap": 0,
+   "players": 3
+  },
+  "st:aot_level_2:Normal": {
+   "runs": 3,
+   "played": 3,
+   "predWins": 3,
+   "realWins": 2,
+   "gap": 0,
+   "players": 3
+  },
+  "st:aot_level_4:Normal": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:aot_level_5:Normal": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:aot_level_6:Normal": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:demonslayer_level_3:Normal": {
+   "runs": 3,
+   "played": 3,
+   "predWins": 3,
+   "realWins": 3,
+   "gap": 0,
+   "players": 3
+  },
+  "st:demonslayer_level_4:Normal": {
+   "runs": 3,
+   "played": 3,
+   "predWins": 3,
+   "realWins": 3,
+   "gap": 0,
+   "players": 3
+  },
+  "pt:shibuya_portal_megumi2": {
+   "runs": 1,
+   "played": 0,
+   "predWins": 0,
+   "realWins": 0
+  },
+  "st:namek_level_5:Normal": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:demonslayer_level_5:Normal": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:demonslayer_level_6:Normal": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:marineford_level_1:Hard": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "pt:skypiea_portal:t7": {
+   "runs": 5,
+   "played": 5,
+   "predWins": 1,
+   "realWins": 0,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_3:Hard": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:naruto_level_1:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:naruto_level_2:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_4:Hard": {
+   "runs": 2,
+   "played": 2,
+   "predWins": 2,
+   "realWins": 2,
+   "gap": 0.0,
+   "players": 2
+  },
+  "st:naruto_level_3:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:naruto_level_4:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:naruto_level_5:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:naruto_level_6:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_1:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_2:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_3:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_4:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_5:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:marineford_level_6:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:magnolia_level_2:Hard": {
+   "runs": 1,
+   "played": 0,
+   "predWins": 0,
+   "realWins": 0
+  },
+  "st:sao_legend_1:Hard": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:hxhant_level_2:Hard": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:jojo_level_3:Hard": {
+   "runs": 1,
+   "played": 0,
+   "predWins": 0,
+   "realWins": 0
+  },
+  "st:opm_level_5:Hard": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:clover_level_4:Hard": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:jjk_level_1:Normal": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:opm_level_6:Hard": {
+   "runs": 1,
+   "played": 0,
+   "predWins": 0,
+   "realWins": 0
+  },
+  "st:clover_level_5:Hard": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:clover_level_6:Hard": {
+   "runs": 1,
+   "played": 1,
+   "predWins": 1,
+   "realWins": 1,
+   "gap": 0,
+   "players": 1
+  },
+  "st:jojo_level_4:Hard": {
+   "runs": 1,
+   "played": 0,
+   "predWins": 0,
+   "realWins": 0
   }
  },
  "mapInfo": {
@@ -6272,49 +11018,107 @@
    ]
   },
   "demonslayer": {
-   "runs": 6,
-   "players": 4,
-   "walk": 0.0095,
+   "runs": 26,
+   "players": 10,
+   "walk": 0.0098,
    "spots": 156.0,
    "hill": true,
    "dens": [
     1.0,
-    0.44,
+    0.73,
+    0.46,
+    0.29,
     0.2,
-    0.17,
-    0.15,
-    0.13,
+    0.16,
     0.11,
-    0.1,
+    0.11,
+    0.08,
     0.07,
+    0.01,
+    0.02,
+    0.01,
+    0.01,
+    0.01,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "namek_cartoon": {
+   "runs": 246,
+   "players": 14,
+   "walk": 0.0085,
+   "spots": 204.0,
+   "hill": true,
+   "dens": [
+    1.0,
+    0.14,
     0.07,
+    0.04,
+    0.02,
+    0.01,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "naruto": {
+   "runs": 30,
+   "players": 12,
+   "walk": 0.0069,
+   "spots": 35.0,
+   "hill": true,
+   "dens": [
+    1.0,
+    0.71,
+    0.66,
+    0.17,
+    0.11,
+    0.06,
     0.04,
     0.03,
     0.02,
     0.01,
     0.01,
     0.01,
+    0.0,
     0.01,
-    0.01,
-    0.01,
-    0.01
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
    ]
   },
-  "namek_cartoon": {
-   "runs": 127,
-   "players": 7,
-   "walk": 0.0085,
-   "spots": 204.0,
+  "west_city": {
+   "runs": 3,
+   "players": 3,
+   "walk": 0.0054,
+   "spots": 505,
    "hill": true,
    "dens": [
     1,
-    0.11,
+    0.91,
+    0.57,
+    0.2,
     0.07,
-    0.04,
+    0.08,
+    0.06,
     0.02,
-    0.01,
-    0,
-    0,
     0,
     0,
     0,
@@ -6329,91 +11133,33 @@
     0
    ]
   },
-  "naruto": {
-   "runs": 16,
-   "players": 8,
-   "walk": 0.0069,
-   "spots": 31.0,
-   "hill": true,
-   "dens": [
-    1.0,
-    0.8,
-    0.85,
-    0.7,
-    0.69,
-    0.56,
-    0.58,
-    0.52,
-    0.48,
-    0.39,
-    0.3,
-    0.28,
-    0.16,
-    0.19,
-    0.15,
-    0.11,
-    0.06,
-    0.03,
-    0.04,
-    0.02
-   ]
-  },
-  "west_city": {
-   "runs": 2,
-   "players": 2,
-   "walk": 0.0043,
-   "spots": 505.0,
-   "hill": true,
-   "dens": [
-    1.0,
-    0.51,
-    0.46,
-    0.5,
-    0.45,
-    0.39,
-    0.38,
-    0.35,
-    0.34,
-    0.29,
-    0.32,
-    0.27,
-    0.24,
-    0.2,
-    0.2,
-    0.13,
-    0.09,
-    0.06,
-    0.04,
-    0.02
-   ]
-  },
   "skypiea": {
-   "runs": 5,
+   "runs": 23,
    "players": 4,
-   "walk": 0.00295,
-   "spots": 2089.0,
+   "walk": 0.003,
+   "spots": 2071.0,
    "lanes": 3.0,
    "hill": true,
    "dens": [
-    0.95,
+    0.98,
     0.99,
-    0.95,
-    1,
+    0.94,
+    0.98,
     0.9,
-    0.86,
+    0.9,
+    0.89,
     0.84,
-    0.81,
-    0.83,
+    0.85,
     0.79,
-    0.79,
-    0.7,
+    0.82,
+    0.77,
+    0.73,
+    0.71,
     0.6,
-    0.55,
-    0.42,
-    0.36,
-    0.36,
+    0.54,
+    0.53,
+    0.35,
     0.16,
-    0.09,
     0.01
    ]
   },
@@ -6447,32 +11193,32 @@
    ]
   },
   "entertainment_district": {
-   "runs": 5,
-   "players": 3,
-   "walk": 0.007,
-   "spots": 87,
+   "runs": 6,
+   "players": 4,
+   "walk": 0.00695,
+   "spots": 87.0,
    "hill": true,
    "dens": [
-    0.9,
-    0.83,
-    0.78,
-    0.82,
-    0.7,
-    0.73,
-    0.62,
-    0.55,
-    0.52,
-    0.67,
+    0.95,
+    0.8,
+    0.75,
+    0.79,
+    0.69,
+    0.71,
+    0.59,
+    0.5,
     0.46,
-    0.45,
-    0.23,
-    0.12,
+    0.59,
+    0.4,
+    0.38,
+    0.21,
+    0.11,
     0.07,
     0.03,
     0.01,
     0.01,
     0.01,
-    0
+    0.0
    ]
   },
   "west_city_frieza": {
@@ -6534,90 +11280,90 @@
    ]
   },
   "kai_planet": {
-   "runs": 4,
-   "players": 3,
+   "runs": 5,
+   "players": 4,
    "walk": 0.0045,
-   "spots": 465,
+   "spots": 465.0,
    "hill": true,
    "dens": [
-    1,
+    1.0,
     0.85,
-    0.9,
-    0.81,
-    0.87,
-    0.73,
-    0.72,
-    0.7,
-    0.65,
-    0.61,
-    0.55,
-    0.54,
-    0.54,
-    0.46,
+    0.85,
+    0.68,
+    0.59,
+    0.44,
     0.4,
-    0.33,
-    0.26,
-    0.15,
-    0.02,
+    0.39,
+    0.36,
+    0.34,
+    0.31,
+    0.3,
+    0.29,
+    0.23,
+    0.2,
+    0.17,
+    0.13,
+    0.07,
+    0.01,
     0.01
    ]
   },
   "uchiha_hideout": {
-   "runs": 3,
-   "players": 2,
+   "runs": 21,
+   "players": 10,
    "walk": 0.0053,
    "spots": 160.0,
    "hill": true,
    "dens": [
-    0.97,
-    0.92,
+    0.99,
+    0.94,
     0.87,
+    0.88,
     0.87,
-    0.9,
-    1,
-    0.83,
-    0.93,
-    0.78,
-    0.84,
-    0.84,
-    0.79,
-    0.87,
-    0.77,
-    0.81,
-    0.71,
-    0.23,
-    0,
-    0,
-    0
+    0.82,
+    0.69,
+    0.76,
+    0.59,
+    0.61,
+    0.61,
+    0.59,
+    0.58,
+    0.43,
+    0.42,
+    0.37,
+    0.28,
+    0.1,
+    0.04,
+    0.01
    ]
   },
   "demonslayer_raid": {
-   "runs": 1,
-   "players": 1,
-   "walk": 0.0069,
-   "spots": 245,
+   "runs": 20,
+   "players": 6,
+   "walk": 0.0067,
+   "spots": 245.0,
    "hill": true,
    "dens": [
-    0.94,
-    0.79,
-    0.87,
-    1,
-    0.71,
-    0.48,
-    0.36,
-    0.19,
-    0.15,
-    0.09,
-    0.02,
+    0.99,
+    0.76,
+    0.74,
+    0.81,
+    0.57,
+    0.46,
+    0.39,
+    0.26,
+    0.23,
+    0.18,
+    0.12,
+    0.12,
+    0.05,
+    0.04,
+    0.03,
+    0.03,
     0.01,
     0.01,
     0.01,
-    0.01,
-    0,
-    0,
-    0,
-    0,
-    0
+    0.01
    ]
   },
   "naruto_raid": {
@@ -6650,8 +11396,8 @@
    ]
   },
   "magnolia": {
-   "runs": 37,
-   "players": 10,
+   "runs": 39,
+   "players": 12,
    "walk": 0.0049,
    "spots": 124.0,
    "hill": true,
@@ -6660,22 +11406,22 @@
     0.97,
     0.91,
     0.85,
-    0.78,
+    0.77,
     0.82,
     0.65,
     0.72,
     0.69,
-    0.64,
-    0.6,
-    0.53,
-    0.55,
+    0.63,
+    0.59,
+    0.52,
+    0.54,
     0.45,
     0.39,
     0.34,
-    0.26,
-    0.19,
+    0.24,
+    0.18,
     0.11,
-    0.04
+    0.03
    ]
   },
   "7ds_summer": {
@@ -6708,83 +11454,25 @@
    ]
   },
   "amegakure": {
-   "runs": 2,
-   "players": 2,
-   "walk": 0.0055,
-   "spots": 305.0,
-   "hill": true,
-   "dens": [
-    0.95,
-    0.64,
-    0.49,
-    0.48,
-    0.42,
-    0.49,
-    0.46,
-    0.45,
-    0.46,
-    0.5,
-    0.44,
-    0.29,
-    0.03,
-    0.01,
-    0.01,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
-   ]
-  },
-  "thriller_bark": {
-   "runs": 15,
-   "players": 3,
-   "walk": 0.0057,
-   "spots": 137,
-   "hill": true,
-   "dens": [
-    1.0,
-    0.85,
-    0.89,
-    0.89,
-    0.83,
-    0.76,
-    0.71,
-    0.66,
-    0.68,
-    0.59,
-    0.69,
-    0.59,
-    0.55,
-    0.54,
-    0.3,
-    0.2,
-    0.14,
-    0.06,
-    0.02,
-    0.02
-   ]
-  },
-  "csm_city": {
    "runs": 3,
-   "players": 2,
-   "walk": 0.0065,
-   "spots": 152.0,
+   "players": 3,
+   "walk": 0.0054,
+   "spots": 305,
    "hill": true,
    "dens": [
+    0.9,
+    0.94,
+    0.93,
+    0.96,
+    0.83,
+    0.97,
+    0.92,
+    0.9,
+    0.9,
     1,
-    0.64,
-    0.51,
-    0.27,
-    0.19,
-    0.08,
-    0.01,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    0.88,
+    0.59,
+    0.05,
     0,
     0,
     0,
@@ -6794,90 +11482,148 @@
     0
    ]
   },
-  "boros_ship": {
-   "runs": 4,
-   "players": 2,
-   "walk": 0.00465,
-   "spots": 280.0,
-   "hill": true,
-   "dens": [
-    1.0,
-    0.67,
-    0.56,
-    0.55,
-    0.56,
-    0.45,
-    0.45,
-    0.4,
-    0.4,
-    0.4,
-    0.41,
-    0.31,
-    0.05,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
-   ]
-  },
-  "aot": {
-   "runs": 25,
-   "players": 13,
-   "walk": 0.0134,
-   "spots": 28,
+  "thriller_bark": {
+   "runs": 16,
+   "players": 4,
+   "walk": 0.00555,
+   "spots": 137.0,
    "hill": true,
    "dens": [
     1,
-    0.67,
-    0.72,
-    0.52,
-    0.62,
-    0.51,
-    0.22,
-    0.27,
+    0.85,
+    0.88,
+    0.88,
+    0.83,
+    0.75,
+    0.71,
+    0.65,
+    0.68,
+    0.59,
+    0.69,
+    0.59,
+    0.54,
+    0.54,
+    0.3,
+    0.2,
     0.13,
-    0.13,
-    0.08,
+    0.05,
     0.02,
-    0.02,
-    0.02,
-    0.03,
-    0.02,
-    0.02,
-    0.02,
-    0.03,
     0.02
    ]
   },
-  "dressrosa": {
-   "runs": 3,
+  "csm_city": {
+   "runs": 26,
+   "players": 9,
+   "walk": 0.0065,
+   "spots": 152.0,
+   "hill": true,
+   "dens": [
+    1.0,
+    0.8,
+    0.92,
+    0.66,
+    0.78,
+    0.7,
+    0.71,
+    0.64,
+    0.59,
+    0.61,
+    0.58,
+    0.53,
+    0.53,
+    0.39,
+    0.46,
+    0.34,
+    0.33,
+    0.28,
+    0.2,
+    0.16
+   ]
+  },
+  "boros_ship": {
+   "runs": 9,
    "players": 3,
-   "walk": 0.0048,
-   "spots": 252,
+   "walk": 0.0053,
+   "spots": 280,
    "hill": true,
    "dens": [
     1,
+    0.39,
+    0.15,
+    0.07,
+    0.03,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.02,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "aot": {
+   "runs": 52,
+   "players": 25,
+   "walk": 0.0134,
+   "spots": 28.0,
+   "hill": true,
+   "dens": [
+    1.0,
+    0.65,
+    0.61,
+    0.39,
+    0.44,
+    0.39,
+    0.17,
+    0.2,
+    0.09,
+    0.08,
+    0.06,
+    0.01,
+    0.01,
+    0.01,
+    0.02,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+   ]
+  },
+  "dressrosa": {
+   "runs": 5,
+   "players": 4,
+   "walk": 0.0048,
+   "spots": 252.0,
+   "hill": true,
+   "dens": [
+    0.99,
     0.99,
     0.91,
-    0.74,
-    0.34,
-    0.11,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    0.82,
+    0.48,
+    0.45,
+    0.43,
+    0.46,
+    0.44,
+    0.44,
+    0.44,
+    0.41,
+    0.42,
+    0.43,
+    0.38,
+    0.45,
+    0.28,
+    0.15,
+    0.03,
     0
    ]
   },
@@ -6911,33 +11657,33 @@
    ]
   },
   "shibuya": {
-   "runs": 22,
-   "players": 6,
-   "walk": 0.00435,
-   "spots": 924.0,
-   "lanes": 2.0,
+   "runs": 40,
+   "players": 9,
+   "walk": 0.0044,
+   "spots": 924,
+   "lanes": 2,
    "hill": true,
    "dens": [
     0.99,
-    0.88,
-    0.64,
-    0.56,
-    0.55,
-    0.45,
-    0.36,
-    0.34,
-    0.29,
-    0.2,
-    0.14,
-    0.11,
+    0.84,
+    0.6,
+    0.42,
+    0.39,
+    0.33,
+    0.27,
+    0.22,
+    0.17,
+    0.12,
+    0.1,
     0.06,
-    0.05,
+    0.04,
     0.03,
     0.02,
     0.01,
     0.01,
-    0.01,
-    0.01
+    0.0,
+    0.0,
+    0.0
    ]
   },
   "skypiea#1": {
@@ -6969,30 +11715,30 @@
    ]
   },
   "skypiea#L3": {
-   "runs": 3,
+   "runs": 4,
    "players": 1,
    "walk": 0.0036,
    "dens": [
     0.98,
-    0.49,
+    0.48,
     0.46,
     0.46,
     0.5,
     0.46,
     0.46,
     0.46,
-    0.46,
-    0.5,
-    0.46,
-    0.46,
-    0.46,
+    0.45,
+    0.45,
+    0.39,
+    0.39,
     0.38,
-    0.08,
+    0.32,
+    0.07,
     0.03,
-    0,
-    0,
-    0,
-    0
+    0.0,
+    0.0,
+    0.0,
+    0.0
    ]
   },
   "skypiea#L1": {
@@ -7023,61 +11769,61 @@
    ]
   },
   "mha_city": {
-   "runs": 7,
-   "players": 5,
+   "runs": 69,
+   "players": 12,
    "walk": 0.0072,
-   "spots": 207,
+   "spots": 207.0,
    "hill": true,
    "dens": [
-    1,
-    0.89,
-    0.9,
-    0.85,
-    0.78,
-    0.79,
-    0.7,
-    0.8,
-    0.63,
-    0.72,
-    0.5,
-    0.51,
-    0.55,
-    0.37,
-    0.29,
-    0.33,
+    1.0,
+    0.82,
+    0.75,
+    0.66,
+    0.74,
+    0.75,
+    0.69,
+    0.61,
+    0.59,
+    0.66,
+    0.43,
+    0.48,
+    0.53,
+    0.31,
     0.26,
-    0.2,
-    0.15,
-    0.08
+    0.28,
+    0.24,
+    0.27,
+    0.23,
+    0.13
    ]
   },
   "marineford": {
-   "runs": 27,
-   "players": 8,
+   "runs": 40,
+   "players": 10,
    "walk": 0.0079,
    "spots": 153.0,
    "hill": true,
    "dens": [
-    1,
+    1.0,
     0.96,
     0.83,
-    0.91,
-    0.7,
-    0.82,
-    0.66,
-    0.6,
-    0.66,
-    0.51,
-    0.54,
-    0.36,
-    0.37,
-    0.25,
-    0.21,
-    0.14,
+    0.9,
+    0.68,
+    0.77,
+    0.62,
+    0.57,
+    0.61,
+    0.44,
+    0.47,
+    0.31,
+    0.19,
     0.1,
-    0.07,
-    0.04,
-    0.02
+    0.06,
+    0.03,
+    0.01,
+    0.01,
+    0.01,
+    0.01
    ]
   },
   "skypiea#L2": {
@@ -7108,131 +11854,131 @@
    ]
   },
   "karakura": {
-   "runs": 8,
-   "players": 4,
-   "walk": 0.00477,
-   "spots": 347.0,
+   "runs": 13,
+   "players": 5,
+   "walk": 0.0048,
+   "spots": 347,
    "hill": true,
    "dens": [
-    1.0,
-    0.81,
-    0.79,
-    0.71,
+    1,
     0.69,
-    0.47,
-    0.34,
+    0.48,
     0.29,
-    0.2,
-    0.18,
+    0.27,
     0.13,
-    0.11,
-    0.11,
-    0.09,
-    0.06,
-    0.03,
-    0.02,
+    0.05,
     0.01,
-    0.02,
-    0.01
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
    ]
   },
   "fate": {
-   "runs": 18,
-   "players": 7,
+   "runs": 19,
+   "players": 8,
    "walk": 0.0061,
    "spots": 369.0,
    "hill": true,
    "dens": [
-    1,
+    1.0,
     0.94,
     0.77,
     0.62,
-    0.6,
-    0.81,
-    0.72,
-    0.81,
-    0.67,
-    0.73,
     0.59,
-    0.53,
-    0.5,
-    0.4,
-    0.22,
-    0.15,
-    0.15,
+    0.8,
+    0.7,
+    0.8,
+    0.65,
+    0.71,
+    0.56,
+    0.51,
+    0.47,
+    0.39,
+    0.21,
+    0.14,
+    0.14,
     0.09,
     0.05,
-    0.02
+    0.01
    ]
   },
   "jjk": {
-   "runs": 2,
-   "players": 2,
+   "runs": 5,
+   "players": 4,
    "walk": 0.00475,
    "spots": 231.0,
    "hill": true,
    "dens": [
-    1.0,
-    0.7,
-    0.37,
-    0.23,
-    0.17,
+    1,
+    0.47,
     0.1,
-    0.04,
+    0.02,
     0.01,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
    ]
   },
   "eclipse": {
-   "runs": 2,
+   "runs": 3,
    "players": 2,
    "walk": 0.0041,
    "spots": 351.0,
    "hill": true,
    "dens": [
-    1.0,
-    0.24,
-    0.08,
-    0.02,
+    1,
+    0.19,
+    0.1,
+    0.03,
     0.01,
     0.01,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
    ]
   },
   "7ds_map": {
-   "runs": 3,
-   "players": 2,
-   "walk": 0.00343,
-   "spots": 225.0,
+   "runs": 5,
+   "players": 3,
+   "walk": 0.0038,
+   "spots": 225,
    "hill": true,
    "dens": [
     1,
-    0.09,
-    0.01,
+    0.19,
+    0.06,
     0.02,
     0,
     0,
@@ -7253,23 +11999,23 @@
    ]
   },
   "tokyo_ghoul": {
-   "runs": 37,
-   "players": 10,
-   "walk": 0.0057,
+   "runs": 45,
+   "players": 12,
+   "walk": 0.00573,
    "spots": 295.0,
    "hill": true,
    "dens": [
     1.0,
     0.92,
     0.95,
-    0.92,
-    0.82,
+    0.91,
+    0.81,
     0.74,
     0.81,
     0.68,
     0.71,
     0.69,
-    0.6,
+    0.59,
     0.6,
     0.58,
     0.47,
@@ -7278,7 +12024,7 @@
     0.34,
     0.26,
     0.25,
-    0.16
+    0.15
    ]
   },
   "karakura2": {
@@ -7311,79 +12057,312 @@
    ]
   },
   "hage": {
-   "runs": 2,
-   "players": 1,
+   "runs": 8,
+   "players": 3,
    "walk": 0.0052,
-   "spots": 214.0,
+   "spots": 214,
    "hill": true,
    "dens": [
     1.0,
+    0.95,
     0.96,
-    0.96,
-    0.86,
-    0.93,
-    0.43,
-    0.1,
+    0.85,
+    0.95,
+    0.62,
+    0.61,
+    0.4,
+    0.24,
+    0.06,
+    0.04,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
+    0.03,
     0.01,
     0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
+    0.0
+   ]
+  },
+  "space_center": {
+   "runs": 9,
+   "players": 6,
+   "walk": 0.006,
+   "spots": 222.0,
+   "hill": true,
+   "dens": [
+    1,
+    0.85,
+    0.64,
+    0.58,
+    0.55,
+    0.47,
+    0.46,
+    0.45,
+    0.38,
+    0.31,
+    0.09,
+    0.04,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "berserk": {
+   "runs": 2,
+   "players": 2,
+   "walk": 0.005,
+   "spots": 376.0,
+   "hill": true,
+   "dens": [
+    1.0,
+    0.97,
+    0.78,
+    0.73,
+    0.6,
+    0.47,
+    0.39,
+    0.42,
+    0.4,
+    0.32,
+    0.27,
+    0.23,
+    0.17,
+    0.14,
+    0.07,
+    0.06,
+    0.04,
+    0.03,
+    0.03,
+    0.03
+   ]
+  },
+  "assassin_park": {
+   "runs": 1,
+   "players": 1,
+   "walk": 0.0045,
+   "spots": 932,
+   "lanes": 2,
+   "hill": true,
+   "dens": [
+    1,
+    0.92,
+    0.78,
+    0.68,
+    0.31,
+    0.17,
+    0.03,
+    0.01,
+    0.01,
+    0,
+    0.01,
+    0,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "dressrosa_summer": {
+   "runs": 23,
+   "players": 5,
+   "walk": 0.0048,
+   "spots": 252.0,
+   "hill": true,
+   "dens": [
+    1,
+    0.98,
+    0.91,
+    0.92,
+    0.8,
+    0.82,
+    0.71,
+    0.75,
+    0.69,
+    0.66,
+    0.61,
+    0.55,
+    0.54,
+    0.52,
+    0.42,
+    0.38,
+    0.31,
+    0.26,
+    0.18,
+    0.12
+   ]
+  },
+  "hxhant": {
+   "runs": 4,
+   "players": 3,
+   "walk": 0.0073,
+   "spots": 128.0,
+   "hill": true,
+   "dens": [
+    0.92,
+    0.89,
+    0.94,
+    0.49,
+    0.42,
+    0.24,
+    0.05,
+    0.03,
+    0.03,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
     0.0,
     0.0,
     0.0,
     0.0,
     0.0
    ]
+  },
+  "hueco": {
+   "runs": 3,
+   "players": 1,
+   "walk": 0.0042,
+   "spots": 273,
+   "hill": true,
+   "dens": [
+    1,
+    0.21,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "sao": {
+   "runs": 1,
+   "players": 1,
+   "walk": 0.0079,
+   "spots": 271,
+   "hill": true,
+   "dens": [
+    1,
+    0.51,
+    0.26,
+    0.2,
+    0.19,
+    0.14,
+    0.11,
+    0.09,
+    0.04,
+    0.01,
+    0.02,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "sao_legend": {
+   "runs": 1,
+   "players": 1,
+   "walk": 0.0079,
+   "spots": 271,
+   "hill": true,
+   "dens": [
+    1,
+    0.72,
+    0.34,
+    0.15,
+    0.07,
+    0.03,
+    0.01,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   }
  },
  "cal": {
   "ev:summer2_event": {
-   "countCal": 0.9471,
-   "waveSec": 24.7287,
-   "spawnGap": 0.7664,
-   "skipDelay": 3.3101,
+   "countCal": 0.9371,
+   "waveSec": 27.2899,
+   "spawnGap": 0.766,
+   "skipDelay": 3.3214,
    "yenCal": 1.0,
-   "baseRel": 1.0616
+   "baseRel": 1.0829
   },
   "st:namek_level_1:Normal": {
-   "countCal": 1.0,
-   "waveSec": 25.2163,
-   "spawnGap": 0.7658,
-   "skipDelay": 3.249,
+   "countCal": 1,
+   "waveSec": 25.286,
+   "spawnGap": 0.7664,
+   "skipDelay": 3.2081,
    "yenCal": 1.0
   },
   "st:namek_level_6:Hard": {
-   "countCal": 0.9777,
-   "waveSec": 22.3322,
-   "spawnGap": 0.765,
-   "skipDelay": 3.2179,
-   "yenCal": 1.0
+   "countCal": 0.9864,
+   "waveSec": 18.2465,
+   "spawnGap": 0.7654,
+   "skipDelay": 3.208,
+   "yenCal": 1
   },
   "rd:west_city_raid": {
-   "countCal": 0.9788,
-   "waveSec": 26.8439,
-   "spawnGap": 0.7764,
-   "skipDelay": 3.1726,
+   "countCal": 1,
+   "waveSec": 31.4274,
+   "spawnGap": 0.7626,
+   "skipDelay": 3.1795,
    "baseRel": 1.3623,
-   "yenCal": 1.0
+   "yenCal": 1
   },
   "dc": {
-   "countCal": 1.0909,
-   "waveSec": 12.4172,
-   "spawnGap": 0.7558,
-   "skipDelay": 3.2526,
+   "countCal": 1.0927,
+   "waveSec": 21.8921,
+   "spawnGap": 0.7566,
+   "skipDelay": 3.2439,
    "baseRel": 1.3658,
    "yenCal": 1.0
   },
   "ch": {
    "countCal": 1,
-   "waveSec": 20.0112,
-   "spawnGap": 0.7921,
-   "skipDelay": 3.2017,
+   "waveSec": 26.9695,
+   "spawnGap": 0.7822,
+   "skipDelay": 3.2101,
    "yenCal": 1,
    "baseRel": 1.3824
   },
@@ -7396,10 +12375,10 @@
    "yenCal": 1
   },
   "st:namek_level_6:Normal": {
-   "countCal": 0.9622,
-   "waveSec": 15.4256,
-   "spawnGap": 0.7655,
-   "skipDelay": 3.1939,
+   "countCal": 0.9623,
+   "waveSec": 24.1512,
+   "spawnGap": 0.7694,
+   "skipDelay": 3.1432,
    "yenCal": 1.0
   },
   "rd:west_city_frieza_level_1": {
@@ -7420,9 +12399,10 @@
   "rd:uchiha_level_1": {
    "countCal": 1.1513,
    "waveSec": 38.3597,
-   "spawnGap": 1.1612,
-   "skipDelay": 3.2593,
-   "yenCal": 1
+   "spawnGap": 1.1157,
+   "skipDelay": 3.2119,
+   "yenCal": 1,
+   "baseRel": 2.5296
   },
   "rd:uchiha_level_2": {
    "countCal": 1,
@@ -7455,47 +12435,47 @@
    "baseRel": 1.0912
   },
   "dg": {
-   "countCal": 1.0501,
-   "waveSec": 28.4239,
-   "spawnGap": 0.7682,
-   "skipDelay": 3.2203,
+   "countCal": 1.0423,
+   "waveSec": 27.4833,
+   "spawnGap": 0.7697,
+   "skipDelay": 3.2189,
    "yenCal": 1.0,
-   "baseRel": 0.7703
+   "baseRel": 0.7319
   },
   "st:namek_level_2:Normal": {
-   "countCal": 0.987,
-   "waveSec": 15.7621,
-   "spawnGap": 0.7706,
+   "countCal": 0.9957,
+   "waveSec": 18.0493,
+   "spawnGap": 0.7724,
    "skipDelay": 3.2138,
    "yenCal": 1.0
   },
   "st:namek_level_3:Normal": {
-   "countCal": 0.9789,
-   "waveSec": 16.8999,
-   "spawnGap": 0.7737,
-   "skipDelay": 3.1311,
-   "yenCal": 1.0
+   "countCal": 0.9962,
+   "waveSec": 20.6011,
+   "spawnGap": 0.7808,
+   "skipDelay": 3.164,
+   "yenCal": 1
   },
   "st:namek_level_4:Normal": {
-   "countCal": 0.9878,
-   "waveSec": 15.7581,
-   "spawnGap": 0.7538,
-   "skipDelay": 3.2011,
+   "countCal": 1.0,
+   "waveSec": 21.4061,
+   "spawnGap": 0.7763,
+   "skipDelay": 3.209,
    "yenCal": 1.0
   },
   "st:demonslayer_level_1:Normal": {
-   "countCal": 1.1152,
-   "waveSec": 16.3797,
-   "spawnGap": 0.7753,
-   "skipDelay": 3.1405,
-   "yenCal": 1
+   "countCal": 1.0987,
+   "waveSec": 26.2195,
+   "spawnGap": 0.7743,
+   "skipDelay": 3.2481,
+   "yenCal": 1.0
   },
   "st:demonslayer_level_2:Normal": {
-   "countCal": 1.1283,
-   "waveSec": 13.8045,
-   "spawnGap": 0.7548,
-   "skipDelay": 3.219,
-   "yenCal": 1
+   "countCal": 1.1305,
+   "waveSec": 32.9989,
+   "spawnGap": 0.7919,
+   "skipDelay": 3.2146,
+   "yenCal": 1.0
   },
   "pt:skypiea_portal:t3": {
    "countCal": 1.0273,
@@ -7512,25 +12492,26 @@
    "yenCal": 1
   },
   "inf:shibuya_infinite": {
-   "countCal": 0.9617,
-   "waveSec": 34.4016,
-   "spawnGap": 0.7857,
-   "skipDelay": 3.2673,
-   "yenCal": 1.0
+   "countCal": 0.963,
+   "waveSec": 33.9523,
+   "spawnGap": 0.7752,
+   "skipDelay": 3.2306,
+   "yenCal": 1.0,
+   "baseRel": 0.807
   },
   "pt:shibuya_portal": {
-   "countCal": 0.9962,
-   "waveSec": 31.4324,
-   "spawnGap": 0.7646,
-   "skipDelay": 3.3342,
+   "countCal": 1.0225,
+   "waveSec": 30.7319,
+   "spawnGap": 0.7634,
+   "skipDelay": 3.2739,
    "yenCal": 1.0
   },
   "st:naruto_level_6:Normal": {
-   "countCal": 1.0177,
-   "waveSec": 23.3312,
-   "spawnGap": 0.7659,
-   "skipDelay": 3.2167,
-   "yenCal": 1
+   "countCal": 1.0071,
+   "waveSec": 24.4516,
+   "spawnGap": 0.7726,
+   "skipDelay": 3.2454,
+   "yenCal": 1.0
   },
   "st:jjk_level_2:Hard": {
    "countCal": 1,
@@ -7540,23 +12521,24 @@
    "yenCal": 1
   },
   "st:opm_level_2:Hard": {
-   "countCal": 1,
-   "waveSec": 33.2948,
-   "spawnGap": 0.7811,
-   "skipDelay": 3.2133,
-   "yenCal": 1
+   "countCal": 0.9897,
+   "waveSec": 29.198,
+   "spawnGap": 0.7769,
+   "skipDelay": 3.2123,
+   "yenCal": 1.0
   },
   "ar:artifact_usopp_ts": {
-   "countCal": 1,
-   "waveSec": 33.2762,
-   "spawnGap": 0.7937,
-   "skipDelay": 3.2064,
-   "yenCal": 1
+   "countCal": 1.0,
+   "waveSec": 33.4124,
+   "spawnGap": 0.8465,
+   "skipDelay": 3.2007,
+   "yenCal": 1.0,
+   "baseRel": 0.0097
   },
   "st:marineford_level_2:Hard": {
    "countCal": 1,
    "waveSec": 33.1214,
-   "spawnGap": 0.7637,
+   "spawnGap": 0.7563,
    "skipDelay": 3.2864,
    "yenCal": 1
   },
@@ -7568,10 +12550,10 @@
    "yenCal": 1
   },
   "st:namek_level_5:Normal": {
-   "countCal": 0.9366,
-   "waveSec": 13.1392,
+   "countCal": 0.9515,
+   "waveSec": 31.2326,
    "spawnGap": 0.7648,
-   "skipDelay": 3.2352,
+   "skipDelay": 3.2203,
    "yenCal": 1
   },
   "st:bleach_legend_6:Hard": {
@@ -7582,25 +12564,25 @@
    "yenCal": 1
   },
   "st:opm_level_3:Hard": {
-   "countCal": 1,
-   "waveSec": 33.0633,
-   "spawnGap": 0.7686,
-   "skipDelay": 3.1682,
-   "yenCal": 1
+   "countCal": 0.998,
+   "waveSec": 28.3262,
+   "spawnGap": 0.7697,
+   "skipDelay": 3.1664,
+   "yenCal": 1.0
   },
   "st:shibuya_level_1:Normal": {
    "countCal": 1.0,
-   "waveSec": 33.2133,
-   "spawnGap": 0.79,
-   "skipDelay": 3.2668,
+   "waveSec": 33.1985,
+   "spawnGap": 0.7861,
+   "skipDelay": 3.226,
    "yenCal": 1.0
   },
   "st:opm_level_4:Hard": {
-   "countCal": 1,
-   "waveSec": 26.0138,
-   "spawnGap": 0.7647,
-   "skipDelay": 3.1826,
-   "yenCal": 1
+   "countCal": 1.0148,
+   "waveSec": 29.5492,
+   "spawnGap": 0.7644,
+   "skipDelay": 3.2384,
+   "yenCal": 1.0
   },
   "st:bleach_legend_1:Hard": {
    "countCal": 1.0147,
@@ -7610,25 +12592,26 @@
    "yenCal": 1
   },
   "st:aot_level_1:Normal": {
-   "countCal": 0.9912,
-   "waveSec": 18.9912,
-   "spawnGap": 0.7744,
-   "skipDelay": 3.16,
-   "yenCal": 1
+   "countCal": 0.9956,
+   "waveSec": 24.1136,
+   "spawnGap": 0.7702,
+   "skipDelay": 3.1794,
+   "yenCal": 1.0
   },
   "st:clover_level_2:Hard": {
-   "countCal": 1,
-   "waveSec": 33.2819,
-   "spawnGap": 0.7635,
-   "skipDelay": 3.2205,
-   "yenCal": 1
+   "countCal": 1.0,
+   "waveSec": 33.269,
+   "spawnGap": 0.764,
+   "skipDelay": 3.2381,
+   "yenCal": 1.0
   },
   "st:aot_level_2:Normal": {
-   "countCal": 0.9917,
-   "waveSec": 15.559,
-   "spawnGap": 0.7546,
-   "skipDelay": 3.2097,
-   "yenCal": 1
+   "countCal": 0.9959,
+   "waveSec": 17.9988,
+   "spawnGap": 0.755,
+   "skipDelay": 3.2365,
+   "yenCal": 1.0,
+   "baseRel": 4.2704
   },
   "pt:shibuya_portal_final": {
    "countCal": 0.9706,
@@ -7645,10 +12628,354 @@
    "yenCal": 1
   },
   "st:clover_level_3:Hard": {
-   "countCal": 1,
-   "waveSec": 33.2982,
+   "countCal": 1.0,
+   "waveSec": 33.2075,
    "spawnGap": 0.7643,
-   "skipDelay": 3.2541,
+   "skipDelay": 3.2325,
+   "yenCal": 1.0
+  },
+  "st:bleach_legend_3:Hard": {
+   "countCal": 1.0196,
+   "waveSec": 26.604,
+   "spawnGap": 0.771,
+   "skipDelay": 3.2924,
+   "yenCal": 1
+  },
+  "st:jojo_level_2:Hard": {
+   "countCal": 1.0,
+   "waveSec": 32.7381,
+   "spawnGap": 0.7722,
+   "skipDelay": 3.2357,
+   "yenCal": 1.0
+  },
+  "pt:skypiea_portal:t5": {
+   "countCal": 1.0258,
+   "waveSec": 33.2651,
+   "spawnGap": 0.7758,
+   "skipDelay": 3.2175,
+   "yenCal": 1
+  },
+  "st:bleach_legend_4:Hard": {
+   "countCal": 1.0123,
+   "waveSec": 26.9584,
+   "spawnGap": 0.7583,
+   "skipDelay": 3.2243,
+   "yenCal": 1
+  },
+  "pt:skypiea_portal:t8": {
+   "countCal": 1.0281,
+   "waveSec": 42.3805,
+   "spawnGap": 1.1822,
+   "skipDelay": 3.2221,
+   "yenCal": 1
+  },
+  "st:bleach_legend_5:Hard": {
+   "countCal": 1.0252,
+   "waveSec": 33.1874,
+   "spawnGap": 0.7564,
+   "skipDelay": 3.2319,
+   "baseRel": 0.3061,
+   "yenCal": 1.0
+  },
+  "st:aot_level_3:Normal": {
+   "countCal": 0.9673,
+   "waveSec": 13.7341,
+   "spawnGap": 0.7661,
+   "skipDelay": 3.2332,
+   "yenCal": 1
+  },
+  "st:aot_level_4:Normal": {
+   "countCal": 1.016,
+   "waveSec": 21.4131,
+   "spawnGap": 0.7653,
+   "skipDelay": 3.1609,
+   "yenCal": 1.0
+  },
+  "st:aot_level_5:Normal": {
+   "countCal": 1.0269,
+   "waveSec": 25.5229,
+   "spawnGap": 0.7879,
+   "skipDelay": 3.1732,
+   "yenCal": 1.0
+  },
+  "st:aot_level_6:Normal": {
+   "countCal": 1.0288,
+   "waveSec": 25.471,
+   "spawnGap": 0.755,
+   "skipDelay": 3.2774,
+   "yenCal": 1.0
+  },
+  "st:demonslayer_level_3:Normal": {
+   "countCal": 1.1149,
+   "waveSec": 33.1834,
+   "spawnGap": 0.7678,
+   "skipDelay": 3.1583,
+   "yenCal": 1
+  },
+  "st:demonslayer_level_4:Normal": {
+   "countCal": 1.1308,
+   "waveSec": 33.2317,
+   "spawnGap": 0.7858,
+   "skipDelay": 3.2058,
+   "yenCal": 1
+  },
+  "pt:shibuya_portal_megumi2": {
+   "countCal": 0.4865,
+   "waveSec": 33.4044,
+   "spawnGap": 2.0196,
+   "skipDelay": 3.2839,
+   "yenCal": 1
+  },
+  "st:demonslayer_level_5:Normal": {
+   "countCal": 1.1212,
+   "waveSec": 33.2373,
+   "spawnGap": 0.7812,
+   "skipDelay": 3.2614,
+   "yenCal": 1.0
+  },
+  "st:demonslayer_level_6:Normal": {
+   "countCal": 1.0863,
+   "waveSec": 28.9347,
+   "spawnGap": 0.8294,
+   "skipDelay": 3.221,
+   "yenCal": 1.0
+  },
+  "st:marineford_level_1:Hard": {
+   "countCal": 1,
+   "waveSec": 32.5604,
+   "spawnGap": 0.7635,
+   "skipDelay": 3.2717,
+   "yenCal": 1
+  },
+  "pt:skypiea_portal:t7": {
+   "countCal": 1.0258,
+   "waveSec": 42.4994,
+   "spawnGap": 1.2333,
+   "skipDelay": 3.2364,
+   "yenCal": 1
+  },
+  "st:marineford_level_3:Hard": {
+   "countCal": 0.9645,
+   "waveSec": 27.7527,
+   "spawnGap": 0.7588,
+   "skipDelay": 3.2386,
+   "yenCal": 1.0
+  },
+  "st:naruto_level_1:Normal": {
+   "countCal": 1.0,
+   "waveSec": 21.3865,
+   "spawnGap": 0.7701,
+   "skipDelay": 3.2348,
+   "yenCal": 1.0
+  },
+  "st:naruto_level_2:Normal": {
+   "countCal": 1.0387,
+   "waveSec": 24.8002,
+   "spawnGap": 0.7653,
+   "skipDelay": 3.2015,
+   "yenCal": 1.0
+  },
+  "st:marineford_level_4:Hard": {
+   "countCal": 0.9426,
+   "waveSec": 25.3167,
+   "spawnGap": 0.7624,
+   "skipDelay": 3.2611,
+   "yenCal": 1.0
+  },
+  "st:naruto_level_3:Normal": {
+   "countCal": 1.0316,
+   "waveSec": 24.6722,
+   "spawnGap": 0.7817,
+   "skipDelay": 3.245,
+   "yenCal": 1.0
+  },
+  "st:naruto_level_4:Normal": {
+   "countCal": 1.0037,
+   "waveSec": 19.5409,
+   "spawnGap": 0.7802,
+   "skipDelay": 3.2467,
+   "yenCal": 1
+  },
+  "st:naruto_level_5:Normal": {
+   "countCal": 1.0036,
+   "waveSec": 23.3974,
+   "spawnGap": 0.7642,
+   "skipDelay": 3.2571,
+   "yenCal": 1
+  },
+  "st:namek_level_4:Hard": {
+   "countCal": 1,
+   "waveSec": 31.1264,
+   "spawnGap": 0.7671,
+   "skipDelay": 3.225,
+   "yenCal": 1
+  },
+  "st:namek_level_5:Hard": {
+   "countCal": 0.9963,
+   "waveSec": 29.0622,
+   "spawnGap": 0.7657,
+   "skipDelay": 3.2873,
+   "yenCal": 1
+  },
+  "st:marineford_level_1:Normal": {
+   "countCal": 1,
+   "waveSec": 30.3228,
+   "spawnGap": 0.7785,
+   "skipDelay": 3.2691,
+   "yenCal": 1
+  },
+  "st:marineford_level_2:Normal": {
+   "countCal": 0.9095,
+   "waveSec": 19.0508,
+   "spawnGap": 0.7574,
+   "skipDelay": 3.2815,
+   "yenCal": 1
+  },
+  "st:marineford_level_3:Normal": {
+   "countCal": 0.913,
+   "waveSec": 16.1491,
+   "spawnGap": 0.7348,
+   "skipDelay": 3.2921,
+   "yenCal": 1
+  },
+  "st:marineford_level_4:Normal": {
+   "countCal": 0.8815,
+   "waveSec": 16.5111,
+   "spawnGap": 0.7882,
+   "skipDelay": 3.1349,
+   "yenCal": 1
+  },
+  "st:marineford_level_5:Normal": {
+   "countCal": 0.8719,
+   "waveSec": 17.6683,
+   "spawnGap": 0.7567,
+   "skipDelay": 3.408,
+   "yenCal": 1
+  },
+  "st:tokyoghoul_level_6:Normal": {
+   "countCal": 1,
+   "waveSec": 33.355,
+   "spawnGap": 0.7714,
+   "skipDelay": 3.1708,
+   "yenCal": 1
+  },
+  "st:marineford_level_6:Normal": {
+   "countCal": 0.8497,
+   "waveSec": 22.2641,
+   "spawnGap": 0.7974,
+   "skipDelay": 2.9652,
+   "yenCal": 1
+  },
+  "st:magnolia_level_2:Hard": {
+   "countCal": 0.9753,
+   "waveSec": 23.6026,
+   "spawnGap": 0.7572,
+   "skipDelay": 3.191,
+   "yenCal": 1
+  },
+  "st:sao_legend_1:Hard": {
+   "countCal": 1,
+   "waveSec": 33.3887,
+   "spawnGap": 0.7655,
+   "skipDelay": 3.2037,
+   "yenCal": 1
+  },
+  "st:hxhant_level_2:Hard": {
+   "countCal": 1.2058,
+   "waveSec": 33.2894,
+   "spawnGap": 0.8452,
+   "skipDelay": 3.1854,
+   "yenCal": 1
+  },
+  "st:jojo_level_3:Hard": {
+   "countCal": 1,
+   "waveSec": 32.4799,
+   "spawnGap": 0.7555,
+   "skipDelay": 3.2926,
+   "yenCal": 1
+  },
+  "st:magnolia_level_6:Normal": {
+   "countCal": 1,
+   "waveSec": 33.2133,
+   "spawnGap": 0.761,
+   "skipDelay": 3.2578,
+   "yenCal": 1
+  },
+  "st:opm_level_5:Hard": {
+   "countCal": 1.0427,
+   "waveSec": 33.237,
+   "spawnGap": 0.762,
+   "skipDelay": 3.2261,
+   "yenCal": 1
+  },
+  "st:clover_level_4:Hard": {
+   "countCal": 1,
+   "waveSec": 33.2287,
+   "spawnGap": 0.7578,
+   "skipDelay": 3.2824,
+   "yenCal": 1
+  },
+  "st:jjk_level_1:Normal": {
+   "countCal": 1,
+   "waveSec": 14.7344,
+   "spawnGap": 0.7735,
+   "skipDelay": 3.1186,
+   "yenCal": 1
+  },
+  "st:opm_level_6:Hard": {
+   "countCal": 1.035,
+   "waveSec": 30.7178,
+   "spawnGap": 0.7659,
+   "skipDelay": 3.2718,
+   "yenCal": 1
+  },
+  "st:clover_level_5:Hard": {
+   "countCal": 1,
+   "waveSec": 33.0557,
+   "spawnGap": 0.7602,
+   "skipDelay": 3.2599,
+   "yenCal": 1
+  },
+  "st:jjk_level_6:Normal": {
+   "countCal": 0.9336,
+   "waveSec": 21.0734,
+   "spawnGap": 0.8317,
+   "skipDelay": 3.2535,
+   "yenCal": 1
+  },
+  "st:7ds_level_1:Normal": {
+   "countCal": 1,
+   "waveSec": 32.1801,
+   "spawnGap": 0.7626,
+   "skipDelay": 3.2286,
+   "yenCal": 1
+  },
+  "st:clover_level_6:Hard": {
+   "countCal": 1,
+   "waveSec": 33.1032,
+   "spawnGap": 0.7628,
+   "skipDelay": 3.1869,
+   "yenCal": 1
+  },
+  "st:jojo_level_4:Hard": {
+   "countCal": 1.0444,
+   "waveSec": 27.1192,
+   "spawnGap": 0.7665,
+   "skipDelay": 3.3607,
+   "yenCal": 1
+  },
+  "st:clover_level_6:Normal": {
+   "countCal": 1,
+   "waveSec": 33.3477,
+   "spawnGap": 0.7799,
+   "skipDelay": 3.2363,
+   "yenCal": 1
+  },
+  "st:jojo_level_1:Normal": {
+   "countCal": 1,
+   "waveSec": 33.2477,
+   "spawnGap": 0.7703,
+   "skipDelay": 3.2353,
    "yenCal": 1
   }
  },
@@ -7659,9 +12986,9 @@
    "pairs": 504
   },
   "Ice": {
-   "f": 0.162,
-   "players": 1,
-   "pairs": 80
+   "f": 0.25,
+   "players": 3,
+   "pairs": 170
   },
   "Ice@snow": {
    "f": 0.333,
@@ -7710,15 +13037,16 @@
    "Flying": 1
   },
   "kai_planet": {
-   "Armor": 2,
    "Flying": 1
   },
   "uchiha_hideout": {
+   "Armor": 2,
    "Flying": 1
   },
   "magnolia": {
-   "Armor": 2,
-   "Flying": 1
+   "Flying": 1,
+   "Fire": 2,
+   "Ice": 1
   },
   "7ds_summer": {
    "Armor": 2,
@@ -7728,7 +13056,8 @@
    "Flying": 1
   },
   "csm_city": {
-   "Flying": 2
+   "Armor": 2,
+   "Flying": 1
   },
   "boros_ship": {
    "Flying": 1
@@ -7781,6 +13110,38 @@
    "Flying": 3,
    "Fire": 1,
    "Ice": 1
+  },
+  "space_center": {
+   "Flying": 1
+  },
+  "berserk": {
+   "Armor": 1,
+   "Flying": 2
+  },
+  "assassin_park": {
+   "Flying": 1
+  },
+  "dressrosa_summer": {
+   "Armor": 2,
+   "Flying": 1
+  },
+  "hxhant": {
+   "Flying": 1
+  },
+  "hueco": {
+   "Flying": 1
+  },
+  "sao": {
+   "Armor": 1,
+   "Flying": 2
+  },
+  "sao_legend": {
+   "Armor": 1,
+   "Flying": 1
+  },
+  "demonslayer_raid": {
+   "Armor": 2,
+   "Flying": 1
   }
  },
  "daily": {
@@ -7796,9 +13157,9 @@
     "magic": 0.408,
     "ice_damage": 0.417
    },
-   "runs": 18,
-   "wins": 4,
-   "players": 11
+   "runs": 27,
+   "wins": 11,
+   "players": 19
   },
   "20760": {
    "map": "skypiea",
